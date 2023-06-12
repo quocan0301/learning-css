@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1 style="text-align: center;">Tìm hiểu về CSS</h1>
+  <h1 style="text-align: center; margin-top:80px;">Tìm hiểu về CSS</h1>
   <h2>Mục lục</h2>
   <ol>
     <li><a href="#section1">Lịch sử về CSS</a></li>
@@ -56,6 +56,83 @@
   <section id="section12">
   </section>
   <section id="section13">
+    <h3 class="sec13_head">13. About CSS Layout</h3>
+    <ol>
+      <li>
+        <strong>Positions</strong>
+        <p><strong>Concept: </strong>là thuộc tính sử dụng để kiểm soát cách các phần tử HTML hiển thị và được định vị trên trang web. Dưới đây là một số giá trị phổ biến của position: </p>
+        <ol>
+          <li>
+            <strong>Static: </strong>là giá trị mặc định của positon. Các phần tử sẽ được hiển thị theo trình tự tự nhiên của tài liệu HTML và sẽ không bị ảnh hưởng bởi các thuộc tính vị trí khác như: <strong>top, bottom, right, left.</strong>
+            <div class="wrap wrap1">
+              <div class="round round1"></div>
+              <div class="round round2"></div>
+              <div class="round round3"></div>
+            </div>
+          </li>
+          <li>
+            <strong>Relative: </strong>các phần tử sẽ được sẽ được định vị tương đối so với vị trí ban đầu của nó. Bằng cách sử dụng các thuộc tính top, bottom, left, right, phần tử có thể được di chuyển từ vị trí ban đầu một cách tương đối.
+            <div class="wrap wrap2">
+              <div class="round round1 round11"></div>
+              <div class="round round2 round21"></div>
+              <div class="round round3 round31"></div>
+            </div>
+          </li>
+          <li>
+            <strong>Absolute: </strong>các phần tử  sẽ được định vị tuyệt đối so với phần tử cha gần nhất có position khác static. Phần tử sẽ được di chuyển dựa trên các thuộc tính top, bottom, left, right. Nếu không có phần tử cha nào có position khác static, thì phần tử absolute sẽ dựa trên cửa sổ trình duyệt.
+            <div class="wrap wrap3">
+              <div class="round round1 round12"></div>
+              <div class="round round2 round22"></div>
+              <div class="round round3 round32"></div>
+            </div>
+          </li>
+          <li style="margin-top: 100px;">
+            <strong>Fixed: </strong>phần tử sẽ được định vị tuyệt đối so với cửa sổ trình duyệt. Nó sẽ không di chuyển khi người dùng cuộn trang. Để định rõ vị trí của phần tử fixed, ta sử dụng các thuộc tính top, bottom, left, right.
+            <div class="menu">
+              <span>Item1</span>
+              <span>Item2</span>
+              <span>Item3</span>
+            </div>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <strong>Multiple-column layout</strong>
+        <p>
+          Multiple-column layout trong CSS cho phép chia nội dung thành nhiều cột ngang, tạo ra một bố cục giống báo chí hoặc tạp chí. Đây là một cách tiện lợi để hiển thị nội dung dài mà không cần cuộn xuống hết trang.
+        </p>
+        <p class="multi-col">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+        <p><strong>Lưu ý </strong>multiple-column layout không được hỗ trợ trên tất cả các trình duyệt cũ, vì vậy bạn nên kiểm tra tính tương thích trình duyệt trước khi sử dụng. Đồng thời, cần cân nhắc về trải nghiệm di động và đảm bảo rằng nội dung vẫn đọc được và hiển thị tốt trên các thiết bị nhỏ hơn.</p>
+      </li>
+      <li>
+        <strong>Float</strong>
+        <p>Thuộc tính Float CSS là một thuộc tính được sử dụng để chuyển một phần tử sang góc trái hoặc góc bên phải của không gian bao quanh nó. </p>
+        <strong>Thuộc tính Float có thể bao gồm các giá trị dưới đây:</strong>
+        <ul style="margin: 20px 0;">
+          <li><strong>Left: </strong>Cố định phần tử HTML về phía bên trái.</li>
+          <li><strong>Right: </strong>Cố định phần tử HTML về bên phải.</li>
+          <li><strong>None: </strong>Phần tử nằm ở vị trí của nó, trạng thái mặc định.</li>
+          <li><strong>Inherit: </strong>Phần tử kế thừa giá trị float của phần tử cha. </li>
+        </ul>
+        <p>
+          <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
+          hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
+          đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+        </p>
+        <p>
+          <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;float: left;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
+          hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
+          đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+        </p>
+        <p style="margin-top: 120px;">
+          <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;float: right;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
+          hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
+          đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+        </p>
+      </li>
+    </ol>
   </section>
   <section id="section14">
   </section>

@@ -90,3 +90,73 @@
   .container_div {
     background-color: cyan;
   }
+
+/* SECTION 13 */
+  .wrap {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #aaaaaa;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .wrap1 {
+    position: static;
+  }
+  .wrap2 {
+    position: relative;
+    left: 100px;
+    /* top: 50px; */
+  }
+  .wrap3 {
+    position: relative;
+  }
+  .round {
+    width: 100px;
+    height: 100px;
+  }
+  .round1 {
+    background-color: red;
+  }
+  .round2 {
+    background-color: blue;
+  }
+  .round3 {
+    background-color: green;
+  }
+  .round11 {
+    position: relative;
+    left: 100px;
+  }
+  .round12 {
+    position: absolute;
+    top: 50px;
+    right: 0;
+  }
+  .round32 {
+    position: absolute;
+    top: 0;
+    left: 200px;
+  }
+  /* MENU */
+  .menu {
+    background-color: yellow;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu span {
+    display: inline-block;
+    padding: 0 50px;
+  }
+  /* MULTICOL */
+  .multi-col {
+    column-count: 3;
+    /* column-width: 200px */
+    column-gap: 80px;
+    column-rule: 1px solid red;
+  }
