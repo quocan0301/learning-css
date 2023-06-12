@@ -33,6 +33,7 @@ code {
 
 .flex-2 {
   display: flex;
+  flex-wrap: wrap;
   background: cyan;
   margin: 25px 0;
   width: 450px;
@@ -116,7 +117,7 @@ code {
 }
 
 .ai-stretch {
-  align-items: stretch !important;
+  align-items: stretch;
 }
 
 .ai-baseline {

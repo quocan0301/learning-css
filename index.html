@@ -79,7 +79,7 @@
       </code>
     </pre>
     <div>
-      <h4>Một số attribute của flexbox</h4>
+      <h4>Một số thuộc tính CSS của flexbox</h4>
       <ul>
         <li>flex-direction: xác định hướng của main axis.
           <pre>
@@ -165,7 +165,24 @@
             <div>8</div>
           </div>
         </li>
-        <li>flex-flow: là sự kết hợp của flex-direction và flex-wrap.</li>
+        <li>flex-flow: là sự kết hợp của flex-direction và flex-wrap. Trong flex-flow, giá trị đầu tiên là
+          flex-direction và giá trị thứ hai là flex-wrap.<br>
+          <pre>
+            <code>
+              .container {
+                display: flex;
+                flex-flow: column wrap-reverse;
+              }
+              /* Tương đương với */
+              .container {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap-reverse;
+              }
+            </code>
+          </pre>
+        </li>
+        </li>
         <li>justify-content: xác định cách thức căn chỉnh các flex item theo trục ngang.
           <pre>
             <code class="language-css">
@@ -262,7 +279,7 @@
           <div class="flex-2 ai-baseline">
             <div>1</div>
             <div style="height: 120px">2</div>
-            <div style="height: 80px">3</div>
+            <div style="height: 90px">3</div>
           </div>
         </li>
 
@@ -278,16 +295,106 @@
                                                 và hai item ở hai đầu sẽ được đẩy ra sát 2 bên */
                 align-content: space-around; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
                                                 và khoảng cách đầu cuối item sẽ bằng 1/2 khoảng cách giữa các item */
-                align-content: space-evenly; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
-                                                và khoảng cách đầu cuối item sẽ bằng khoảng cách giữa các item */
                 align-content: stretch; /* Item sẽ được kéo dài theo chiều cross axis */
-                align-content: baseline; /* Item sẽ được căn chỉnh theo baseline của chúng */
               }
             </code>
           </pre>
+          <p>+ align-content: flex-start</p>
+          <div style="height: 200px" class="flex-2 ac-start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+
+          </div>
+          <p>+ align-content: flex-end</p>
+          <div style="height: 200px" class="flex-2 ac-end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+          <p>+ align-content: center</p>
+          <div style="height: 200px" class="flex-2 ac-center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+          <p>+ align-content: space-between</p>
+          <div style="height: 200px" class="flex-2 ac-between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+          <p>+ align-content: space-around</p>
+          <div style="height: 200px" class="flex-2 ac-around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+          <p>+ align-content: stretch</p>
+          <div style="height: 200px" class="flex-2 ac-stretch">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
         </li>
+        <li>order: Sắp xếp thứ tự hiển thị cho các flex item theo quy tắc: phần tử có giá trị order nhỏ hơn sẽ xuất hiện
+          trước. <br>
+          Giá
+          trị order
+          mặc định là 0, ngoài ra ta có thể cho order một giá trị âm.</li>
+        <pre>
+          <code class="language-html">
+            &lt;div class="flex"&gt;
+              &lt;div style="order: 2"&gt;1&lt;/div&gt;
+              &lt;div style="order: 4"&gt;2&lt;/div&gt;
+              &lt;div&gt;3&lt;/div&gt;
+              &lt;div style="order: 1"&gt;4&lt;/div&gt;
+              &lt;div style="order: -1"&gt;5&lt;/div&gt;
+            &lt;/div&gt;
+          </code>
+        </pre>
+        <p>=> Do giá trị order mặc định là 0, nên 5 sẽ xuất hiện trước 3 do -1 < 0. Tiếp theo đó lần lượt là 4, 1, 2 do
+            1 < 2 < 4. </p>
+            <div class="flex">
+              <div style="order: 2">1</div>
+              <div style="order: 4">2</div>
+              <div>3</div>
+              <div style="order: 1">4</div>
+              <div style="order: -1">5</div>
+            </div>
       </ul>
     </div>
+    <h3>b. Grid</h3>
   </section>
   <section id="section13">
   </section>
