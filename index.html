@@ -53,6 +53,241 @@
   <section id="section11">
   </section>
   <section id="section12">
+    <h2>12.Flexbox / Grid</h2>
+    <h3>a. Flexbox</h3>
+    <div style="display: flex; justify-content: center">
+      <img src="https://images.viblo.asia/0c116fbb-972d-4162-8506-bac8605cd704.png" alt="Flexbox" />
+    </div>
+    <div style="text-align:center">Cấu trúc cơ bản của một phần tử flexbox với 3 flex item</div>
+    <ul>
+      <li>Flex container: Chính là flexbox, nơi chứa các flex item bên trong nó.</li>
+      <li>Main axis: trục quyết định hướng mà các flex item sẽ hiển thị (mặc định từ trái qua phải); cross axis: trục
+        còn lại của flexbox, vuông góc với main axis.</li>
+      <li>Cross start: vị trí bắt đầu của trục cross axis; cross end: vị trí kết thúc của trục
+        cross axis.</li>
+      <li>Main start: vị trí bắt đầu của trục main axie; main end: vị trí kết thúc của trục ngang.</li>
+      <li>Flex item: các phần tử con chứa trong flexbox.</li>
+      <li>Main size: kích thước của flex item dựa theo hướng main axis.</li>
+      <li>Cross size: kích thước của flex item dựa theo hướng cross axis.</li>
+    </ul>
+    <p>Để tạo ra một flex container, ta tiến hành khai báo:</p>
+    <pre>
+      <code class="language-css">
+        .container {
+          display: flex;
+        }
+      </code>
+    </pre>
+    <div>
+      <h4>Một số attribute của flexbox</h4>
+      <ul>
+        <li>flex-direction: xác định hướng của main axis.
+          <pre>
+            <code class="language-css">
+              .container {
+                display: flex;
+                flex-direction: row; /* Hướng mặc định, từ trái qua phải */
+                flex-direction: row-reverse; /* Từ phải qua trái */
+                flex-direction: column; /* Từ trên xuống dưới */
+                flex-direction: column-reverse; /* Từ dưới lên trên */
+              }
+            </code>
+          </pre>
+          <p>+ flex-direction: row;</p>
+          <div class="flex fd-row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ flex-direction: row-reverse;</p>
+          <div class="flex fd-row-rev">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ flex-direction: column;</p>
+          <div class="flex fd-col">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ flex-direction: column-reverse;</p>
+          <div class="flex fd-col-rev">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>flex-wrap: xác định flex item có được phép xuống dòng hay không.
+          <pre>
+            <code class="language-css">
+              .container {
+                display: flex;
+                flex-wrap: wrap; /* Mặc định, xuống dòng bình thường */
+                flex-wrap: nowrap; /* Không xuống dòng, item sẽ được bọc trong container */
+                flex-wrap: wrap-reverse; /* Xuống dòng nhưng chiều cross axis bị đảo ngược */
+
+              }
+            </code>
+          </pre>
+          <p>+ flex-wrap: wrap;</p>
+          <div class="flex fw-wrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+          <p>+ flex-wrap: nowrap;</p>
+          <div class="flex fw-nowrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+          <p>+ flex-wrap: wrap-reverse;</p>
+          <div class="flex fw-wrap-rev">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+        </li>
+        <li>flex-flow: là sự kết hợp của flex-direction và flex-wrap.</li>
+        <li>justify-content: xác định cách thức căn chỉnh các flex item theo trục ngang.
+          <pre>
+            <code class="language-css">
+              .container {
+                display: flex;
+                justify-content: flex-start; /* Mặc định, item hiển thị bắt đầu từ main start */
+                justify-content: flex-end; /* Item hiển thị bắt đầu từ main end */
+                justify-content: center; /* Item được căn giữa trục main axis */
+                justify-content: space-between; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
+                                                và hai item ở hai đầu sẽ được đẩy ra sát 2 bên */
+                justify-content: space-around; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
+                                                và khoảng cách đầu cuối item sẽ bằng 1/2 khoảng cách giữa các item */
+                justify-content: space-evenly; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
+                                                và khoảng cách đầu cuối item sẽ bằng khoảng cách giữa các item */
+              }
+            </code>
+          </pre>
+          <p>+ justify-content: flex-start</p>
+          <div class="flex jc-start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ justify-content: flex-end</p>
+          <div class="flex jc-end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ justify-content: center</p>
+          <div class="flex jc-center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ justify-content: space-between</p>
+          <div class="flex jc-between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ justify-content: space-around</p>
+          <div class="flex jc-around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ justify-content: space-evenly</p>
+          <div class="flex jc-evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>align-items: xác định cách thức căn chỉnh các flex item theo chiều của cross axis.
+          <pre>
+            <code class="language-css">
+              .container {
+                display: flex;
+                align-items: flex-start; /* Mặc định, item hiển thị bắt đầu từ cross start */
+                align-items: flex-end; /* Item hiển thị bắt đầu từ cross end */
+                align-items: center; /* Item được căn giữa trục cross axis */
+                align-items: stretch; /* Item sẽ được kéo dài theo chiều cross axis */
+                align-items: baseline; /* Item sẽ được căn chỉnh theo baseline của chúng */
+              }
+            </code>
+          </pre>
+          <p>+ align-items: flex-start</p>
+          <div class="flex-2 ai-start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ align-items: flex-end</p>
+          <div class="flex-2 ai-end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ align-items: center</p>
+          <div class="flex-2 ai-center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ align-items: stretch</p>
+          <div class="flex-2 ai-stretch">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <p>+ align-items: baseline</p>
+          <div class="flex-2 ai-baseline">
+            <div>1</div>
+            <div style="height: 120px">2</div>
+            <div style="height: 80px">3</div>
+          </div>
+        </li>
+
+        <li>align-content: xác định cách thức căn chỉnh các flex line theo chiều của cross axis.
+          <pre>
+            <code class="language-css">
+              .container {
+                display: flex;
+                align-content: flex-start; /* Mặc định, item hiển thị bắt đầu từ main start */
+                align-content: flex-end; /* Item hiển thị bắt đầu từ main end */
+                align-content: center; /* Item được căn giữa trục main axis */
+                align-content: space-between; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
+                                                và hai item ở hai đầu sẽ được đẩy ra sát 2 bên */
+                align-content: space-around; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
+                                                và khoảng cách đầu cuối item sẽ bằng 1/2 khoảng cách giữa các item */
+                align-content: space-evenly; /* Các item sẽ được căn chỉnh với khoảng cách giữa chúng bằng nhau 
+                                                và khoảng cách đầu cuối item sẽ bằng khoảng cách giữa các item */
+                align-content: stretch; /* Item sẽ được kéo dài theo chiều cross axis */
+                align-content: baseline; /* Item sẽ được căn chỉnh theo baseline của chúng */
+              }
+            </code>
+          </pre>
+        </li>
+      </ul>
+    </div>
   </section>
   <section id="section13">
   </section>
@@ -62,4 +297,6 @@
   </section>
   <section id="section16">
   </section>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>

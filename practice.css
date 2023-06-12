@@ -3,5 +3,189 @@
 }
 
 html {
+
   font-family: Tahoma, sans-serif;
 }
+
+code {
+  font-size: 18px;
+}
+
+/* section1 */
+/* section2 */
+/* section3 */
+/* section4 */
+/* section5 */
+/* section6 */
+/* section7 */
+/* section8 */
+/* section9 */
+/* section10 */
+/* section11 */
+/* section12 */
+.flex {
+  display: flex;
+  background: cyan;
+  margin: 25px 0;
+  width: 450px;
+
+}
+
+.flex-2 {
+  display: flex;
+  background: cyan;
+  margin: 25px 0;
+  width: 450px;
+  height: 150px;
+}
+
+.flex div,
+.flex-2 div {
+  width: 75px;
+  height: auto;
+  background: lightblue;
+  border: 1px solid black;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fd-row {
+  flex-direction: row;
+}
+
+.fd-row-rev {
+  flex-direction: row-reverse;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+.fd-col-rev {
+  flex-direction: column-reverse;
+}
+
+.fw-wrap {
+  flex-wrap: wrap;
+}
+
+.fw-nowrap {
+  flex-wrap: nowrap;
+}
+
+.fw-wrap-rev {
+  flex-wrap: wrap-reverse;
+}
+
+.jc-start {
+  justify-content: flex-start;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-end {
+  justify-content: flex-end;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.jc-around {
+  justify-content: space-around;
+}
+
+.jc-evenly {
+  justify-content: space-evenly;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-end {
+  align-items: flex-end;
+}
+
+.ai-stretch {
+  align-items: stretch !important;
+}
+
+.ai-baseline {
+  align-items: baseline;
+}
+
+.ac-start {
+  align-content: flex-start;
+}
+
+.ac-center {
+  align-content: center;
+}
+
+.ac-end {
+  align-content: flex-end;
+}
+
+.ac-between {
+  align-content: space-between;
+}
+
+.ac-around {
+  align-content: space-around;
+}
+
+.ac-stretch {
+  align-content: stretch;
+}
+
+.as-start {
+  align-self: flex-start;
+}
+
+.as-center {
+  align-self: center;
+}
+
+.as-end {
+  align-self: flex-end;
+}
+
+.as-stretch {
+  align-self: stretch;
+}
+
+.as-baseline {
+  align-self: baseline;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.flex-2.ai-baseline div {
+  position: relative;
+}
+
+
+.flex-2.ai-baseline div::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px solid red;
+}
+
+/* section13 */
+/* section14 */
+/* section15 */
+/* section16 */
