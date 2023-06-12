@@ -134,9 +134,61 @@
       </li>
     </ol>
   </section>
-  <section id="section14">
+  <section id="section14" style="margin-top: 120px;">
+    <h3 class="sec14_head">14. About CSS Stacking Contexts</h3>
+    <p>Là một khái niệm quan trọng trong CSS để xác định cách các phần tử HTML được xếp chồng và hiển thị trên trang web. Mỗi phần tử HTML có một stacking context riêng, và cách chúng xếp chồng với nhau được quy định bởi một số quy tắc.</p>
+    <p>Một stacking context được tạo ra khi một phần tử thỏa mãn một trong những điều kiện sau: </p>
+    <ol>
+      <li>Phần tử có một thuộc tính position không phải là static (như relative, absolute hoặc fixed) và một trong những thuộc tính sau đây được áp dụng: z-index, opacity nhỏ hơn 1, transform, ...</li>
+      <li>Phần tử có một thuộc tính position là fixed hoặc sticky.</li>
+      <li>Phần tử là một root của trang web (ví dụ: phần tử &lt;html&gt;).</li>
+    </ol>
+    <p>Mỗi stacking context có một "độ sâu" được xác định bởi giá trị z-index của các phần tử trong nó. Phần tử với z-index lớn hơn sẽ được hiển thị trên phần tử với z-index nhỏ hơn.</p>
+    <strong>Expample: </strong>
+    <div class="wrap4 wrap">
+      <div class="round round1 round14"></div>
+      <div class="cycle"></div>
+      <div class="cycle-mini"></div>
+    </div>
   </section>
-  <section id="section15">
+  <section id="section15" style="margin-top:150px;">
+    <h3>15. Animation</h3>
+    <p>CSS Animation là một công nghệ cho phép tạo ra các hiệu ứng chuyển động của các phần tử HTML. Cho phép điều chỉnh thuộc tính của một phần tử theo thời gian, tạo ra các hiệu ứng chuyển động.</p>
+    <p>Để tạo ra một Animation trong CSS, cần thực hiện các bước sau: </p>
+    <ol>
+      <li>
+        <p><strong>Định nghĩa Animation: </strong>Sử dụng <strong>@keyframes</strong> để định nghĩa các trạng thái của animation. Mỗi keyframe đại diện cho 1 trạng thái của phần tử tại 1 thời điểm cụ thể trong quá trình animation.</p>
+      </li>
+      <li>
+        <p><strong>Áp dụng Animation: </strong>Sử dụng thuộc tính <strong>animation</strong> hoặc cá thuộc tính liên quan để áp dụng animation vào phần tử.</p>
+      </li>
+    </ol>
+    <p>
+      <strong>Cú pháp rút gọn của Animation:</strong>
+    </p>
+    <p>
+      animation: name duration timing-function delay iteration-count direction fill-mode;
+    </p>
+    <strong>Trong đó: </strong>
+    <ul>
+      <li><strong>name: </strong>tên của animation được định nghĩa bằng @keyframes</li>
+      <li><strong>duration: </strong>thời gian hoàn thành animation, có thể là giá trị số (ex: 1s, 500ms, ...) hoặc 'infinite' để lặp vô hạn.</li>
+      <li><strong>timing-function: </strong>hàm thời gian, quyết định tốc độ chuyển động.</li>
+      <li><strong>delay: </strong>độ trễ trước khi animation bắt đầu.</li>
+      <li><strong>iteration-count: </strong>số lần lặp lại của animation, có thể là giá trị số hoặc infinite để lặp vô hạn.</li>
+      <li><strong>direction: </strong>xác định cách animation chuyển động khi lặp lại. Nó quyết định animation sẽ chạy theo hướng nào và có đảo ngược hay không.</li>
+      <li><strong>fill-mode: </strong>trạng thái của phần tử sau khi animation kết thúc.</li>
+    </ul>
+    <p><strong>Example: </strong></p>
+    <div class="animate">
+      <div class="cycle-rotate"></div>
+      <div class="run-rotate">
+        <div class="run-mini"></div>
+      </div>
+      <div class="cycle-animate">
+        <div class="cycle-skew"></div>
+      </div>
+    </div>
   </section>
   <section id="section16">
   </section>
