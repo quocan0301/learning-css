@@ -2,67 +2,123 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horus | CSS</title>
-    <link rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/panda-syntax-light.min.css">
-    <link rel="stylesheet" href="practice.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/panda-syntax-light.min.css">
+  <link rel="stylesheet" href="practice.css">
+  <title>Horus | CSS</title>
 </head>
 
 <body>
-  <h1 style="text-align: center;">Tìm hiểu về CSS</h1>
-  <h2>Mục lục</h2>
-  <ol>
-    <li><a href="#section1">Lịch sử về CSS</a></li>
-    <li><a href="#section2">Những cơ bản về CSS</a></li>
-    <li><a href="#section3">Cách CSS hoạt động</a></li>
-    <li><a href="#section4">Cú pháp CSS</a></li>
-    <li><a href="#section5">CSS Selectors</a></li>
-    <li><a href="#section6">CSS Rule Priority</a></li>
-    <li><a href="#section7">CSS Properties</a></li>
-    <li><a href="#section8">CSS Styling Box</a></li>
-    <li><a href="#section9">CSS Specificity</a></li>
-    <li><a href="#section10">CSS Transitions</a></li>
-    <li><a href="#section11">CSS Units</a></li>
-    <li><a href="#section12">CSS Flexbox./ Grid</a></li>
-    <li><a href="#section13">CSS Layout</a></li>
-    <li><a href="#section14">CSS Stacking</a></li>
-    <li><a href="#section15">CSS Animation</a></li>
-    <li><a href="#section16">SCSS - Preprocessor</a></li>
-  </ol>
-  <section id="section1">
-  </section>
-  <section id="section2">
-  </section>
-  <section id="section3">
-  </section>
-  <section id="section4">
-  </section>
-  <section id="section5">
-  </section>
-  <section id="section6">
-  </section>
-  <section id="section7">
-  </section>
-  <section id="section8">
-  </section>
-  <section id="section9">
-  </section>
-  <section id="section10">
-  </section>
-  <section id="section11">
-  </section>
-  <section id="section12">
-  </section>
-  <section id="section13">
-  </section>
-  <section id="section14">
-  </section>
-  <section id="section15">
-  </section>
-  <section id="section16">
-  </section>
+  <div class="container">
+    <h1 style="text-align: center;">Tìm hiểu về CSS</h1>
+    <nav>
+      <h2>Mục lục</h2>
+      <ol>
+        <li><a href="#section1">Lịch sử về CSS</a></li>
+        <li><a href="#section2">Những cơ bản về CSS</a></li>
+        <li><a href="#section3">Cách CSS hoạt động</a></li>
+        <li><a href="#section4">Cú pháp CSS</a></li>
+        <li><a href="#section5">CSS Selectors</a></li>
+        <li><a href="#section6">CSS Rule Priority</a></li>
+        <li><a href="#section7">CSS Properties</a></li>
+        <li><a href="#section8">CSS Styling Box</a></li>
+        <li><a href="#section9">CSS Specificity</a></li>
+        <li><a href="#section10">CSS Transitions</a></li>
+        <li><a href="#section11">CSS Units</a></li>
+        <li><a href="#section12">CSS Flexbox./ Grid</a></li>
+        <li><a href="#section13">CSS Layout</a></li>
+        <li><a href="#section14">CSS Stacking</a></li>
+        <li><a href="#section15">CSS Animation</a></li>
+        <li><a href="#section16">SCSS - Preprocessor</a></li>
+      </ol>
+    </nav>
+    <hr>
+    <main>
+      <section id="section1">
+        <header>
+          <h2>1. Lịch sử về CSS</h2>
+        </header>
+        <div class="section-desc">
+          <article>
+            <header>
+              <h3>a. CSS là gì?</h3>
+            </header>
+            <div class="section-desc">
+              <p>CSS là chữ viết tắt của Cascading Style Sheets, có nghĩa là các tập tin định kiểu theo tầng.</p>
+              <p>CSS có các code để tạo kiểu cho nội dung trang web, cho phép tạo ra các trang web đẹp mắt.</p>
+              <p>Tương tự như HTML thì CSS không phải là ngôn ngữ lập trình, mà là style sheet language (ngôn ngữ định
+                dạng
+                trang). CSS sẽ tạo kiểu cho các phần tử của HTML một cách có chọn lọc.</p>
+              <p>Khái niệm của nó được bắt nguồn bởi Håkon Wium Lie vào năm 1994. Vào tháng 12 năm 1996, CSS đã được W3C
+                tạo
+                ra một đặc tả và ngày nay cho phép các nhà phát triển web thay đổi bố cục và diện mạo của các trang web.
+              </p>
+              <p>CSS lần đầu tiên được đề xuất bởi Håkon Wium Lie vào ngày 10 tháng 10 năm 1994.</p>
+            </div>
+          </article>
+          <article>
+            <header>
+              <h3>b. Lịch sử phiên bản</h3>
+            </header>
+            <div class="section-desc">
+              <p>Có 3 phiên bản chính:</p>
+              <ul>
+                <li>
+                  <p>CSS W3C phiên bản đầu tiên (CSS1) được xuất bản vào ngày 17 tháng 12 năm 1996.</p>
+                </li>
+                <li>
+                  <p>CSS cấp 2 được W3C phát triển vào tháng 5 năm 1998. Nó là phiên bản nâng cấp từ CSS1, ngoài ra CSS
+                    2 còn bao gồm một số khả năng mới</p>
+                  <p>Css 2.1 được nâng cấp, sửa lỗi loại bỏ những tính năng kém hoặc không tương thích đầy đủ cho người
+                    dùng, sau đó được đề xuất vào ngày 12 tháng 4 năm 2011, và chỉ 2 tháng sau nó đã được đưa đến người
+                    dùng một lần nữa.</p>
+                </li>
+                <li>
+                  <p>CSS 3 được chia thành nhiều tài liệu riêng biệt gọi là “module”. Mỗi module thêm các khả năng mới
+                    hoặc mở rộng các tính năng được xác định trong CSS 2, duy trì khả năng tương thích ngược.</p>
+                  <p>Bản nháp CSS 3 sớm nhất đã được xuất bản vào tháng 6 năm 1999. CSS3 là phiên bản CSS (Cascading
+                    Style Sheets) thay thế CSS2 . Nó giới thiệu các bộ chọn và thuộc tính mới cho phép linh hoạt hơn với
+                    bố cục và trình bày trang.</p>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="section2">
+      </section>
+      <section id="section3">
+      </section>
+      <section id="section4">
+      </section>
+      <section id="section5">
+      </section>
+      <section id="section6">
+      </section>
+      <section id="section7">
+      </section>
+      <section id="section8">
+      </section>
+      <section id="section9">
+      </section>
+      <section id="section10">
+      </section>
+      <section id="section11">
+      </section>
+      <section id="section12">
+      </section>
+      <section id="section13">
+      </section>
+      <section id="section14">
+      </section>
+      <section id="section15">
+      </section>
+      <section id="section16">
+      </section>
+    </main>
+    <footer>---</footer>
+  </div>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 </body>
