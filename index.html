@@ -240,26 +240,542 @@
       </section>
       <section id="section5">
         <h2>5. CSS Selectors</h2>
-        <div class="subsection" id="section5a">
-          <p>Element selector: chọn các phần tử HTML dựa trên tên phần tử.</p>
-          <pre><code class="language-html">p {
-      text-align: center;
-      color: red;
-    }</code></pre>
-        </div>
-        <div class="ele-selector">
-          <p>đỏ giữa</p>
-        </div>
+        <ol>
+          <li>
+            <h3>Simple CSS Selectors</h3>
+            <h4>a. Element selector</h4>
+            <div class="subsection">
+              <p>Element selector: chọn các phần tử HTML dựa trên tên phần tử.</p>
+              <pre><code class="language-html">p {
+  text-align: center;
+  color: red;
+}</code></pre>
+            </div>
+            <h4>b. Id selector</h4>
+            <div class="subsection">
+              <p>CSS id Selector: chọn các phần tử HTML dựa trên id của các phần tử (#).</p>
+              <pre><code class="language-html">#para1 {
+  text-align: center;
+  color: red;
+}</code></pre>
+            </div>
+            <h4>c. Class selector</h4>
+            <div class="subsection">
+              <p>CSS class Selector: chọn các phần tử HTML dựa trên tên class của các phần tử (.).</p>
+              <pre><code class="language-html">.center {
+  text-align: center;
+  color: red;
+  }</code></pre>
+              <p>Có thể chỉ định rằng cụ thể những phần tử HTML sẽ bị ảnh hưởng bởi trong một
+                lớp(&lt;element&gt;.&lt;class&gt;).</p>
+              <pre><code class="language-html">p.center {
+  text-align: center;
+  color: red;
+  }</code></pre>
+            </div>
+            <h4>d. Universal selector</h4>
+            <div class="subsection">
+              <p>CSS Universal Selector: chọn tất cả các phần tử HTML (*).</p>
+              <pre><code class="language-html">*{
+  text-align: center;
+  color: red;
+}</code></pre>
+            </div>
+            <h4>e. Grouping selector</h4>
+            <div class="subsection">
+              <p>CSS Grouping Selector: chọn các phần tử HTML để định dạng chung (,).</p>
+              <pre><code class="language-html">h1, h2, p {
+  text-align: center;
+  color: red;
+}</code></pre>
+            </div>
+          </li>
+          <li>
+            <h3>CSS Combinators</h3>
+            <h4>a. Descendant Selector</h4>
+            <div class="subsection">
+              <p>CSS Descendant Selector: chọn phần tử con là con cháu của một phần tử cụ thể được chỉ định.</p>
+              <pre><code class="language-html">div p {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>b. Child Selector</h4>
+            <div class="subsection">
+              <p>CSS Child Selector: chỉ chọn phần tử là phần tử con của một phần tử cụ thể được chỉ định.(&gt;)</p>
+              <pre><code class="language-html">div > p {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>c. Adjacent Sibling Selector</h4>
+            <div class="subsection">
+              <p>CSS CAdjacent Sibling Selector: chọn phần tử anh em liền kề phía sau một phần tử cụ thể được chỉ
+                định.(+)</p>
+              <pre><code class="language-html">div + p {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>d. General Sibling Selector</h4>
+            <div class="subsection">
+              <p>CSS General Sibling Selector: chọn tất cả phần tử anh em liền kề phía sau một phần tử cụ thể được chỉ
+                định.(~)</p>
+              <pre><code class="language-html">div + p {
+  background-color: yellow;
+}</code></pre>
+            </div>
+          </li>
+          <li>
+            <h3>CSS Pseudo-classes</h3>
+            <h4>a. Anchor Pseudo-classes</h4>
+            <div class="subsection">
+              <p>CSS Anchor Pseudo-classes: Các lớp giả này cho phép bạn xác định trạng thái hoặc vị trí của các liên
+                kết trong tài liệu.</p>
+              <pre><code class="language-html">/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}</code></pre>
+              <p>Lưu ý: a:hover PHẢI đặt sau a:link và a:visited trong định nghĩa CSS để có hiệu quả! a:active PHẢI đặt
+                sau a:hover
+                trong định nghĩa CSS để có hiệu quả! Tên lớp giả không phân biệt chữ hoa chữ thường</p>
+            </div>
+            <h4>b. The :first-child Pseudo-class</h4>
+            <div class="subsection">
+              <p>CSS The :first-child Pseudo-class: chọn phần tử con đầu tiên</p>
+              <pre><code class="language-html">p:first-child {
+  color: blue;
+}</code></pre>
+              <p>Chọn phần tử con đầu tiên trong một phần tử cụ thể</p>
+              <pre><code class="language-html">p i:first-child {
+  color: blue;
+}</code></pre>
+              <p>Chọn tất cả phần tử cụ thể trong phần tử con đầu tiên</p>
+              <pre><code class="language-html">p:first-child i {
+  color: blue;
+}</code></pre>
+            </div>
+          </li>
+          <li>
+            <h3>CSS Pseudo-elements</h3>
+            <h4>a. The ::first-line Pseudo-element</h4>
+            <div class="subsection">
+              <p>CSS The ::first-line Pseudo-element: được sử dụng để thêm một kiểu dáng đặc biệt cho dòng đầu tiên của
+                một đoạn văn bản.</p>
+              <pre><code class="language-html">p::first-line {
+  color: #ff0000;
+}</code></pre>
+            </div>
+            <h4>b. The ::first-letter Pseudo-element</h4>
+            <div class="subsection">
+              <p>CSS The ::first-letter Pseudo-element: được sử dụng để thêm một kiểu dáng đặc biệt cho kí tự đầu tiên
+                của một đoạn văn bản.</p>
+              <pre><code class="language-html">p::first-letter {
+  color: #ff0000;
+}</code></pre>
+            </div>
+            <h4>c. The ::before Pseudo-element</h4>
+            <div class="subsection">
+              <p>CSS The ::before Pseudo-element: để chèn nội dung nào đó trước nội dung của một phần tử.</p>
+              <pre><code class="language-html">p::before {
+  content: url(smiley.gif);
+}</code></pre>
+            </div>
+            <h4>d. The ::after Pseudo-element</h4>
+            <div class="subsection">
+              <p>CSS The ::after Pseudo-element: để chèn nội dung nào đó sau nội dung của một phần tử.</p>
+              <pre><code class="language-html">p::after {
+  content: url(smiley.gif);
+}</code></pre>
+            </div>
+            <h4>e. The ::marker Pseudo-element</h4>
+            <div class="subsection">
+              <p>CSS The ::marker Pseudo-element: để chọn các chỉ mục của danh sách</p>
+              <pre><code class="language-html">p::marker {
+  color: red;
+}</code></pre>
+            </div>
+            <h4>f. The ::selection Pseudo-element</h4>
+            <div class="subsection">
+              <p>CSS The ::selection Pseudo-element: nhũng phần tử được chọn, tô đậm bởi người dùng</p>
+              <pre><code class="language-html">p::selection {
+  color: red;
+}</code></pre>
+            </div>
+          </li>
+          <li>
+            <h3>CSS Attribute Selectors</h3>
+            <h4>a. [attribute] Selector</h4>
+            <div class="subsection">
+              <p>CSS [attribute] Selector: chọn những phần tử chứa thuộc tính cụ thể.</p>
+              <pre><code class="language-html">a[target] {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>b. [attribute="value"] Selector</h4>
+            <div class="subsection">
+              <p>CSS [attribute="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị cụ thể.</p>
+              <pre><code class="language-html">a[target="_blank"] {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>c. [attribute~="value"] Selector</h4>
+            <div class="subsection">
+              <p>CSS [attribute~="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa từ cụ thể (cách
+                nhau bằng space).</p>
+              <pre><code class="language-html">[target~="blank"] {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>d. [attribute|="value"] Selector</h4>
+            <div class="subsection">
+              <p>CSS [attribute|="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa từ cụ thể (cách
+                nhau bằng -).</p>
+              <pre><code class="language-html">[target|="blank"] {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>e. [attribute^="value"] Selector</h4>
+            <div class="subsection">
+              <p>CSS [attribute^="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị bắt đầu bằng chuỗi kí
+                tự cụ thể.</p>
+              <pre><code class="language-html">[target^="blank"] {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>f. [attribute$="value"] Selector</h4>
+            <div class="subsection">
+              <p>CSS [attribute$="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị kết thúc bằng chuỗi kí
+                tự cụ thể.</p>
+              <pre><code class="language-html">[target$="blank"] {
+  background-color: yellow;
+}</code></pre>
+            </div>
+            <h4>g. [attribute*="value"] Selector</h4>
+            <div class="subsection">
+              <p>CSS [attribute*="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa chuỗi kí tự cụ
+                thể.</p>
+              <pre><code class="language-html">[target*="blank"] {
+  background-color: yellow;
+}</code></pre>
+            </div>
+          </li>
+        </ol>
       </section>
       <section id="section6">
+        <h2>6. CSS Rule Priority</h2>
+        <ol>
+          <li>
+            <h3>Specificity</h3>
+            <p>Một giá trị định danh độ ưu tiên của các quy tắc CSS. Nó được biểu diễn bằng một bộ giá trị có
+              4 con số (a, b, c, d), trong đó mỗi con số đại diện cho một loại chọn phần tử hoặc quy tắc khác nhau.
+              Các con số này xác định độ ưu tiên của một quy tắc CSS khi áp dụng kiểu dáng.</p>
+            <p>Thứ tự ưu tiên của các loại chọn phần tử và quy tắc trong đặc thù là:</p>
+            <ol>
+              <li>Inline style: a = 1 </li>
+              <li>ID selectors: b = số lượng ID selectors trong quy tắc</li>
+              <li>Class selectors, attribute selectors, và pseudo-classes: c = số lượng class selectors, attribute
+                selectors, và pseudo-classes trong quy tắc</li>
+              <li>Element selectors và pseudo-elements: d = số lượng element selectors và pseudo-elements trong quy tắc
+              </li>
+            </ol>
+            <p>Ví dụ:</p>
+            <ul>
+              <li>h1: (0,0,0,1)</li>
+              <li>.container: (0,0,1,0)</li>
+              <li>#head: (0,1,0,0)</li>
+              <li>body .container p: (0,0,1,2)</li>
+              <li>a:hover: (0,0,1,1)</li>
+            </ul>
+          </li>
+          <p>Đặc thù cao nhất sẽ có ưu tiên cao nhất và được áp dụng khi có xung đột giữa các quy tắc. Ví dụ: hai quy
+            tắc với đặc thù
+            (0,1,1,0) và (0,0,2,1) được áp dụng cho cùng một phần tử, quy tắc có đặc thù (0,0,2,1) sẽ có độ ưu tiên cao
+            hơn và được áp dụng.</p>
+          <li>
+            <h3>Order of declaration</h3>
+            <p>Thứ tự khai báo trong CSS là cách thứ tự các quy tắc CSS được khai báo trong tệp CSS hoặc CSS của một
+              trang HTML.
+              Thứ tự này quyết định ưu tiên áp dụng các quy tắc CSS khi có các quy tắc xung đột hoặc ghi đè lên nhau.
+            </p>
+            <p>Một số quy định thứ tự khai báo trong CSS:</p>
+            <ul>
+              <li>Thứ tự từ trên xuống dưới: Các quy tắc CSS được áp dụng theo thứ tự từ trên xuống dưới trong tệp CSS
+                hoặc phần khai báo CSS.</li>
+              <li>Quy tắc sau ghi đè lên: Nếu hai quy tắc có cùng đặc thù, thì quy tắc được khai báo sau sẽ ghi đè lên
+                quy tắc được khai báo trước đó.</li>
+            </ul>
+          </li>
+        </ol>
       </section>
       <section id="section7">
+        <h2>7. CSS Attribute</h2>
+        <p>Attribute(thuộc tính) bao gồm các cặp "tên thuộc tính" và "giá trị" được sử dụng để kiểm soát và định dạng
+          các phần tử HTML trên trang web.</p>
+        <p>Mỗi thuộc tính CSS có một tên đặc trưng và có thể có một hoặc nhiều giá trị.</p>
+        <p>Một số attribute thông dụng có thể kể đến như:
+        <ol>
+          <li><h4>Thuộc tính liên quan đến văn bản:</h4>
+            <ul>
+              <li><strong>color: Màu chữ.</strong></li>
+              <li><strong>font-family:</strong> Font chữ.</li>
+              <li><strong>font-size:</strong> Kích thước chữ.</li>
+              <li><strong>font-weight:</strong> Độ đậm của chữ.</li>
+              <li><strong>text-align:</strong> Căn chỉnh văn bản.</li>
+              <li><strong>text-decoration:</strong> Trang trí văn bản (gạch chân, gạch ngang, gạch dưới chân...).</li>
+              <li><strong>text-transform:</strong> Chuyển đổi chữ hoa, chữ thường.</li>
+              <li><strong>line-height:</strong> Chiều cao dòng.</li>
+            </ul>
+          </li>
+          <li><h4>Thuộc tính liên quan đến hình ảnh:</h4>
+            <ul>
+              <li><strong>background-color:</strong> Màu nền.</li>
+              <li><strong>background-image:</strong> Ảnh nền.</li>
+              <li><strong>background-size:</strong> Kích thước ảnh nền.</li>
+              <li><strong>text-align:</strong> Căn chỉnh văn bản.</li>
+              <li><strong>background-position:</strong> Vị trí ảnh nền.</li>
+            </ul>
+          </li>
+          <li><h4>Thuộc tính liên quan đến kích thước và khoảng cách:</h4>
+            <ul>
+              <li><strong>width:</strong> Độ rộng.</li>
+              <li><strong>height:</strong> Chiều cao.</li>
+              <li><strong>margin:</strong> Khoảng cách bên ngoài.</li>
+              <li><strong>padding:</strong> Khoảng cách bên trong.</li>
+              <li><strong>border:</strong> Viền.</li>
+            </ul>
+          </li>
+          <li><h4>Thuộc tính liên quan đến hiệu ứng và chuyển đổi:</h4>
+            <ul>
+              <li><strong>transition:</strong> Chuyển đổi hiệu ứng.</li>
+              <li><strong>animation:</strong> Hoạt động chuyển động.</li>
+              <li><strong>box-shadow:</strong> Đổ bóng.</li>
+            </ul>
+          </li>
+          <li><h4>Thuộc tính liên quan đến định dạng đa phương tiện:</h4>
+            <ul>
+              <li><strong>opacity:</strong> Độ mờ của phần tử.</li>
+              <li><strong>cursor:</strong> Hình ảnh con trỏ khi di chuột qua phần tử.</li>
+              <li><strong>resize:</strong> Thay đổi kích thước phần tử.</li>
+            </ul>
+          </li>
+        </ol>
+        <p>Một số ví dụ về attribute css:</p>
+        <ul>
+          <li class="color"><h4>Color: (đỏ)</h4>
+            <p>hello</p>
+          </li>
+          <li class="f-size"><h4>Font-size: (12px)</h4>
+            <p>hello</p>
+          </li>
+          <li class="f-fam"><h4>Font-family: (Arial > Times > Sans-serif)</h4>
+            <p>hello</p>
+          </li>
+          <li class="bg-color"><h4>Background-color: (xanh lam)</h4>
+            <p>hello</p>
+          </li>
+          <li class="border"><h4>Border: (nét liền 1px)</h4>
+            <p>hello</p>
+          </li>
+          <li class="width"><h4>Width: (rộng 200px)</h4>
+            <p>hello</p>
+          </li>
+          <li class="height"><h4>Height: (cao 200px)</h4>
+            <p>hello</p>
+          </li>
+          <li class="text-dec"><h4>text-decoration: (underline)</h4>
+            <p>hello</p>
+          </li>
+        </ul>
       </section>
       <section id="section8">
+        <h2>8. Styling Box</h2>
+        <p>
+          Là thuật ngữ được sử dụng để chỉ đến việc tạo kiểu và trang trí cho các hộp được tạo ra bởi box model.
+        </p>
+        <p>
+          <strong>Box Model: </strong>Là mô hình dùng để xác định cách các phần tử HTML hiển thị và tương tác trong
+          trình duyệt. Gồm 4 phần quan trọng: <strong>content, padding, border, margin.</strong>
+        </p>
+        <img
+          src="https://www.lilengine.co/sites/default/files/inline-images/Screen%20Shot%202019-04-14%20at%2023.59.07.png"
+          alt="" style="width:500px; height:auto; margin:0 auto; display:block;">
+        <p style="font-style: italic; text-align:center; font-weight:bold;">Box Model</p>
+        <p style="margin: 30px 0;">Styling box bao gồm việc sử dụng các thuộc tính CSS như width, height, border,
+          margin, padding, background, position và nhiều thuộc tính khác để kiểm soát diện mạo và vị trí của hộp trang
+          trí.</p>
+        <div class="box">
+          <span>Content Here</span>
+        </div>
       </section>
       <section id="section9">
       </section>
       <section id="section10">
+        <h2>10. Transitions</h2>
+        <p>Trong CSS, transition cho phép chúng ta thay đổi các thuộc tính CSS của phần tử một cách "mượt" hơn, sự thay
+          đổi này có thể được kéo dài một khoảng thời gian nhất định. </p>
+        <p>Ví dụ: Khi hover vào logo, hiệu ứng phóng to của logo có transition diễn ra chậm hơn, từ đó đem lại cảm giác
+          "mượt" hơn.</p>
+        <table class="transition-table">
+          <tr>
+            <th style="font-size: 20px">Có transition</th>
+            <th style="font-size: 20px">Không có transition</th>
+          </tr>
+          <tr>
+          <tr>
+            <td><img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo transition-enable">
+            </td>
+            <td><img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo">
+            </td>
+          </tr>
+        </table>
+        <p>Để sử dụng transition, ta phải khai báo 2 thành phần:</p>
+        <ul>
+          <li>Thuộc tính mong muốn được áp dụng transition</li>
+          <li>Thời gian áp dụng hiệu ứng</li>
+        </ul>
+        <p>Ví dụ với hiệu ứng hover đã cho ở trên:</p>
+        <pre>
+          <code>
+            .horusoftaceae-logo:hover {
+              scale: 1.15; /* Phóng to ảnh lên 1.15 lần khi hover */
+            }
+            
+            .horusoftaceae-logo.transition-enable {
+              transition: scale 0.67s; /* Áp dụng transition lên thuộc tính scale với thời gian 0.67s */
+            } 
+          </code>
+        </pre>
+        <p>Ngoài ra,nếu muốn áp dụng transition cho nhiều hơn 1 property, ta ngăn cách chúng bằng dấu phẩy:</p>
+        <pre>
+          <code>
+            .horusoftaceae-logo:hover {
+              scale: 1.15; /* Phóng to ảnh lên 1.15 lần khi hover */
+              background-color: red; /* Đổi màu nền thành đỏ khi hover */
+            }
+            
+            .horusoftaceae-logo.transition-enable {
+              transition: scale 0.67s, background-color 2s; /* Áp dụng transition lên thuộc tính scale với thời gian 0.67s 
+                                                        và thuộc tính background với thời gian 2s */
+            } 
+          </code>
+        </pre>
+        <p>Kết quả</p>
+        <table class="transition-table">
+          <tr>
+            <th style="font-size: 20px">Có transition</th>
+            <th style="font-size: 20px">Không có transition</th>
+          </tr>
+          <tr>
+          <tr>
+            <td><img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo-2 transition-enable">
+            </td>
+            <td><img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo-2">
+            </td>
+          </tr>
+        </table>
+        <p>- transition-property và transition-duration: Thực chất là 2 property tách ra từ transition đã nói ở trên:
+        </p>
+        <pre>
+            <code>
+              .trans-box:hover {
+                width: 1000px;
+                background: blue;
+              }
+              
+              .trans-box {
+                width: 100px;
+                height: 100px;
+                background: red;
+                transition: width 2s, background 3s;
+                /* Tương đương với 
+                transition-property: width, background;
+                transition-duration: 2s, 3s;
+                */
+              } 
+            </code>
+          </pre>
+        <p>Kết quả:</p>
+        <div class="trans-box"></div>
+        <p>- transition-delay: Là thời gian delay khi áp dụng hiệu ứng transition. Người
+          dùng phải "chờ" hết thời
+          gian
+          này để hiệu ứng được áp dụng, cả khi hiệu ứng xuất hiện và biến mất.</p>
+        <table class="transition-table">
+          <tr>
+            <th style="font-size: 20px">Có delay 1s</th>
+            <th style="font-size: 20px">Không có delay</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo-2 transition-enable delay">
+            </td>
+            <td>
+              <img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo-2 transition-enable">
+            </td>
+          </tr>
+        </table>
+        <p>- transition-timing-function: Là property sử dụng để điều chỉnh tốc độ trong các giai đoạn của hiệu ứng, gồm
+          một số giá trị như sau:</p>
+        <ul>
+          <li>ease: Hiệu ứng bắt đầu chậm, rồi nhanh dần, rồi kết thúc chậm (Mặc định).</li>
+          <li>linear: Cùng tốc độ từ khi bắt đầu đến kết thúc.</li>
+          <li>ease-in: Bắt đầu chậm.</li>
+          <li>ease-out: Kết thúc chậm.</li>
+          <li>ease-in-out: Bắt đầu và kết thúc chậm.</li>
+        </ul>
+        <p>Ví dụ:</p>
+        <pre>
+          <code>
+            .horusoftaceae-logo:hover {
+              scale: 1.15; /* Phóng to ảnh lên 1.15 lần khi hover */
+            }
+            
+            .horusoftaceae-logo.transition-enable {
+              transition: scale 0.67s ease-out; /* Áp dụng transition lên thuộc tính scale với thời gian 0.67s và kết thúc chậm */
+              /* Tương đương với 
+              transition-property: scale;
+              transition-duration: 0.67s;
+              transition-timing-function: ease-out;
+              */
+            } 
+          </code>
+        </pre>
+        <p>Ta thấy cột bên trái có ease-out, màu đỏ có vẻ lâu phai hơn:</p>
+        <table class="transition-table">
+          <tr>
+            <th style="font-size: 20px">Có ease-out</th>
+            <th style="font-size: 20px">Không có ease-out</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo-2 transition-enable transition-timing">
+            </td>
+            <td>
+              <img src="https://horusoftaceae.com/_next/static/images/logo-horus-bd41ee8bea2cf78b141f8110c054775d.svg"
+                alt="Horusoftaceae logo" class="horusoftaceae-logo-2 transition-enable">
+            </td>
+          </tr>
+        </table>
       </section>
       <section id="section11">
       </section>
@@ -285,7 +801,7 @@
         <p>Để tạo ra một flex container, ta tiến hành khai báo:</p>
         <pre>
           <code class="language-css">
-            .container {
+            .flex-container {
               display: flex;
             }
           </code>
@@ -296,7 +812,7 @@
             <li>flex-direction: xác định hướng của main axis.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-direction: row; /* Hướng mặc định, từ trái qua phải */
                     flex-direction: row-reverse; /* Từ phải qua trái */
@@ -334,7 +850,7 @@
             <li>flex-wrap: xác định flex item có được phép xuống dòng hay không.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-wrap: wrap; /* Mặc định, xuống dòng bình thường */
                     flex-wrap: nowrap; /* Không xuống dòng, item sẽ được bọc trong container */
@@ -381,12 +897,12 @@
               flex-direction và giá trị thứ hai là flex-wrap.<br>
               <pre>
                 <code>
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-flow: column wrap-reverse;
                   }
                   /* Tương đương với */
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap-reverse;
@@ -397,7 +913,7 @@
             <li>justify-content: xác định cách thức căn chỉnh các flex item theo trục ngang.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     justify-content: flex-start; /* Mặc định, item hiển thị bắt đầu từ main start */
                     justify-content: flex-end; /* Item hiển thị bắt đầu từ main end */
@@ -452,7 +968,7 @@
             <li>align-items: xác định cách thức căn chỉnh các flex item theo chiều của cross axis.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     align-items: flex-start; /* Mặc định, item hiển thị bắt đầu từ cross start */
                     align-items: flex-end; /* Item hiển thị bắt đầu từ cross end */
@@ -497,7 +1013,7 @@
             <li>align-content: xác định cách thức căn chỉnh các flex line theo chiều của cross axis.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     align-content: flex-start; /* Mặc định, item hiển thị bắt đầu từ main start */
                     align-content: flex-end; /* Item hiển thị bắt đầu từ main end */
@@ -596,10 +1112,10 @@
               </code>
             </pre>
             <p>=> Do giá trị order mặc định là 0, nên 5 sẽ xuất hiện trước 3 do -1 < 0. Tiếp theo đó lần lượt là 4, 1, 2
-                do 1 < 2 < 4. </p>
+                theo thứ tự order 1 - 2 - 3. </p>
                 <div class="flex">
                   <div style="order: 2">1</div>
-                  <div style="order: 4">2</div>
+                  <div style="order: 3">2</div>
                   <div>3</div>
                   <div style="order: 1">4</div>
                   <div style="order: -1">5</div>
@@ -607,10 +1123,496 @@
           </ul>
         </div>
         <h3>b. Grid</h3>
+
+        <p>Để tạo ra một grid container, ta tiến hành khai báo: </p>
+        <pre>
+          <code>
+            .grid-container {
+              display: grid;
+            }
+          </code>
+        </pre>
+        <p>Một grid container có thể chứa một hoặc nhiều grid item. Các grid item này có thể được phân bố theo hàng và
+          cột:</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px">
+          <img src="https://www.w3schools.com/css/grid_columns.png" alt="Grid columns" width="420">
+        </div>
+        <p style="text-align:center; margin-bottom: 40px">Tập hợp các grid item theo hàng dọc là các cột (column)</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px">
+          <img src="https://www.w3schools.com/css/grid_rows.png" alt="Grid columns" width="420">
+        </div>
+        <p style="text-align:center">Tập hợp các grid item theo hàng ngang là các hàng (row)</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px">
+          <img src="https://www.w3schools.com/css/grid_gaps.png" alt="Grid columns" width="420">
+        </div>
+        <p style="text-align:center">Khoảng cách giữa các grid item được gọi là gap, bao gồm khoảng cách giữa hàng (row
+          gap) và khoảng cách giữa cột (column gap). Mặc định gap là 0.</p>
+        <h3>Một số thuộc tính CSS của grid:</h3>
+        <ul>
+          <li>grid-template-columns: Biểu diễn số lượng và kích thước chiều rộng các cột trên layout của grid.<br>
+            Ví dụ: Tạo ra 1 grid có 5 cột, mỗi cột có chiều rộng 100px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 100px 100px 100px 100px 100px;
+                }
+              </code>
+            </pre>
+            <div class="grid" style="grid-template-columns: 100px 100px 100px 100px 100px;">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+            </div>
+
+            <p>Chiều rộng của cột khác với chiều rộng của item, grid item có thể rộng hoặc hẹp hơn chiều rộng cột.</p>
+          </li>
+          <li>grid-template-rows: Biểu diễn số lượng và kích thước chiều cao các hàng trên layout của grid.<br>
+            Ví dụ: Tạo ra 1 grid có 4 cột và 3 hàng, mỗi cột có chiều rộng 100px và 3 hàng có chiều cao 50px, 80px,
+            100px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 100px 100px 100px 100px;
+                  grid-template-rows: 50px 80px 100px;
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 100px 100px 100px 100px; grid-template-rows: 50px 80px 100px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+            </div>
+            <p>
+              Tương tự như trên, chiều cao của hàng khác với chiều cao của item, grid item có thể thấp hoặc cao
+              hơn chiều cao của hàng. Do grid item có chiều cao 75px, vì thế hàng đầu tiên với chiều cao 50px sẽ bị tràn
+              ra ngoài row và bị mất đi phần bên dưới.<br>
+            </p>
+          </li>
+          <li>gap, row-gap và column-gap:
+            Trong grid container, ta có thể sử dụng thuộc tính gap để tạo khoảng cách theo hàng và cột giữa các grid
+            item. Thuộc tính này
+            là sự kết hợp giữa row-gap và column-gap.
+            <p></p>
+            <p>Ví dụ: Ta có grid 3x2:</p>
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                }
+              </code>
+            </pre>
+            <div class="grid" style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            Sau đó, ta thêm thuộc tính column-gap: 20px vào grid, ta thấy 3 cột của grid đã cách nhau 20px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                  column-gap: 20px;
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px; column-gap: 20px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            Nếu ta thay bằng row-gap: 40px, ta thấy 2 hàng của grid đã cách nhau 40px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                  row-gap: 40px;
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px; row-gap: 40px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            Ta có thể sử dụng gap để kết hợp row-gap và column-gap. Trong đó, kích thước đầu tiên là row-gap, kích
+            thước thứ hai là column-gap:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                  gap: 40px 20px;
+                  /* Tương đương với 
+                  row-gap: 40px;
+                  column-gap: 20px; 
+                  */
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px; gap: 40px 20px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+
+
+            <p>=> Vấn đề phát sinh: Trong trường hợp grid có quá nhiều hàng/cột thì việc
+              dùng
+              grid-template-rows và grid-template-columns để gõ kích thước cho từng hàng/cột sẽ mất rất nhiều thời
+              gian
+              và
+              khó theo dõi. Do đó, repeat được
+              sinh ra để giải quyết vấn đề này.</p>
+            <p>Ta sử dụng repeat bằng syntax: repeat(số lượng, kích thước)</p>
+
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: repeat(3, 75px); /* Tạo ra 3 cột, mỗi cột có kích thước 75px */
+                  grid-template-rows: repeat(2, 90px); /* Tạo ra 2 hàng, mỗi hàng có kích thước 90px */
+                }
+              </code>
+          </pre>
+            Trong trường hợp có các nhóm hàng/cột có kích thước khác nhau, ta hoàn toàn có thể thêm nhóm repeat hoặc
+            khai báo riêng ra:
+            <pre>
+            <code class="language-css">
+              .grid-container {
+                display: grid;
+                grid-template-columns: 150px 100px repeat(3, 75px); /* Tạo ra 5 cột, cột thứ 1 rộng 150px, cột thứ 2 rộng 100px, 
+                                                                    3 cột tiếp theo mỗi cột có kích thước 75px */
+                grid-template-rows: repeat(2, 90px) repeat(2, 120px); /* Tạo ra 4 hàng, 2 hàng đầu có kích thước 90px, 
+                                                                      2 hàng sau có kích thước 120px */
+              }
+            </code>
+        </pre>
+            <div class="grid" style="grid-template-columns: 150px 100px repeat(3, 75px); 
+                                  grid-template-rows: repeat(2, 90px) repeat(2, 120px);">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+        </ul>
+        <p>Ngoài ghi rõ số lượng hàng/cột được repeat, ta có thể sử dụng auto-fill để tạo ra số lượng hàng/cột
+          linh động với kích thước grid container. Các item sẽ tự được điền vào và xuống dòng khi chúng tràn ra khỏi
+          kích
+          thước
+          container.</p>
+        <pre>
+            <code class="language-css">
+              .grid-container {
+                display: grid;
+                width: 600px;
+                grid-template-columns: repeat(auto-fill, 90px); /* Tạo ra số lượng cột vừa đủ so với kích thước container,
+                                                                mỗi cột có kích thước 90px */
+                row-gap: 20px; /* gap cũng có thể được áp dụng khi các hàng xuống dòng bằng auto-fill */                                           
+              }
+            </code>
+        </pre>
+        <div class="grid" style="width: 600px; grid-template-columns: repeat(auto-fill, 90px);row-gap: 20px; ">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+        </div>
+        <p>Ở đây, chiều dài container là 600px, cột là 90px. Do đó, 1 hàng container chỉ có thể chứa được tối đa 600/90
+          &thickapprox; 6 item.
+          Do đó item thứ 7 sẽ được tự động xuống dòng.</p>
+        </li>
+        <li>grid-row và grid-column: Bình thường, ở mỗi hàng sẽ chỉ có 1 grid item trong 1 cột. Nhưng ta có thể dùng
+          grid-row/grid-column để cho
+          phép chúng chiếm nhiều hàng/cột hơn.
+          <p>Syntax: grid-row/grid-column: cột bắt đầu / cột kết thúc. Ví dụ:</p>
+          <pre>
+            <code class="language-css">
+              .grid-item-1 {
+                grid-column: 1 / 3; /* Item này sẽ chiếm các cột từ cột 1 đến trước cột 3 */
+              }
+
+            </code>
+          </pre>
+          <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+            <div class="grid-item-1">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+
+          </div>
+          <pre>
+            <code class="language-css">
+              .grid-item-2 {
+                grid-row: 2 / 4; /* Item này sẽ chiếm các hàng từ hàng 2 đến trước hàng 4 */
+              }
+
+            </code>
+          </pre>
+          <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+            <div class="grid-item-2">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+            <div>19</div>
+            <div>20</div>
+          </div>
+          <p>Ngoài ra để rõ ràng hơn, ta cũng có thể truyền vào span nhằm thể hiện số lượng hàng/cột mà nó sẽ chiếm.</p>
+          <pre>
+            <code class="language-css">
+              .grid-item-3 {
+                grid-column: 1 / span 3; /* Item này sẽ chiếm 3 cột bắt đầu từ cột 1 */
+              }
+
+            </code>
+          </pre>
+          <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+            <div class="grid-item-3">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </li>
+        <li>grid-area: là sự kết hợp giữa grid-row và grid-column.</li>
+        <p>Syntax: grid-area: hàng bắt đầu / cột bắt đầu / hàng kết thúc / cột kết thúc.</p>
+        <pre>
+            <code class="language-css">
+              .grid-item-4 {
+                grid-area: 1 / 2 / 3 / 4; /* Item này sẽ chiếm các cột từ cột 1 đến trước cột 3 
+                                          và các hàng từ hàng 2 đến trước hàng 4 */
+              }
+
+            </code>
+        </pre>
+        <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+          <div class="grid-item-4">1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+        <p>Span cũng có thể được dùng trong thuộc tính này:</p>
+        <pre>
+            <code class="language-css">
+              .grid-item-5 {
+                grid-area: 1 / 1 / span 2 / span 3; /* Item này sẽ chiếm 2 hàng bắt đầu từ hàng 1
+                                                      và 3 cột bắt đầu từ cột 1 */
+              }
+
+            </code>
+        </pre>
+        <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+          <div class="grid-item-5">1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+        </div>
+        <p>Ngoài ra, grid-area cũng có thể được sử dụng để đặt tên cho grid item.</p>
+        <pre>
+          <code>
+            .grid-item-header {
+              grid-area: header;
+            }
+            .grid-item-content {
+              grid-area: content;
+            }
+            .grid-item-footer {
+              grid-area: footer;
+            }
+          </code>
+        </pre>
+        <li>grid-template-areas: Layout các grid item dựa theo tên của chúng (được đặt bằng grid-area như ví dụ trên).
+          Ví dụ:
+          <pre>
+            <code>
+              .grid-item-header {
+                grid-area: header;
+              }
+              
+              .grid-item-content {
+                grid-area: content;
+              }
+              
+              .grid-item-footer {
+                grid-area: footer;
+              }
+              
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header header'
+                  'content content content'
+                  'footer footer footer';
+              }
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>Ta có thể sắp xếp chúng theo cả chiều dọc và ngang, ví dụ thêm cột sidebar ở bên trái content:</p>
+          <pre>
+            <code>
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header header'
+                  'sidebar content content'
+                  'sidebar footer footer';
+              }
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example-2">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-sidebar">Sidebar</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>Nếu như muốn có cột trống (cột bị khuyết) ta sử dụng dấu chấm:</p>
+          <pre>
+            <code>
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header .' /* 1/3 bên phải của header sẽ trống */
+                  'content content content'
+                  'footer footer footer';
+              }
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example-3">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>Ví dụ: Nếu trong grid-template-areas không có footer nhưng trong grid container vẫn khai báo footer?</p>
+          <pre>
+            <code>
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header .'
+                  'content content content';
+              }
+              -----------------------------------------------
+              &lt;div class="grid grid-temp-areas-example"&gt;
+                &lt;div class="grid-item-header"&gt;Header&lt;/div&gt;
+                &lt;div class="grid-item-content"&gt;Content&lt;/div&gt;
+                &lt;div class="grid-item-footer"&gt;Footer&lt;/div&gt;
+              &lt;/div&gt;
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example-4">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>=> Footer vẫn sẽ xuất hiện nhưng bị đẩy ra sau cùng.</p>
+        </li>
+
       </section>
       <section id="section13">
         <h3 class="sec13_head">13. About CSS Layout</h3>
         <ol>
+          <li>
+            <strong>Normal Flow</strong>
+            <p>Cách mà trình duyệt bố cục trang web một cách mặc định.</p>
+            <strong>Example:</strong>
+            <p>I love my cat.</p>
+            <ul>
+              <li>Buy cat food</li>
+              <li>Exercise</li>
+              <li>Cheer up friend</li>
+            </ul>
+            <p>The end!</p>
+          </li>
+          <li>
+            <strong>Flexbox</strong>
+            <p>Được thiết kế giúp bố cục layout theo một chiều ngang hoặc dọc.</p>
+          </li>
+          <li>
+            <strong>Grid Layout</strong>
+            <p>Nếu Flexbox được thiết kế cho bố cục 1 chiều, thì Grid Layout được thiết kế dạng lưới, có thể điều chỉnh
+              bố cục cho cả 2 chiều, ngang và dọc.</p>
+          </li>
           <li>
             <strong>Positions</strong>
             <p><strong>Concept: </strong>là thuộc tính sử dụng để kiểm soát cách các phần tử HTML hiển thị và được định
@@ -654,6 +1656,15 @@
                   <span>Item1</span>
                   <span>Item2</span>
                   <span>Item3</span>
+                </div>
+              </li>
+              <li>
+                <strong>Sticky: </strong>được sử dụng để tạo một phần tử có thể "dính" (sticky) trên màn hình khi người
+                dùng cuộn trang. Nghĩa là phần tử sẽ giữ vị trí của nó trong phạm vi một thành phần cha cụ thể, cho đến
+                khi vị trí của nó đạt đến giới hạn đã được định sẵn, sau đó nó sẽ "dính" tại vị trí đó khi cuộn tiếp tục
+                diễn ra.
+                <div class="stick-wrap">
+                  <div class="stick">Sticky</div>
                 </div>
               </li>
             </ol>
@@ -730,9 +1741,64 @@
               gốc từ các loài châu Mỹ và châu Á.
             </p>
           </li>
+          <li style="margin-top: 120px;">
+            <strong>Table Layout</strong>
+            <p>Trong CSS, thuộc tính <strong>display: table</strong> được sử dụng để biến một phần tử HTML thành một
+              phần tử bảng (table). Khi một phần tử có thuộc tính <strong>display: table</strong>, nó sẽ được hiển thị
+              và xử lý như một bảng HTML.</p>
+            <p>Khi sử dụng <strong>display: table</strong>, các phần tử con bên trong phần tử cha sẽ được hiểu là các
+              thành phần của bảng, bao gồm các hàng (table rows), các ô (table cells), tiêu đề (table headers), v.v.</p>
+            <strong>Example: </strong>
+            <div class="form">
+              <form>
+                <p>First of all, tell us your name and age.</p>
+                <div>
+                  <label for="fname">First name:</label>
+                  <input type="text" id="fname" />
+                </div>
+                <div>
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname" />
+                </div>
+                <div>
+                  <label for="age">Age:</label>
+                  <input type="text" id="age" />
+                </div>
+              </form>
+              <form class="form-mini">
+                <p>First of all, tell us your name and age.</p>
+                <div>
+                  <label for="fname">First name:</label>
+                  <input type="text" id="fname" />
+                </div>
+                <div>
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname" />
+                </div>
+                <div>
+                  <label for="age">Age:</label>
+                  <input type="text" id="age" />
+                </div>
+              </form>
+            </div>
+            <p>Thuộc tính <strong>display: table</strong> ít được sử dụng trong CSS vì có các hạn chế và khó khăn trong
+              việc kiểm soát và thiết kế giao diện.</p>
+            <ol>
+              <li><strong>Hạn chế về kiểm soát giao diện: </strong>Khi sử dụng display: table, giao diện của bảng phụ
+                thuộc vào việc tự động xử lý của trình duyệt. Việc kiểm soát chiều cao, chiều rộng và căn chỉnh các phần
+                tử trong bảng có thể trở nên khó khăn và không linh hoạt</li>
+              <li><strong>Khó tạo kiểu tùy chỉnh: </strong>Thuộc tính display: table cung cấp một cấu trúc giao diện
+                bảng cố định. Điều này có nghĩa là việc tạo kiểu tùy chỉnh cho các phần tử trong bảng có thể trở nên khó
+                khăn. Một số yêu cầu thiết kế đặc biệt có thể không được đáp ứng một cách dễ dàng khi sử dụng display:
+                table.</li>
+              <li><strong>Hiệu suất: </strong>So với các phần tử linh hoạt khác như display: flex hay grid, display:
+                table có thể có hiệu suất kém hơn. Việc xử lý và vẽ các bảng có thể tốn nhiều tài nguyên và có thể làm
+                chậm trang web.</li>
+            </ol>
+          </li>
         </ol>
       </section>
-      <section id="section14" style="margin-top: 120px;">
+      <section id="section14">
         <h3 class="sec14_head">14. About CSS Stacking Contexts</h3>
         <p>Là một khái niệm quan trọng trong CSS để xác định cách các phần tử HTML được xếp chồng và hiển thị trên trang
           web. Mỗi phần tử HTML có một stacking context riêng, và cách chúng xếp chồng với nhau được quy định bởi một số
