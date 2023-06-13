@@ -394,7 +394,7 @@ a:active {
         <p>Để tạo ra một flex container, ta tiến hành khai báo:</p>
         <pre>
           <code class="language-css">
-            .container {
+            .flex-container {
               display: flex;
             }
           </code>
@@ -405,7 +405,7 @@ a:active {
             <li>flex-direction: xác định hướng của main axis.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-direction: row; /* Hướng mặc định, từ trái qua phải */
                     flex-direction: row-reverse; /* Từ phải qua trái */
@@ -443,7 +443,7 @@ a:active {
             <li>flex-wrap: xác định flex item có được phép xuống dòng hay không.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-wrap: wrap; /* Mặc định, xuống dòng bình thường */
                     flex-wrap: nowrap; /* Không xuống dòng, item sẽ được bọc trong container */
@@ -490,12 +490,12 @@ a:active {
               flex-direction và giá trị thứ hai là flex-wrap.<br>
               <pre>
                 <code>
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-flow: column wrap-reverse;
                   }
                   /* Tương đương với */
-                  .container {
+                  .flex-container {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap-reverse;
@@ -507,7 +507,7 @@ a:active {
             <li>justify-content: xác định cách thức căn chỉnh các flex item theo trục ngang.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     justify-content: flex-start; /* Mặc định, item hiển thị bắt đầu từ main start */
                     justify-content: flex-end; /* Item hiển thị bắt đầu từ main end */
@@ -562,7 +562,7 @@ a:active {
             <li>align-items: xác định cách thức căn chỉnh các flex item theo chiều của cross axis.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     align-items: flex-start; /* Mặc định, item hiển thị bắt đầu từ cross start */
                     align-items: flex-end; /* Item hiển thị bắt đầu từ cross end */
@@ -607,7 +607,7 @@ a:active {
             <li>align-content: xác định cách thức căn chỉnh các flex line theo chiều của cross axis.
               <pre>
                 <code class="language-css">
-                  .container {
+                  .flex-container {
                     display: flex;
                     align-content: flex-start; /* Mặc định, item hiển thị bắt đầu từ main start */
                     align-content: flex-end; /* Item hiển thị bắt đầu từ main end */
@@ -706,10 +706,10 @@ a:active {
               </code>
             </pre>
             <p>=> Do giá trị order mặc định là 0, nên 5 sẽ xuất hiện trước 3 do -1 < 0. Tiếp theo đó lần lượt là 4, 1, 2
-                do 1 < 2 < 4. </p>
+                theo thứ tự order 1 - 2 - 3. </p>
                 <div class="flex">
                   <div style="order: 2">1</div>
-                  <div style="order: 4">2</div>
+                  <div style="order: 3">2</div>
                   <div>3</div>
                   <div style="order: 1">4</div>
                   <div style="order: -1">5</div>
@@ -717,6 +717,471 @@ a:active {
           </ul>
         </div>
         <h3>b. Grid</h3>
+
+        <p>Để tạo ra một grid container, ta tiến hành khai báo: </p>
+        <pre>
+          <code>
+            .grid-container {
+              display: grid;
+            }
+          </code>
+        </pre>
+        <p>Một grid container có thể chứa một hoặc nhiều grid item. Các grid item này có thể được phân bố theo hàng và
+          cột:</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px">
+          <img src="https://www.w3schools.com/css/grid_columns.png" alt="Grid columns" width="420">
+        </div>
+        <p style="text-align:center; margin-bottom: 40px">Tập hợp các grid item theo hàng dọc là các cột (column)</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px">
+          <img src="https://www.w3schools.com/css/grid_rows.png" alt="Grid columns" width="420">
+        </div>
+        <p style="text-align:center">Tập hợp các grid item theo hàng ngang là các hàng (row)</p>
+        <div style="display: flex; justify-content: center; margin-bottom: 20px">
+          <img src="https://www.w3schools.com/css/grid_gaps.png" alt="Grid columns" width="420">
+        </div>
+        <p style="text-align:center">Khoảng cách giữa các grid item được gọi là gap, bao gồm khoảng cách giữa hàng (row
+          gap) và khoảng cách giữa cột (column gap). Mặc định gap là 0.</p>
+        <h3>Một số thuộc tính CSS của grid:</h3>
+        <ul>
+          <li>grid-template-columns: Biểu diễn số lượng và kích thước chiều rộng các cột trên layout của grid.<br>
+            Ví dụ: Tạo ra 1 grid có 5 cột, mỗi cột có chiều rộng 100px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 100px 100px 100px 100px 100px;
+                }
+              </code>
+            </pre>
+            <div class="grid" style="grid-template-columns: 100px 100px 100px 100px 100px;">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+            </div>
+
+            <p>Chiều rộng của cột khác với chiều rộng của item, grid item có thể rộng hoặc hẹp hơn chiều rộng cột.</p>
+          </li>
+          <li>grid-template-rows: Biểu diễn số lượng và kích thước chiều cao các hàng trên layout của grid.<br>
+            Ví dụ: Tạo ra 1 grid có 4 cột và 3 hàng, mỗi cột có chiều rộng 100px và 3 hàng có chiều cao 50px, 80px,
+            100px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 100px 100px 100px 100px;
+                  grid-template-rows: 50px 80px 100px;
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 100px 100px 100px 100px; grid-template-rows: 50px 80px 100px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+            </div>
+            <p>
+              Tương tự như trên, chiều cao của hàng khác với chiều cao của item, grid item có thể thấp hoặc cao
+              hơn chiều cao của hàng. Do grid item có chiều cao 75px, vì thế hàng đầu tiên với chiều cao 50px sẽ bị tràn
+              ra ngoài row và bị mất đi phần bên dưới.<br>
+            </p>
+          </li>
+          <li>gap, row-gap và column-gap:
+            Trong grid container, ta có thể sử dụng thuộc tính gap để tạo khoảng cách theo hàng và cột giữa các grid
+            item. Thuộc tính này
+            là sự kết hợp giữa row-gap và column-gap.
+            <p></p>
+            <p>Ví dụ: Ta có grid 3x2:</p>
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                }
+              </code>
+            </pre>
+            <div class="grid" style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            Sau đó, ta thêm thuộc tính column-gap: 20px vào grid, ta thấy 3 cột của grid đã cách nhau 20px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                  column-gap: 20px;
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px; column-gap: 20px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            Nếu ta thay bằng row-gap: 40px, ta thấy 2 hàng của grid đã cách nhau 40px:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                  row-gap: 40px;
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px; row-gap: 40px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+            Ta có thể sử dụng gap để kết hợp row-gap và column-gap. Trong đó, kích thước đầu tiên là row-gap, kích
+            thước thứ hai là column-gap:
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: 75px 75px 75px;
+                  grid-template-rows: 75px 75px;
+                  gap: 40px 20px;
+                  /* Tương đương với 
+                  row-gap: 40px;
+                  column-gap: 20px; 
+                  */
+                }
+              </code>
+            </pre>
+            <div class="grid"
+              style="grid-template-columns: 75px 75px 75px; grid-template-rows: 75px 75px; gap: 40px 20px">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+            </div>
+
+
+            <p>=> Vấn đề phát sinh: Trong trường hợp grid có quá nhiều hàng/cột thì việc
+              dùng
+              grid-template-rows và grid-template-columns để gõ kích thước cho từng hàng/cột sẽ mất rất nhiều thời
+              gian
+              và
+              khó theo dõi. Do đó, repeat được
+              sinh ra để giải quyết vấn đề này.</p>
+            <p>Ta sử dụng repeat bằng syntax: repeat(số lượng, kích thước)</p>
+
+            <pre>
+              <code>
+                .grid-container {
+                  display: grid;
+                  grid-template-columns: repeat(3, 75px); /* Tạo ra 3 cột, mỗi cột có kích thước 75px */
+                  grid-template-rows: repeat(2, 90px); /* Tạo ra 2 hàng, mỗi hàng có kích thước 90px */
+                }
+              </code>
+          </pre>
+            Trong trường hợp có các nhóm hàng/cột có kích thước khác nhau, ta hoàn toàn có thể thêm nhóm repeat hoặc
+            khai báo riêng ra:
+            <pre>
+            <code class="language-css">
+              .grid-container {
+                display: grid;
+                grid-template-columns: 150px 100px repeat(3, 75px); /* Tạo ra 5 cột, cột thứ 1 rộng 150px, cột thứ 2 rộng 100px, 
+                                                                    3 cột tiếp theo mỗi cột có kích thước 75px */
+                grid-template-rows: repeat(2, 90px) repeat(2, 120px); /* Tạo ra 4 hàng, 2 hàng đầu có kích thước 90px, 
+                                                                      2 hàng sau có kích thước 120px */
+              }
+            </code>
+        </pre>
+            <div class="grid" style="grid-template-columns: 150px 100px repeat(3, 75px); 
+                                  grid-template-rows: repeat(2, 90px) repeat(2, 120px);">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+            </div>
+        </ul>
+        <p>Ngoài ghi rõ số lượng hàng/cột được repeat, ta có thể sử dụng auto-fill để tạo ra số lượng hàng/cột
+          linh động với kích thước grid container. Các item sẽ tự được điền vào và xuống dòng khi chúng tràn ra khỏi
+          kích
+          thước
+          container.</p>
+        <pre>
+            <code class="language-css">
+              .grid-container {
+                display: grid;
+                width: 600px;
+                grid-template-columns: repeat(auto-fill, 90px); /* Tạo ra số lượng cột vừa đủ so với kích thước container,
+                                                                mỗi cột có kích thước 90px */
+                row-gap: 20px; /* gap cũng có thể được áp dụng khi các hàng xuống dòng bằng auto-fill */                                           
+              }
+            </code>
+        </pre>
+        <div class="grid" style="width: 600px; grid-template-columns: repeat(auto-fill, 90px);row-gap: 20px; ">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+        </div>
+        <p>Ở đây, chiều dài container là 600px, cột là 90px. Do đó, 1 hàng container chỉ có thể chứa được tối đa 600/90
+          &thickapprox; 6 item.
+          Do đó item thứ 7 sẽ được tự động xuống dòng.</p>
+        </li>
+        <li>grid-row và grid-column: Bình thường, ở mỗi hàng sẽ chỉ có 1 grid item trong 1 cột. Nhưng ta có thể dùng
+          grid-row/grid-column để cho
+          phép chúng chiếm nhiều hàng/cột hơn.
+          <p>Syntax: grid-row/grid-column: cột bắt đầu / cột kết thúc. Ví dụ:</p>
+          <pre>
+            <code class="language-css">
+              .grid-item-1 {
+                grid-column: 1 / 3; /* Item này sẽ chiếm các cột từ cột 1 đến trước cột 3 */
+              }
+
+            </code>
+          </pre>
+          <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+            <div class="grid-item-1">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+
+          </div>
+          <pre>
+            <code class="language-css">
+              .grid-item-2 {
+                grid-row: 2 / 4; /* Item này sẽ chiếm các hàng từ hàng 2 đến trước hàng 4 */
+              }
+
+            </code>
+          </pre>
+          <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+            <div class="grid-item-2">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+            <div>19</div>
+            <div>20</div>
+          </div>
+          <p>Ngoài ra để rõ ràng hơn, ta cũng có thể truyền vào span nhằm thể hiện số lượng hàng/cột mà nó sẽ chiếm.</p>
+          <pre>
+            <code class="language-css">
+              .grid-item-3 {
+                grid-column: 1 / span 3; /* Item này sẽ chiếm 3 cột bắt đầu từ cột 1 */
+              }
+
+            </code>
+          </pre>
+          <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+            <div class="grid-item-3">1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </li>
+        <li>grid-area: là sự kết hợp giữa grid-row và grid-column.</li>
+        <p>Syntax: grid-area: hàng bắt đầu / cột bắt đầu / hàng kết thúc / cột kết thúc.</p>
+        <pre>
+            <code class="language-css">
+              .grid-item-4 {
+                grid-area: 1 / 2 / 3 / 4; /* Item này sẽ chiếm các cột từ cột 1 đến trước cột 3 
+                                          và các hàng từ hàng 2 đến trước hàng 4 */
+              }
+
+            </code>
+        </pre>
+        <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+          <div class="grid-item-4">1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+        <p>Span cũng có thể được dùng trong thuộc tính này:</p>
+        <pre>
+            <code class="language-css">
+              .grid-item-5 {
+                grid-area: 1 / 1 / span 2 / span 3; /* Item này sẽ chiếm 2 hàng bắt đầu từ hàng 1
+                                                      và 3 cột bắt đầu từ cột 1 */
+              }
+
+            </code>
+        </pre>
+        <div class="grid" style="width: 400px; grid-template-columns: repeat(auto-fill, 75px)">
+          <div class="grid-item-5">1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+        </div>
+        <p>Ngoài ra, grid-area cũng có thể được sử dụng để đặt tên cho grid item.</p>
+        <pre>
+          <code>
+            .grid-item-header {
+              grid-area: header;
+            }
+            .grid-item-content {
+              grid-area: content;
+            }
+            .grid-item-footer {
+              grid-area: footer;
+            }
+          </code>
+        </pre>
+        <li>grid-template-areas: Layout các grid item dựa theo tên của chúng (được đặt bằng grid-area như ví dụ trên).
+          Ví dụ:
+          <pre>
+            <code>
+              .grid-item-header {
+                grid-area: header;
+              }
+              
+              .grid-item-content {
+                grid-area: content;
+              }
+              
+              .grid-item-footer {
+                grid-area: footer;
+              }
+              
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header header'
+                  'content content content'
+                  'footer footer footer';
+              }
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>Ta có thể sắp xếp chúng theo cả chiều dọc và ngang, ví dụ thêm cột sidebar ở bên trái content:</p>
+          <pre>
+            <code>
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header header'
+                  'sidebar content content'
+                  'sidebar footer footer';
+              }
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example-2">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-sidebar">Sidebar</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>Nếu như muốn có cột trống (cột bị khuyết) ta sử dụng dấu chấm:</p>
+          <pre>
+            <code>
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header .' /* Cột thứ 3 của header sẽ là cột trống */
+                  'content content content'
+                  'footer footer footer';
+              }
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example-3">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>Ví dụ: Nếu trong grid-template-areas không có footer nhưng trong grid container vẫn khai báo footer?</p>
+          <pre>
+            <code>
+              .grid-temp-areas-example {
+                grid-template-areas:
+                  'header header .'
+                  'content content content';
+              }
+              -----------------------------------------------
+              &lt;div class="grid grid-temp-areas-example"&gt;
+                &lt;div class="grid-item-header"&gt;Header&lt;/div&gt;
+                &lt;div class="grid-item-content"&gt;Content&lt;/div&gt;
+                &lt;div class="grid-item-footer"&gt;Footer&lt;/div&gt;
+              &lt;/div&gt;
+            </code>
+          </pre>
+          <div class="grid grid-temp-areas-example-4">
+            <div class="grid-item-header">Header</div>
+            <div class="grid-item-content">Content</div>
+            <div class="grid-item-footer">Footer</div>
+          </div>
+          <p>=> Footer vẫn sẽ xuất hiện nhưng bị đẩy ra sau cùng.</p>
+        </li>
+
       </section>
       <section id="section13">
         <h3 class="sec13_head">13. About CSS Layout</h3>

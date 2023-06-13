@@ -23,6 +23,7 @@ a:visited {
   text-decoration: none;
   color: blue;
 }
+
 a:hover {
   color: purple;
   text-decoration: underline;
@@ -34,20 +35,29 @@ ol {
   padding-left: 1.5em;
   margin-bottom: 1em;
 }
+
 li {
   margin-bottom: 0.5em;
+}
+
+code {
+  font-size: 18px;
 }
 
 /*---Main style---*/
 .container {
   padding: 1em;
 }
+
 section {
+  width: 100%;
   margin-bottom: 2em;
 }
+
 main {
   padding: 1em 0;
 }
+
 .section-desc {
   padding-left: 0.5em;
 }
@@ -226,6 +236,7 @@ main {
   right: 0;
   border-top: 2px solid red;
 }
+
 /* SESSION 8 */
 .box {
   width: 500px;
@@ -238,6 +249,7 @@ main {
   box-sizing: border-box;
   border: 5px solid yellow;
 }
+
 .box span {
   box-sizing: border-box;
   display: inline-block;
@@ -246,6 +258,111 @@ main {
   background-color: aquamarine;
 }
 
+.grid {
+  display: grid;
+  margin-bottom: 20px;
+  border: 3px solid black;
+}
+
+.grid div {
+  /* width: 75px;
+  height: 75px; */
+  min-width: 75px;
+  max-width: auto;
+  min-height: 75px;
+  max-height: auto;
+  background: red;
+  border: 5px solid blue;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-item-1 {
+  grid-column: 1 / 3;
+  /* Item này sẽ chiếm các cột từ cột 1 đến trước cột 3 */
+}
+
+.grid-item-2 {
+  grid-row: 2 / 4;
+  /* Item này sẽ chiếm các hàng từ hàng 1 đến trước hàng 3 */
+}
+
+.grid-item-3 {
+  grid-column: 1 / span 3;
+  /* Item này sẽ chiếm 2 cột bắt đầu từ cột 1 */
+}
+
+.grid-item-4 {
+  grid-area: 1 / 2 / 3 / 4;
+  /* Item này sẽ chiếm các cột từ cột 1 đến trước cột 3 và các hàng từ hàng 2 đến trước hàng 4 */
+}
+
+.grid-item-5 {
+  grid-area: 1 / 1 / span 2 / span 3;
+  /* Item này sẽ chiếm 3 cột bắt đầu từ cột 1 
+                                        và 2 hàng bắt đầu từ hàng 1 */
+}
+
+.grid-item-header {
+  grid-area: header;
+}
+
+.grid-item-content {
+  grid-area: content;
+}
+
+.grid-item-footer {
+  grid-area: footer;
+}
+
+.grid-item-sidebar {
+  grid-area: sidebar;
+}
+
+.grid-temp-areas-example {
+  grid-template-areas:
+    'header header header'
+    'content content content'
+    'footer footer footer';
+}
+
+.grid-temp-areas-example-2 {
+  grid-template-areas:
+    'header header header'
+    'sidebar content content'
+    'sidebar footer footer';
+}
+
+.grid-temp-areas-example-3 {
+  grid-template-areas:
+    'header header .'
+    'content content content'
+    'footer footer footer';
+}
+
+.grid-temp-areas-example-4 {
+  grid-template-areas:
+    'header header .'
+    'content content content';
+}
+
+.header-box {
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.content-box {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+/* section13 */
+/* section14 */
+/* section15 */
+/* section16 */
 /* SECTION 13 */
 .wrap {
   width: 600px;
@@ -254,44 +371,55 @@ main {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
 .wrap1 {
   position: static;
 }
+
 .wrap2 {
   position: relative;
   left: 100px;
   /* top: 50px; */
 }
+
 .wrap3 {
   position: relative;
 }
+
 .round {
   width: 100px;
   height: 100px;
 }
+
 .round1 {
   background-color: red;
 }
+
 .round2 {
   background-color: blue;
 }
+
 .round3 {
   background-color: green;
 }
+
 .round11 {
   position: relative;
   left: 100px;
 }
+
 .round12 {
   position: absolute;
   top: 50px;
   right: 0;
 }
+
 .round32 {
   position: absolute;
   top: 0;
   left: 200px;
 }
+
 /* MENU */
 .menu {
   background-color: yellow;
@@ -305,13 +433,16 @@ main {
   align-items: center;
   z-index: 100;
 }
+
 .menu span {
   display: inline-block;
   padding: 0 50px;
 }
+
 .stick-wrap {
   height: 300px;
 }
+
 .stick {
   position: sticky;
   margin-top: 20px;
@@ -325,6 +456,7 @@ main {
   box-sizing: border-box;
   padding: 20px 40px;
 }
+
 /* MULTICOL */
 .multi-col {
   column-count: 3;
@@ -332,6 +464,7 @@ main {
   column-gap: 80px;
   column-rule: 1px solid red;
 }
+
 /* TABLE */
 .form {
   display: flex;
@@ -339,6 +472,7 @@ main {
   align-items: center;
   margin-top: 50px;
 }
+
 .form-mini {
   display: table;
 }
@@ -370,6 +504,7 @@ main {
   color: #999;
   font-style: italic;
 }
+
 /* SECTION 14 */
 .cycle {
   width: 100px;
@@ -377,27 +512,35 @@ main {
   border-radius: 50%;
   background-color: blue;
 }
+
 .cycle-mini {
   width: 50px;
   height: 50px;
   background-color: yellow;
 }
+
 .wrap4 {
   position: relative;
 }
-.round14, .cycle, .cycle-mini {
+
+.round14,
+.cycle,
+.cycle-mini {
   position: absolute;
   z-index: 1;
 }
+
 .cycle {
   z-index: 2;
 }
+
 /* SECTION 15 */
 .animate {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .cycle-rotate {
   width: 80px;
   height: 80px;
@@ -413,6 +556,7 @@ main {
   background-color: #aaaaaa;
   position: relative;
 }
+
 .run-mini {
   height: 100%;
   width: 40px;
@@ -422,12 +566,14 @@ main {
   left: 0;
   animation: runMini 0.7s linear infinite alternate;
 }
+
 .cycle-animate {
-  width:120px;
+  width: 120px;
   height: 120px;
   background-color: #aaaaaa;
   border-radius: 50%;
 }
+
 .cycle-skew {
   width: 100%;
   height: 100%;
@@ -441,28 +587,35 @@ main {
     transform: rotate(360deg);
   }
 }
+
 @keyframes runMini {
   0% {
     left: 0;
   }
+
   50% {
-    left:50%;
+    left: 50%;
     transform: translateX(-50%);
   }
+
   100% {
     left: 100%;
     transform: translateX(-100%);
   }
 }
+
 @keyframes skewCycle {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(50%);
   }
+
   100% {
     transform: scale(100%);
   }
 }
+
 /* section16 */
