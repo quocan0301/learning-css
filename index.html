@@ -476,6 +476,26 @@
         <h3 class="sec13_head">13. About CSS Layout</h3>
         <ol>
           <li>
+            <strong>Normal Flow</strong>
+            <p>Cách mà trình duyệt bố cục trang web một cách mặc định.</p>
+            <strong>Example:</strong>
+            <p>I love my cat.</p>
+            <ul>
+              <li>Buy cat food</li>
+              <li>Exercise</li>
+              <li>Cheer up friend</li>
+            </ul>
+            <p>The end!</p>
+          </li>
+          <li>
+            <strong>Flexbox</strong>
+            <p>Được thiết kế giúp bố cục layout theo một chiều ngang hoặc dọc.</p>
+          </li>
+          <li>
+            <strong>Grid Layout</strong>
+            <p>Nếu Flexbox được thiết kế cho bố cục 1 chiều, thì Grid Layout được thiết kế dạng lưới, có thể điều chỉnh bố cục cho cả 2 chiều, ngang và dọc.</p>
+          </li>
+          <li>
             <strong>Positions</strong>
             <p><strong>Concept: </strong>là thuộc tính sử dụng để kiểm soát cách các phần tử HTML hiển thị và được định vị trên trang web. Dưới đây là một số giá trị phổ biến của position: </p>
             <ol>
@@ -509,6 +529,12 @@
                   <span>Item1</span>
                   <span>Item2</span>
                   <span>Item3</span>
+                </div>
+              </li>
+              <li>
+                <strong>Sticky: </strong>được sử dụng để tạo một phần tử có thể "dính" (sticky) trên màn hình khi người dùng cuộn trang. Nghĩa là phần tử sẽ giữ vị trí của nó trong phạm vi một thành phần cha cụ thể, cho đến khi vị trí của nó đạt đến giới hạn đã được định sẵn, sau đó nó sẽ "dính" tại vị trí đó khi cuộn tiếp tục diễn ra.
+                <div class="stick-wrap">
+                  <div class="stick">Sticky</div>
                 </div>
               </li>
             </ol>
@@ -549,9 +575,53 @@
               đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
             </p>
           </li>
+          <li style="margin-top: 120px;">
+            <strong>Table Layout</strong>
+            <p>Trong CSS, thuộc tính <strong>display: table</strong> được sử dụng để biến một phần tử HTML thành một phần tử bảng (table). Khi một phần tử có thuộc tính <strong>display: table</strong>, nó sẽ được hiển thị và xử lý như một bảng HTML.</p>
+            <p>Khi sử dụng <strong>display: table</strong>, các phần tử con bên trong phần tử cha sẽ được hiểu là các thành phần của bảng, bao gồm các hàng (table rows), các ô (table cells), tiêu đề (table headers), v.v.</p>
+            <strong>Example: </strong>
+            <div class="form">
+              <form>
+                <p>First of all, tell us your name and age.</p>
+                <div>
+                  <label for="fname">First name:</label>
+                  <input type="text" id="fname" />
+                </div>
+                <div>
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname" />
+                </div>
+                <div>
+                  <label for="age">Age:</label>
+                  <input type="text" id="age" />
+                </div>
+              </form>
+              <form class="form-mini">
+                <p>First of all, tell us your name and age.</p>
+                <div>
+                  <label for="fname">First name:</label>
+                  <input type="text" id="fname" />
+                </div>
+                <div>
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname" />
+                </div>
+                <div>
+                  <label for="age">Age:</label>
+                  <input type="text" id="age" />
+                </div>
+              </form>
+            </div>
+            <p>Thuộc tính <strong>display: table</strong> ít được sử dụng trong CSS vì có các hạn chế và khó khăn trong việc kiểm soát và thiết kế giao diện.</p>
+            <ol>
+              <li><strong>Hạn chế về kiểm soát giao diện: </strong>Khi sử dụng display: table, giao diện của bảng phụ thuộc vào việc tự động xử lý của trình duyệt. Việc kiểm soát chiều cao, chiều rộng và căn chỉnh các phần tử trong bảng có thể trở nên khó khăn và không linh hoạt</li>
+              <li><strong>Khó tạo kiểu tùy chỉnh: </strong>Thuộc tính display: table cung cấp một cấu trúc giao diện bảng cố định. Điều này có nghĩa là việc tạo kiểu tùy chỉnh cho các phần tử trong bảng có thể trở nên khó khăn. Một số yêu cầu thiết kế đặc biệt có thể không được đáp ứng một cách dễ dàng khi sử dụng display: table.</li>
+              <li><strong>Hiệu suất: </strong>So với các phần tử linh hoạt khác như display: flex hay grid, display: table có thể có hiệu suất kém hơn. Việc xử lý và vẽ các bảng có thể tốn nhiều tài nguyên và có thể làm chậm trang web.</li>
+            </ol>
+          </li>
         </ol>
       </section>
-      <section id="section14" style="margin-top: 120px;">
+      <section id="section14">
         <h3 class="sec14_head">14. About CSS Stacking Contexts</h3>
         <p>Là một khái niệm quan trọng trong CSS để xác định cách các phần tử HTML được xếp chồng và hiển thị trên trang web. Mỗi phần tử HTML có một stacking context riêng, và cách chúng xếp chồng với nhau được quy định bởi một số quy tắc.</p>
         <p>Một stacking context được tạo ra khi một phần tử thỏa mãn một trong những điều kiện sau: </p>

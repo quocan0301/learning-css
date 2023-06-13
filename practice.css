@@ -317,12 +317,66 @@ main {
   display: inline-block;
   padding: 0 50px;
 }
+.stick-wrap {
+  height: 300px;
+}
+.stick {
+  position: sticky;
+  margin-top: 20px;
+  top: 0;
+  z-index: 500;
+  text-align: center;
+  background: rgba(237, 7, 7, 0.778);
+  color: white;
+  border: 5px solid red;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 40px;
+}
 /* MULTICOL */
 .multi-col {
   column-count: 3;
   /* column-width: 200px */
   column-gap: 80px;
   column-rule: 1px solid red;
+}
+/* TABLE */
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+.form-mini {
+  display: table;
+}
+
+.form-mini div {
+  display: table-row;
+}
+
+.form-mini label,
+.form-mini input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+.form-mini label {
+  width: 200px;
+  padding-right: 5%;
+  text-align: right;
+}
+
+.form-mini input {
+  width: 300px;
+}
+
+.form-mini p {
+  display: table-caption;
+  caption-side: bottom;
+  width: 300px;
+  color: #999;
+  font-style: italic;
 }
 /* SECTION 14 */
 .cycle {
