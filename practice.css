@@ -261,6 +261,76 @@ main {
   background-color: aquamarine;
 }
 
+/* section11 */
+.transition-table {
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.transition-table td,
+th {
+  border: 3px solid black;
+  padding: 15px 40px;
+}
+
+.horusoftaceae-logo:hover {
+  scale: 1.15;
+}
+
+.horusoftaceae-logo.transition-enable {
+  transition: scale 0.67s;
+}
+
+.trans-box:hover {
+  width: 1000px;
+  background: blue;
+  /* j4f */
+  background-image: url('https://static.wikia.nocookie.net/pepe/images/3/3f/Sadpepe.png');
+  background-repeat: repeat-x;
+  background-size: 100px;
+  background-position: center;
+}
+
+.trans-box {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, background 3s;
+  /* Tương đương với 
+  transition-property: width, background;
+  transition-duration: 2s, 1s;
+  */
+  margin-bottom: 50px;
+  /* j4f */
+  background-image: url('https://static.wikia.nocookie.net/pepe/images/3/3f/Sadpepe.png');
+  background-repeat: repeat-x;
+  background-size: 100px;
+  background-position: center;
+
+}
+
+.horusoftaceae-logo-2:hover {
+  scale: 1.15;
+  /* Phóng to ảnh lên 1.15 lần khi hover */
+  background-color: red;
+  /* Đổi màu nền thành đỏ khi hover */
+}
+
+.horusoftaceae-logo-2.transition-enable {
+  transition: scale 0.67s, background-color 2s;
+  /* Áp dụng transition lên thuộc tính scale với thời gian 0.67s 
+                                            và thuộc tính background với thời gian 0.5s */
+}
+
+.horusoftaceae-logo-2.transition-enable.delay {
+  transition-delay: 1s;
+}
+
+.horusoftaceae-logo-2.transition-timing {
+  transition-timing-function: ease-out;
+}
+
+/* section12 */
 .grid {
   display: grid;
   margin-bottom: 20px;
