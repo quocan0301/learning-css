@@ -154,60 +154,72 @@
           <h1>3. Cách CSS hoạt động</h1>
         </header>
         <div class="subsection">
-          <p>Khi một trình duyệt hiển thị một tài liệu, nó phải kết hợp nội dung của tài liệu với thông tin kiểu của nó.
-            Nó sẽ xử lý tài liệu theo một số giai đoạn tóm tắt như sau:</p>
-          <ol>
-            <li>
-              <p>Trình duyệt tải HTML (ví dụ như lấy từ trên mạng).</p>
-            </li>
-            <li>
-              <p>Trình duyệt chuyển đổi HTML thành DOM (<i>Document Object Model</i>). DOM đại diện cho tài liệu trong
-                bộ nhớ của máy tính.</p>
-            </li>
-            <li>
-              <p>Trình duyệt tìm nạp hầu hết các tài nguyên được liên kết bởi tài liệu HTML, ví dụ như hình ảnh, video,
-                và CSS. JavaScript sẽ được nạp.
-              </p>
-            </li>
-            <li>
+          <article>
+            <header>
+              <h3>a. Khái niệm DOM</h3>
+            </header>
+            <div class="subsection">
+              <p>DOM là tên gọi viết tắt của (Document Object Model - Mô hình Các Đối tượng Tài liệu), là một chuẩn
+                được định nghĩa bởi W3C (Tổ Chức Web Toàn Cầu - World Wide Web Consortium). DOM là một giao diện lập trình
+                cho các tài liệu web, nó đại diện cho trang để các chương trình có thể thay đổi cấu trúc, kiểu và nội dung.
+                DOM đại diện cho tài liệu dưới dạng các nodes và đối tượng; theo cách đó, các ngôn ngữ lập trình (ví dụ
+                JavaScript) có thể
+                tương tác với trang.</p>
               <p>
-                Trình duyệt phân tích cú pháp CSS và sắp xếp các quy tắc khác nhau theo từng loại bộ chọn thành các
-                "nhóm" khác nhau, ví dụ: element, class, id, v.v... Dựa trên các bộ chọn được tìm thấy, nó
-                tìm ra quy tắc nào sẽ được áp dụng cho node nào trong DOM và gắn kiểu cho chúng theo yêu cầu (bước trung
-                gian này được gọi là render tree).
+                Khi một trang web được tải, trình duyệt sẽ tạo ra một DOM của trang.
               </p>
-            </li>
-            <li>
               <p>
-                Render tree được đặt trong cấu trúc mà nó sẽ xuất hiện sau khi các quy tắc đã được áp dụng cho nó.
+                DOM có cấu trúc dạng cây. Mô hình HTML DOM được xây dựng như một cái cây của các đối tượng. Mỗi phần tử,
+                thuộc tính, và văn bản trong ngôn ngữ đánh dấu (HTML) trở thành một node DOM trong cấu trúc cây này. Các
+                node này được xác định bởi mối quan hệ với những nodes DOM khác. Một số phần tử là cha của các node con, và
+                các node con có anh chị em.
               </p>
-            </li>
-            <li>
-              <p>
-                Nội dung trực quan của trang sẽ được hiển thị trên màn hình (công đoạn này được gọi là "vẽ").
-              </p>
-              <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works/rendering.svg"
-                alt="">
-            </li>
-          </ol>
-          <p>
-          <h3>DOM</h3>
-          <p>DOM là tên gọi viết tắt của (Document Object Model - Mô hình Các Đối tượng Tài liệu), là một chuẩn
-            được định nghĩa bởi W3C (Tổ Chức Web Toàn Cầu - World Wide Web Consortium). DOM là một giao diện lập trình
-            cho các tài liệu web, nó đại diện cho trang để các chương trình có thể thay đổi cấu trúc, kiểu và nội dung.
-            DOM đại diện cho tài liệu dưới dạng các nodes và đối tượng; theo cách đó, các ngôn ngữ lập trình (ví dụ
-            JavaScript) có thể
-            tương tác với trang.</p>
-          <p>
-            Khi một trang web được tải, trình duyệt sẽ tạo ra một DOM của trang.
-          </p>
-          <p>
-            DOM có cấu trúc dạng cây. Mô hình HTML DOM được xây dựng như một cái cây của các đối tượng. Mỗi phần tử,
-            thuộc tính, và văn bản trong ngôn ngữ đánh dấu (HTML) trở thành một node DOM trong cấu trúc cây này. Các
-            node này được xác định bởi mối quan hệ với những nodes DOM khác. Một số phần tử là cha của các node con, và
-            các node con có anh chị em.
-          </p>
-          <img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="">
+              <img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="">
+            </div>
+          </article>
+          <article>
+            <header>
+              <h3>b. Cách CSS hoạt động</h3>
+            </header>
+            <div class="subsection">
+              <p>Khi một trình duyệt hiển thị một tài liệu, nó phải kết hợp nội dung của tài liệu với thông tin kiểu của nó.
+                Nó sẽ xử lý tài liệu theo một số giai đoạn tóm tắt như sau:</p>
+              <ol>
+                <li>
+                  <p>Trình duyệt tải HTML (ví dụ như lấy từ trên mạng).</p>
+                </li>
+                <li>
+                  <p>Trình duyệt chuyển đổi HTML thành DOM (<i>Document Object Model</i>). DOM đại diện cho tài liệu trong
+                    bộ nhớ của máy tính.</p>
+                </li>
+                <li>
+                  <p>Trình duyệt tìm nạp hầu hết các tài nguyên được liên kết bởi tài liệu HTML, ví dụ như hình ảnh, video,
+                    và CSS. JavaScript sẽ được nạp.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Trình duyệt phân tích cú pháp CSS và sắp xếp các quy tắc khác nhau theo từng loại bộ chọn thành các
+                    "nhóm" khác nhau, ví dụ: element, class, id, v.v... Dựa trên các bộ chọn được tìm thấy, nó
+                    tìm ra quy tắc nào sẽ được áp dụng cho node nào trong DOM và gắn kiểu cho chúng theo yêu cầu (bước trung
+                    gian này được gọi là render tree).
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Render tree được đặt trong cấu trúc mà nó sẽ xuất hiện sau khi các quy tắc đã được áp dụng cho nó.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Nội dung trực quan của trang sẽ được hiển thị trên màn hình (công đoạn này được gọi là "vẽ").
+                  </p>
+                  <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works/rendering.svg"
+                    alt="">
+                </li>
+              </ol>
+            </div>
+          </article>
         </div>
       </section>
       <section id="section4">
@@ -215,9 +227,9 @@
           <h2>4. Cú pháp CSS</h2>
           <div class="subsection">
             <p>
-              Một bộ quy tắc CSS bao gồm một bộ chọn (selector) và một khối khai báo (declaration):
+              Một bộ quy tắc CSS bao gồm một bộ chọn (selector) và một khối khai báo (declaration).
             </p>
-            <h3>Cú pháp CSS:</h3>
+            <h3>CSS Syntax:</h3>
             <img src="https://www.w3schools.com/css/img_selector.gif" alt="">
             <p>Bộ chọn (Selector) chỉ tới các phần tử HTML mà bạn áp dụng kiểu.</p>
             <p>Khối mô tả (Declaration) bao gồm một hoặc nhiều mô tả phân tách nhau bằng dấu chấm phẩy.</p>
@@ -231,9 +243,9 @@
 }</code></pre>
             <p>Giải thích:</p>
             <ul>
-              <li>p là một bộ chọn CSS (trỏ tới phần tử HTML mà bạn muốn áp dụng kiểu:)</li>
-              <li>color là một thuộc tính, và red là giá trị thuộc tính</li>
-              <li>text-align là một thuộc tính, và center là giá trị thuộc tính</li>
+              <li><strong>p</strong> là một bộ chọn CSS (trỏ tới phần tử HTML mà bạn muốn áp dụng kiểu)</li>
+              <li><strong>color</strong> là một thuộc tính, và <strong>red</strong> là giá trị thuộc tính</li>
+              <li><strong>text-align</strong> là một thuộc tính, và <strong>center</strong> là giá trị thuộc tính</li>
             </ul>
           </div>
         </header>
@@ -1950,7 +1962,7 @@ a:active {
             </li>
             <li>
               <p>Import<br />
-                Tương tự CSS thì lệnh @import cho phép đưa nội dung của file khác vào. Tip: Không cần phải thêm phần mở
+                Tương tự CSS thì lệnh <strong>@import</strong> cho phép đưa nội dung của file khác vào. Có thể không cần thiết phải thêm phần mở
                 rộng của file khi khai báo.</p>
             </li>
             <li>
