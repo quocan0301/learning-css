@@ -370,6 +370,8 @@ a:active {
                 hoặc phần khai báo CSS.</li>
               <li>Quy tắc sau ghi đè lên: Nếu hai quy tắc có cùng đặc thù, thì quy tắc được khai báo sau sẽ ghi đè lên
                 quy tắc được khai báo trước đó.</li>
+              <li>!important: Trong CSS, khi ta thêm !important vào sau một CSS property, thuộc tính của property đó sẽ
+                được ưu tiên hơn tất cả các thuộc tính khác của cùng element, kể cả so với inline style.</li>
             </ul>
           </li>
         </ol>
@@ -570,10 +572,10 @@ a:active {
                 width: 100px;
                 height: 100px;
                 background: red;
-                transition: width 2s, background 3s;
-                /* Tương đương với 
                 transition-property: width, background;
                 transition-duration: 2s, 3s;
+                /* Tương đương với 
+                transition: width 2s, background 3s;
                 */
               } 
             </code>
@@ -645,6 +647,69 @@ a:active {
         </table>
       </section>
       <section id="section11">
+        <h2>11. Units</h2>
+        <p>Trong CSS, có nhiều đơn vị được sử dụng để định dạng và định vị các phần tử. Các đơn vị này được sử dụng để
+          chỉ định nhiều yếu tố như kích thước, cỡ chữ, khoảng cách, độ dày, v.v.</p>
+        <p>Chúng được phân thành hai loại chính: đơn vị tuyệt đối và đơn vị tương đối.</p>
+        <h3>1. Đơn vị tuyệt đối</h3>
+        <p>- Đơn vị tuyệt đối là các đơn vị chỉ định kích thước cố định và không thay đổi của các phần tử trên trang
+          web.
+        </p>
+        <p>- Do kích thước màn hình của người dùng là rất đa dạng, nên các đơn vị tuyệt đối thông thường chỉ dành cho
+          các
+          phần tử nhỏ, cho cỡ chữ nội dung hoặc các phần tử được quy ước sẵn một kích thước cố định.</p>
+        <p>- Sử dụng quá nhiều phần tử có đơn vị tuyệt đối có kích thước trung bình và lớn có thể khiến trang web trở
+          nên
+          khó đáp ứng (responsive) với
+          nhiều loại thiết bị và kích cỡ màn hình khác nhau.</p>
+        <p>Một số đơn vị tuyệt đối trong CSS: </p>
+        <ul>
+          <li><b>Pixel (px)</b>: Đây là đơn vị đo phổ biến nhất trong CSS. Mỗi pixel được quy ước là một (với màn hình
+            có dpi -
+            dots per inch thấp) hoặc nhiều điểm ảnh (màn hình có độ phân giải cao) trên màn hình. Một pixel bằng 1/96
+            inch.</li>
+          <li><b>Point (pt)</b>: Đơn vị này thường được dùng cho các tài liệu in ấn. Một point bằng 1/72 inch.</li>
+          <li><b>Inch (in)</b>: Đơn vị inch, không được dùng phổ biến do ít linh hoạt và khó cùng tương thích với nhiều
+            loại
+            thiết
+            bị.</li>
+          <li><b>Centimeter (cm)</b> và <b>millimeter (mm)</b>: Các đơn vị đo độ dài thông thường, cũng giống như inch,
+            chúng không
+            được sử dụng nhiều trong CSS.</li>
+          <li><b>Pica (pc)</b>: Một pica = 12 point.</li>
+        </ul>
+        <h3>2. Đơn vị tương đối</h3>
+        <p>- Đơn vị tương đối là các đơn vị chỉ định kích thước có thể thay đổi của các phần tử trên trang web.</p>
+        </p>
+        <p>- Sự thay đổi của kích thước thông thường phụ thuộc vào kích cỡ màn hình của người dùng hoặc so với kích cỡ
+          font chữ.</p>
+        <p>- Thông thường, các trang web sử dụng các đơn vị này cho các phần tử để tạo ra trang web đáp
+          ứng (responsive) nhằm đem lại trải nghiệm tốt nhất cho người dùng trên nhiều loại thiết bị và kích cỡ màn hình
+          khác
+          nhau.</p>
+        <p>Một số đơn vị tương đối trong CSS: </p>
+        <ul>
+          <li><b>Phần trăm (%)</b>: Đây là đơn vị tương đối phổ biến nhất trong CSS. Kích thước của phần tử này sẽ được
+            tính
+            dựa trên % kích thước so với phần tử cha của nó.</li>
+          <li><b>em</b>: Kích thước phần tử sẽ được tính theo font-size của phần tử đó. (Với N em sẽ bằng N lần
+            font-size hiện
+            tại).</li>
+          <li><b>Root-em (rem)</b>: Kích thước phần tử sẽ được tính theo font-size của phần tử root. Thông thường root ở
+            đây là
+            thẻ &lt;html&gt; (mặc định 16px) hoặc nó cũng có thể là font-size của pseudo-class :root.</li>
+          <li><b>Viewport width (vw)</b> và <b>viewport height (vh)</b>: Kích thước phần tử được tính theo % kích thước
+            của cửa sổ trình duyệt hiện tại (Cứ 1vw = 1% chiều rộng cửa sổ trình duyệt; 1vh = 1% chiều cao cửa sổ trình
+            duyệt).</li>
+          <li><b>Viewport min (vmin)</b> và <b>viewport max (vmax)</b>: Kích thước phần tử được tính theo % kích thước
+            nhỏ hơn hoặc lớn hơn của cửa sổ trình duyệt (khi so chiều rộng với chiều cao).<br>
+            (Ví dụ: Khi ta đặt smartphone nằm ngang, lúc này trang web sẽ được xoay theo để hiển thị đúng với chiều của
+            smartphone, khi đó chiều rộng của cửa sổ trình duyệt sẽ dài hơn chiều cao của cửa sổ trình duyệt, nên khi
+            ta lấy 1vmin thì tức là ta đang tính là 1% chiều cao cửa sổ trình duyệt).
+          </li>
+          <li><b>ch</b>: Đơn vị này ít được dùng, 1ch = 100% chiều rộng hiện tại của kí tự "0".</li>
+          <li><b>ex</b>: Đơn vị này ít được dùng, 1ex = 100% chiều cao hiện tại của kí tự "x".</li>
+        </ul>
       </section>
       <section id="section12">
         <h2>12.Flexbox / Grid</h2>

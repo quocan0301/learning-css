@@ -36,7 +36,8 @@ ol {
   margin-bottom: 1em;
 }
 
-li {
+li,
+p {
   margin-bottom: 0.5em;
 }
 
@@ -296,6 +297,7 @@ main {
 .transition-table {
   border-collapse: collapse;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .transition-table td,
