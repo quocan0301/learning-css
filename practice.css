@@ -234,6 +234,25 @@ main {
   right: 0;
   border-top: 2px solid red;
 }
+/* SESSION 8 */
+.box {
+  width: 500px;
+  height: 300px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+  box-sizing: border-box;
+  border: 5px solid yellow;
+}
+.box span {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 50px 30px;
+  border: 5px solid red;
+  background-color: aquamarine;
+}
 
 /* SECTION 13 */
 .wrap {
