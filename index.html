@@ -94,22 +94,277 @@
       </section>
       <section id="section5">
         <h2>5. CSS Selectors</h2>
-        <div class="subsection" id="section5a">
-          <p>Element selector: chọn các phần tử HTML dựa trên tên phần tử.</p>
-          <pre><code class="language-html">p {
-      text-align: center;
-      color: red;
-    }</code></pre>
+        <ol>
+        <li><h3>Simple CSS Selectors</h3>
+        <h4>a. Element selector</h4>
+        <div class="subsection">
+            <p>Element selector: chọn các phần tử HTML dựa trên tên phần tử.</p>
+            <pre><code class="language-html">p {
+  text-align: center;
+  color: red;
+}</code></pre>
         </div>
-        <div class="ele-selector">
-          <p>đỏ giữa</p>
+        <h4>b. Id selector</h4>
+        <div class="subsection">
+          <p>CSS id Selector: chọn các phần tử HTML dựa trên id của các phần tử (#).</p>
+          <pre><code class="language-html">#para1 {
+  text-align: center;
+  color: red;
+}</code></pre>
+      </div>
+        <h4>c. Class selector</h4>
+        <div class="subsection">
+          <p>CSS class Selector: chọn các phần tử HTML dựa trên tên class của các phần tử (.).</p>
+          <pre><code class="language-html">.center {
+  text-align: center;
+  color: red;
+  }</code></pre>
+          <p>Có thể chỉ định rằng cụ thể những phần tử HTML sẽ bị ảnh hưởng bởi trong một lớp(&lt;element&gt;.&lt;class&gt;).</p>
+          <pre><code class="language-html">p.center {
+  text-align: center;
+  color: red;
+  }</code></pre>
         </div>
+        <h4>d. Universal selector</h4>
+        <div class="subsection">
+          <p>CSS Universal Selector: chọn tất cả các phần tử HTML (*).</p>
+          <pre><code class="language-html">*{
+  text-align: center;
+  color: red;
+}</code></pre>
+      </div>
+      <h4>e. Grouping selector</h4>
+        <div class="subsection">
+          <p>CSS Grouping Selector: chọn các phần tử HTML để định dạng chung (,).</p>
+          <pre><code class="language-html">h1, h2, p {
+  text-align: center;
+  color: red;
+}</code></pre>
+      </div></li>
+      <li><h3>CSS Combinators</h3>
+        <h4>a. Descendant Selector</h4>
+        <div class="subsection">
+          <p>CSS Descendant Selector: chọn phần tử con là con cháu của một phần tử cụ thể được chỉ định.</p>
+          <pre><code class="language-html">div p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>b. Child Selector</h4>
+        <div class="subsection">
+          <p>CSS Child Selector: chỉ chọn phần tử là phần tử con của một phần tử cụ thể được chỉ định.(&gt;)</p>
+          <pre><code class="language-html">div > p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>c. Adjacent Sibling Selector</h4>
+        <div class="subsection">
+          <p>CSS CAdjacent Sibling Selector: chọn phần tử anh em liền kề phía sau một phần tử cụ thể được chỉ định.(+)</p>
+          <pre><code class="language-html">div + p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>d. General Sibling Selector</h4>
+        <div class="subsection">
+          <p>CSS General Sibling Selector: chọn tất cả phần tử anh em liền kề phía sau một phần tử cụ thể được chỉ định.(~)</p>
+          <pre><code class="language-html">div + p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+      </li>
+      <li><h3>CSS Pseudo-classes</h3>
+        <h4>a. Anchor Pseudo-classes</h4>
+        <div class="subsection">
+          <p>CSS Anchor Pseudo-classes: Các lớp giả này cho phép bạn xác định trạng thái hoặc vị trí của các liên kết trong tài liệu.</p>
+          <pre><code class="language-html">/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}</code></pre>
+        <p>Lưu ý: a:hover PHẢI đặt sau a:link và a:visited trong định nghĩa CSS để có hiệu quả! a:active PHẢI đặt sau a:hover 
+          trong định nghĩa CSS để có hiệu quả! Tên lớp giả không phân biệt chữ hoa chữ thường</p>
+        </div>
+        <h4>b. The :first-child Pseudo-class</h4>
+        <div class="subsection">
+          <p>CSS The :first-child Pseudo-class: chọn phần tử con đầu tiên</p>
+          <pre><code class="language-html">p:first-child {
+  color: blue;
+}</code></pre>
+          <p>Chọn phần tử con đầu tiên trong một phần tử cụ thể</p>
+          <pre><code class="language-html">p i:first-child {
+  color: blue;
+}</code></pre>
+          <p>Chọn tất cả phần tử cụ thể trong phần tử con đầu tiên</p>
+          <pre><code class="language-html">p:first-child i {
+  color: blue;
+}</code></pre>
+        </div>
+      </li>
+      <li><h3>CSS Pseudo-elements</h3>
+        <h4>a. The ::first-line Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::first-line Pseudo-element: được sử dụng để thêm một kiểu dáng đặc biệt cho dòng đầu tiên của một đoạn văn bản.</p>
+          <pre><code class="language-html">p::first-line {
+  color: #ff0000;
+}</code></pre>
+        </div>
+        <h4>b. The ::first-letter Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::first-letter Pseudo-element: được sử dụng để thêm một kiểu dáng đặc biệt cho kí tự đầu tiên của một đoạn văn bản.</p>
+          <pre><code class="language-html">p::first-letter {
+  color: #ff0000;
+}</code></pre>
+        </div>
+        <h4>c. The ::before Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::before Pseudo-element: để chèn nội dung nào đó trước nội dung của một phần tử.</p>
+          <pre><code class="language-html">p::before {
+  content: url(smiley.gif);
+}</code></pre>
+        </div>
+        <h4>d. The ::after Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::after Pseudo-element: để chèn nội dung nào đó sau nội dung của một phần tử.</p>
+          <pre><code class="language-html">p::after {
+  content: url(smiley.gif);
+}</code></pre>
+        </div>
+        <h4>e. The ::marker Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::marker Pseudo-element: để chọn các chỉ mục của danh sách</p>
+          <pre><code class="language-html">p::marker {
+  color: red;
+}</code></pre>
+        </div>
+        <h4>f. The ::selection Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::selection Pseudo-element: nhũng phần tử được chọn, tô đậm bởi người dùng</p>
+          <pre><code class="language-html">p::selection {
+  color: red;
+}</code></pre>
+        </div>
+      </li>
+      <li><h3>CSS Attribute Selectors</h3>
+        <h4>a. [attribute] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute] Selector: chọn những phần tử chứa thuộc tính cụ thể.</p>
+          <pre><code class="language-html">a[target] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>b. [attribute="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị cụ thể.</p>
+          <pre><code class="language-html">a[target="_blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>c. [attribute~="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute~="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa từ cụ thể (cách nhau bằng space).</p>
+          <pre><code class="language-html">[target~="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>d. [attribute|="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute|="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa từ cụ thể (cách nhau bằng -).</p>
+          <pre><code class="language-html">[target|="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>e. [attribute^="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute^="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị bắt đầu bằng chuỗi kí tự cụ thể.</p>
+          <pre><code class="language-html">[target^="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>f. [attribute$="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute$="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị kết thúc bằng chuỗi kí tự cụ thể.</p>
+          <pre><code class="language-html">[target$="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>g. [attribute*="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute*="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa chuỗi kí tự cụ thể.</p>
+          <pre><code class="language-html">[target*="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+      </li>
+      </ol>
       </section>
       <section id="section6">
+        <h2>6. CSS Rule Priority</h2>
+        <ol>
+        <li><h3>Specificity</h3>
+          <p>Một giá trị định danh độ ưu tiên của các quy tắc CSS. Nó được biểu diễn bằng một bộ giá trị có 
+            4 con số (a, b, c, d), trong đó mỗi con số đại diện cho một loại chọn phần tử hoặc quy tắc khác nhau.
+             Các con số này xác định độ ưu tiên của một quy tắc CSS khi áp dụng kiểu dáng.</p>
+          <p>Thứ tự ưu tiên của các loại chọn phần tử và quy tắc trong đặc thù là:</p>
+          <ol>
+            <li>Inline style: a = 1 </li>
+            <li>ID selectors: b = số lượng ID selectors trong quy tắc</li>
+            <li>Class selectors, attribute selectors, và pseudo-classes: c = số lượng class selectors, attribute selectors, và pseudo-classes trong quy tắc</li>
+            <li>Element selectors và pseudo-elements: d = số lượng element selectors và pseudo-elements trong quy tắc</li>
+          </ol>
+          <p>Ví dụ:</p>
+          <ul>
+            <li>h1: (0,0,0,1)</li>
+            <li>.container: (0,0,1,0)</li>
+            <li>#head: (0,1,0,0)</li>
+            <li>body .container p: (0,0,1,2)</li>
+            <li>a:hover: (0,0,1,1)</li>
+          </ul>
+        </li>
+        <p>Đặc thù cao nhất sẽ có ưu tiên cao nhất và được áp dụng khi có xung đột giữa các quy tắc. Ví dụ: hai quy tắc với đặc thù 
+          (0,1,1,0) và (0,0,2,1) được áp dụng cho cùng một phần tử, quy tắc có đặc thù (0,0,2,1) sẽ có độ ưu tiên cao hơn và được áp dụng.</p>
+        <li><h3>Order of declaration</h3>
+          <p>Thứ tự khai báo trong CSS là cách thứ tự các quy tắc CSS được khai báo trong tệp CSS hoặc CSS của một trang HTML. 
+            Thứ tự này quyết định ưu tiên áp dụng các quy tắc CSS khi có các quy tắc xung đột hoặc ghi đè lên nhau.</p>
+          <p>Một số quy định thứ tự khai báo trong CSS:</p>
+          <ul>
+            <li>Thứ tự từ trên xuống dưới: Các quy tắc CSS được áp dụng theo thứ tự từ trên xuống dưới trong tệp CSS hoặc phần khai báo CSS.</li>
+            <li>Quy tắc sau ghi đè lên: Nếu hai quy tắc có cùng đặc thù, thì quy tắc được khai báo sau sẽ ghi đè lên quy tắc được khai báo trước đó.</li>
+          </ul>
+        </li>
+      </ol>
       </section>
       <section id="section7">
+        <h2>7. CSS Attribute</h2>
+        <p>Attribute(thuộc tính) bao gồm các cặp "tên thuộc tính" và "giá trị" được sử dụng để kiểm soát và định dạng các phần tử HTML trên trang web.</p>
+        <p>Mỗi thuộc tính CSS có một tên đặc trưng và có thể có một hoặc nhiều giá trị.</p>
       </section>
       <section id="section8">
+        <h2>8. Styling Box</h2>
+        <p> 
+          Là thuật ngữ được sử dụng để chỉ đến việc tạo kiểu và trang trí cho các hộp được tạo ra bởi box model.
+        </p>
+        <p>
+          <strong>Box Model: </strong>Là mô hình dùng để xác định cách các phần tử HTML hiển thị và tương tác trong trình duyệt. Gồm 4 phần quan trọng: <strong>content, padding, border, margin.</strong>
+        </p>
+        <img src="https://www.lilengine.co/sites/default/files/inline-images/Screen%20Shot%202019-04-14%20at%2023.59.07.png" alt="" style="width:500px; height:auto; margin:0 auto; display:block;">
+        <p style="font-style: italic; text-align:center; font-weight:bold;">Box Model</p>
+        <p style="margin: 30px 0;">Styling box bao gồm việc sử dụng các thuộc tính CSS như width, height, border, margin, padding, background, position và nhiều thuộc tính khác để kiểm soát diện mạo và vị trí của hộp trang trí.</p>
+        <div class="box">
+          <span>Content Here</span>
+        </div>
       </section>
       <section id="section9">
       </section>
@@ -464,10 +719,209 @@
         <h3>b. Grid</h3>
       </section>
       <section id="section13">
+        <h3 class="sec13_head">13. About CSS Layout</h3>
+        <ol>
+          <li>
+            <strong>Normal Flow</strong>
+            <p>Cách mà trình duyệt bố cục trang web một cách mặc định.</p>
+            <strong>Example:</strong>
+            <p>I love my cat.</p>
+            <ul>
+              <li>Buy cat food</li>
+              <li>Exercise</li>
+              <li>Cheer up friend</li>
+            </ul>
+            <p>The end!</p>
+          </li>
+          <li>
+            <strong>Flexbox</strong>
+            <p>Được thiết kế giúp bố cục layout theo một chiều ngang hoặc dọc.</p>
+          </li>
+          <li>
+            <strong>Grid Layout</strong>
+            <p>Nếu Flexbox được thiết kế cho bố cục 1 chiều, thì Grid Layout được thiết kế dạng lưới, có thể điều chỉnh bố cục cho cả 2 chiều, ngang và dọc.</p>
+          </li>
+          <li>
+            <strong>Positions</strong>
+            <p><strong>Concept: </strong>là thuộc tính sử dụng để kiểm soát cách các phần tử HTML hiển thị và được định vị trên trang web. Dưới đây là một số giá trị phổ biến của position: </p>
+            <ol>
+              <li>
+                <strong>Static: </strong>là giá trị mặc định của positon. Các phần tử sẽ được hiển thị theo trình tự tự nhiên của tài liệu HTML và sẽ không bị ảnh hưởng bởi các thuộc tính vị trí khác như: <strong>top, bottom, right, left.</strong>
+                <div class="wrap wrap1">
+                  <div class="round round1"></div>
+                  <div class="round round2"></div>
+                  <div class="round round3"></div>
+                </div>
+              </li>
+              <li>
+                <strong>Relative: </strong>các phần tử sẽ được sẽ được định vị tương đối so với vị trí ban đầu của nó. Bằng cách sử dụng các thuộc tính top, bottom, left, right, phần tử có thể được di chuyển từ vị trí ban đầu một cách tương đối.
+                <div class="wrap wrap2">
+                  <div class="round round1 round11"></div>
+                  <div class="round round2 round21"></div>
+                  <div class="round round3 round31"></div>
+                </div>
+              </li>
+              <li>
+                <strong>Absolute: </strong>các phần tử  sẽ được định vị tuyệt đối so với phần tử cha gần nhất có position khác static. Phần tử sẽ được di chuyển dựa trên các thuộc tính top, bottom, left, right. Nếu không có phần tử cha nào có position khác static, thì phần tử absolute sẽ dựa trên cửa sổ trình duyệt.
+                <div class="wrap wrap3">
+                  <div class="round round1 round12"></div>
+                  <div class="round round2 round22"></div>
+                  <div class="round round3 round32"></div>
+                </div>
+              </li>
+              <li style="margin-top: 100px;">
+                <strong>Fixed: </strong>phần tử sẽ được định vị tuyệt đối so với cửa sổ trình duyệt. Nó sẽ không di chuyển khi người dùng cuộn trang. Để định rõ vị trí của phần tử fixed, ta sử dụng các thuộc tính top, bottom, left, right.
+                <div class="menu">
+                  <span>Item1</span>
+                  <span>Item2</span>
+                  <span>Item3</span>
+                </div>
+              </li>
+              <li>
+                <strong>Sticky: </strong>được sử dụng để tạo một phần tử có thể "dính" (sticky) trên màn hình khi người dùng cuộn trang. Nghĩa là phần tử sẽ giữ vị trí của nó trong phạm vi một thành phần cha cụ thể, cho đến khi vị trí của nó đạt đến giới hạn đã được định sẵn, sau đó nó sẽ "dính" tại vị trí đó khi cuộn tiếp tục diễn ra.
+                <div class="stick-wrap">
+                  <div class="stick">Sticky</div>
+                </div>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <strong>Multiple-column layout</strong>
+            <p>
+              Multiple-column layout trong CSS cho phép chia nội dung thành nhiều cột ngang, tạo ra một bố cục giống báo chí hoặc tạp chí. Đây là một cách tiện lợi để hiển thị nội dung dài mà không cần cuộn xuống hết trang.
+            </p>
+            <p class="multi-col">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            </p>
+            <p><strong>Lưu ý </strong>multiple-column layout không được hỗ trợ trên tất cả các trình duyệt cũ, vì vậy bạn nên kiểm tra tính tương thích trình duyệt trước khi sử dụng. Đồng thời, cần cân nhắc về trải nghiệm di động và đảm bảo rằng nội dung vẫn đọc được và hiển thị tốt trên các thiết bị nhỏ hơn.</p>
+          </li>
+          <li>
+            <strong>Float</strong>
+            <p>Thuộc tính Float CSS là một thuộc tính được sử dụng để chuyển một phần tử sang góc trái hoặc góc bên phải của không gian bao quanh nó. </p>
+            <strong>Thuộc tính Float có thể bao gồm các giá trị dưới đây:</strong>
+            <ul style="margin: 20px 0;">
+              <li><strong>Left: </strong>Cố định phần tử HTML về phía bên trái.</li>
+              <li><strong>Right: </strong>Cố định phần tử HTML về bên phải.</li>
+              <li><strong>None: </strong>Phần tử nằm ở vị trí của nó, trạng thái mặc định.</li>
+              <li><strong>Inherit: </strong>Phần tử kế thừa giá trị float của phần tử cha. </li>
+            </ul>
+            <p>
+              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
+              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
+              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+            </p>
+            <p>
+              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;float: left;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
+              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
+              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+            </p>
+            <p style="margin-top: 120px;">
+              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;float: right;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
+              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
+              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+            </p>
+          </li>
+          <li style="margin-top: 120px;">
+            <strong>Table Layout</strong>
+            <p>Trong CSS, thuộc tính <strong>display: table</strong> được sử dụng để biến một phần tử HTML thành một phần tử bảng (table). Khi một phần tử có thuộc tính <strong>display: table</strong>, nó sẽ được hiển thị và xử lý như một bảng HTML.</p>
+            <p>Khi sử dụng <strong>display: table</strong>, các phần tử con bên trong phần tử cha sẽ được hiểu là các thành phần của bảng, bao gồm các hàng (table rows), các ô (table cells), tiêu đề (table headers), v.v.</p>
+            <strong>Example: </strong>
+            <div class="form">
+              <form>
+                <p>First of all, tell us your name and age.</p>
+                <div>
+                  <label for="fname">First name:</label>
+                  <input type="text" id="fname" />
+                </div>
+                <div>
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname" />
+                </div>
+                <div>
+                  <label for="age">Age:</label>
+                  <input type="text" id="age" />
+                </div>
+              </form>
+              <form class="form-mini">
+                <p>First of all, tell us your name and age.</p>
+                <div>
+                  <label for="fname">First name:</label>
+                  <input type="text" id="fname" />
+                </div>
+                <div>
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname" />
+                </div>
+                <div>
+                  <label for="age">Age:</label>
+                  <input type="text" id="age" />
+                </div>
+              </form>
+            </div>
+            <p>Thuộc tính <strong>display: table</strong> ít được sử dụng trong CSS vì có các hạn chế và khó khăn trong việc kiểm soát và thiết kế giao diện.</p>
+            <ol>
+              <li><strong>Hạn chế về kiểm soát giao diện: </strong>Khi sử dụng display: table, giao diện của bảng phụ thuộc vào việc tự động xử lý của trình duyệt. Việc kiểm soát chiều cao, chiều rộng và căn chỉnh các phần tử trong bảng có thể trở nên khó khăn và không linh hoạt</li>
+              <li><strong>Khó tạo kiểu tùy chỉnh: </strong>Thuộc tính display: table cung cấp một cấu trúc giao diện bảng cố định. Điều này có nghĩa là việc tạo kiểu tùy chỉnh cho các phần tử trong bảng có thể trở nên khó khăn. Một số yêu cầu thiết kế đặc biệt có thể không được đáp ứng một cách dễ dàng khi sử dụng display: table.</li>
+              <li><strong>Hiệu suất: </strong>So với các phần tử linh hoạt khác như display: flex hay grid, display: table có thể có hiệu suất kém hơn. Việc xử lý và vẽ các bảng có thể tốn nhiều tài nguyên và có thể làm chậm trang web.</li>
+            </ol>
+          </li>
+        </ol>
       </section>
       <section id="section14">
+        <h3 class="sec14_head">14. About CSS Stacking Contexts</h3>
+        <p>Là một khái niệm quan trọng trong CSS để xác định cách các phần tử HTML được xếp chồng và hiển thị trên trang web. Mỗi phần tử HTML có một stacking context riêng, và cách chúng xếp chồng với nhau được quy định bởi một số quy tắc.</p>
+        <p>Một stacking context được tạo ra khi một phần tử thỏa mãn một trong những điều kiện sau: </p>
+        <ol>
+          <li>Phần tử có một thuộc tính position không phải là static (như relative, absolute hoặc fixed) và một trong những thuộc tính sau đây được áp dụng: z-index, opacity nhỏ hơn 1, transform, ...</li>
+          <li>Phần tử có một thuộc tính position là fixed hoặc sticky.</li>
+          <li>Phần tử là một root của trang web (ví dụ: phần tử &lt;html&gt;).</li>
+        </ol>
+        <p>Mỗi stacking context có một "độ sâu" được xác định bởi giá trị z-index của các phần tử trong nó. Phần tử với z-index lớn hơn sẽ được hiển thị trên phần tử với z-index nhỏ hơn.</p>
+        <strong>Expample: </strong>
+        <div class="wrap4 wrap">
+          <div class="round round1 round14"></div>
+          <div class="cycle"></div>
+          <div class="cycle-mini"></div>
+        </div>
       </section>
-      <section id="section15">
+      <section id="section15" style="margin-top:150px;">
+        <h3>15. Animation</h3>
+        <p>CSS Animation là một công nghệ cho phép tạo ra các hiệu ứng chuyển động của các phần tử HTML. Cho phép điều chỉnh thuộc tính của một phần tử theo thời gian, tạo ra các hiệu ứng chuyển động.</p>
+        <p>Để tạo ra một Animation trong CSS, cần thực hiện các bước sau: </p>
+        <ol>
+          <li>
+            <p><strong>Định nghĩa Animation: </strong>Sử dụng <strong>@keyframes</strong> để định nghĩa các trạng thái của animation. Mỗi keyframe đại diện cho 1 trạng thái của phần tử tại 1 thời điểm cụ thể trong quá trình animation.</p>
+          </li>
+          <li>
+            <p><strong>Áp dụng Animation: </strong>Sử dụng thuộc tính <strong>animation</strong> hoặc cá thuộc tính liên quan để áp dụng animation vào phần tử.</p>
+          </li>
+        </ol>
+        <p>
+          <strong>Cú pháp rút gọn của Animation:</strong>
+        </p>
+        <p>
+          animation: name duration timing-function delay iteration-count direction fill-mode;
+        </p>
+        <strong>Trong đó: </strong>
+        <ul>
+          <li><strong>name: </strong>tên của animation được định nghĩa bằng @keyframes</li>
+          <li><strong>duration: </strong>thời gian hoàn thành animation, có thể là giá trị số (ex: 1s, 500ms, ...) hoặc 'infinite' để lặp vô hạn.</li>
+          <li><strong>timing-function: </strong>hàm thời gian, quyết định tốc độ chuyển động.</li>
+          <li><strong>delay: </strong>độ trễ trước khi animation bắt đầu.</li>
+          <li><strong>iteration-count: </strong>số lần lặp lại của animation, có thể là giá trị số hoặc infinite để lặp vô hạn.</li>
+          <li><strong>direction: </strong>xác định cách animation chuyển động khi lặp lại. Nó quyết định animation sẽ chạy theo hướng nào và có đảo ngược hay không.</li>
+          <li><strong>fill-mode: </strong>trạng thái của phần tử sau khi animation kết thúc.</li>
+        </ul>
+        <p><strong>Example: </strong></p>
+        <div class="animate">
+          <div class="cycle-rotate"></div>
+          <div class="run-rotate">
+            <div class="run-mini"></div>
+          </div>
+          <div class="cycle-animate">
+            <div class="cycle-skew"></div>
+          </div>
+        </div>
       </section>
       <section id="section16">
       </section>

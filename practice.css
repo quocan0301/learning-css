@@ -61,10 +61,6 @@ main {
 /* section3 */
 /* section4 */
 /* section5 */
-.ele-selector p {
-  text-align: center;
-  color: red;
-}
 /* section6 */
 /* section7 */
 /* section8 */
@@ -234,8 +230,243 @@ main {
   right: 0;
   border-top: 2px solid red;
 }
+/* SESSION 8 */
+.box {
+  width: 500px;
+  height: 300px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+  box-sizing: border-box;
+  border: 5px solid yellow;
+}
+.box span {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 50px 30px;
+  border: 5px solid red;
+  background-color: aquamarine;
+}
 
-/* section13 */
-/* section14 */
-/* section15 */
+/* SECTION 13 */
+.wrap {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #aaaaaa;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.wrap1 {
+  position: static;
+}
+.wrap2 {
+  position: relative;
+  left: 100px;
+  /* top: 50px; */
+}
+.wrap3 {
+  position: relative;
+}
+.round {
+  width: 100px;
+  height: 100px;
+}
+.round1 {
+  background-color: red;
+}
+.round2 {
+  background-color: blue;
+}
+.round3 {
+  background-color: green;
+}
+.round11 {
+  position: relative;
+  left: 100px;
+}
+.round12 {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+.round32 {
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+/* MENU */
+.menu {
+  background-color: yellow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.menu span {
+  display: inline-block;
+  padding: 0 50px;
+}
+.stick-wrap {
+  height: 300px;
+}
+.stick {
+  position: sticky;
+  margin-top: 20px;
+  top: 0;
+  z-index: 500;
+  text-align: center;
+  background: rgba(237, 7, 7, 0.778);
+  color: white;
+  border: 5px solid red;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 40px;
+}
+/* MULTICOL */
+.multi-col {
+  column-count: 3;
+  /* column-width: 200px */
+  column-gap: 80px;
+  column-rule: 1px solid red;
+}
+/* TABLE */
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+.form-mini {
+  display: table;
+}
+
+.form-mini div {
+  display: table-row;
+}
+
+.form-mini label,
+.form-mini input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+.form-mini label {
+  width: 200px;
+  padding-right: 5%;
+  text-align: right;
+}
+
+.form-mini input {
+  width: 300px;
+}
+
+.form-mini p {
+  display: table-caption;
+  caption-side: bottom;
+  width: 300px;
+  color: #999;
+  font-style: italic;
+}
+/* SECTION 14 */
+.cycle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: blue;
+}
+.cycle-mini {
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+}
+.wrap4 {
+  position: relative;
+}
+.round14, .cycle, .cycle-mini {
+  position: absolute;
+  z-index: 1;
+}
+.cycle {
+  z-index: 2;
+}
+/* SECTION 15 */
+.animate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cycle-rotate {
+  width: 80px;
+  height: 80px;
+  border: 6px solid red;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: rotateCycle 0.7s linear infinite;
+}
+
+.run-rotate {
+  width: 400px;
+  height: 50px;
+  background-color: #aaaaaa;
+  position: relative;
+}
+.run-mini {
+  height: 100%;
+  width: 40px;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: runMini 0.7s linear infinite alternate;
+}
+.cycle-animate {
+  width:120px;
+  height: 120px;
+  background-color: #aaaaaa;
+  border-radius: 50%;
+}
+.cycle-skew {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: red;
+  animation: skewCycle 0.7s linear infinite alternate;
+}
+
+@keyframes rotateCycle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes runMini {
+  0% {
+    left: 0;
+  }
+  50% {
+    left:50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 100%;
+    transform: translateX(-100%);
+  }
+}
+@keyframes skewCycle {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(50%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
 /* section16 */
