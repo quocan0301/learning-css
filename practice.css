@@ -36,7 +36,8 @@ ol {
   margin-bottom: 1em;
 }
 
-li {
+li,
+p {
   margin-bottom: 0.5em;
 }
 
@@ -71,30 +72,38 @@ main {
 /* section7 */
 #section7 ul .color p {
   color: red;
-} 
+}
+
 #section7 ul .f-size p {
   font-size: 12px;
-} 
+}
+
 #section7 ul .f-fam p {
   font-family: Arial, Times, sans-serif;
-} 
+}
+
 #section7 ul .bg-color p {
   background-color: cyan;
-} 
+}
+
 #section7 ul .border p {
   border: 1px solid;
-} 
+}
+
 #section7 ul .width p {
   background-color: cyan;
   width: 200px;
-} 
+}
+
 #section7 ul .height p {
   background-color: cyan;
   height: 200px;
-} 
+}
+
 #section7 ul .text-dec p {
   text-decoration: underline;
-} 
+}
+
 /* section8 */
 /* section9 */
 /* section10 */
@@ -330,7 +339,6 @@ th {
   background-repeat: repeat-x;
   background-size: 100px;
   background-position: center;
-
 }
 
 .horusoftaceae-logo-2:hover {
