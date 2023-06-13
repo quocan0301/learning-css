@@ -94,18 +94,262 @@
       </section>
       <section id="section5">
         <h2>5. CSS Selectors</h2>
-        <div class="subsection" id="section5a">
+        <ol>
+        <li><h3>Simple CSS Selectors</h3>
+        <h4>a. Element selector</h4>
+        <div class="subsection">
             <p>Element selector: chọn các phần tử HTML dựa trên tên phần tử.</p>
             <pre><code class="language-html">p {
-      text-align: center;
-      color: red;
-    }</code></pre>
+  text-align: center;
+  color: red;
+}</code></pre>
         </div>
-        <div class="ele-selector"><p>đỏ giữa</p></div>
+        <h4>b. Id selector</h4>
+        <div class="subsection">
+          <p>CSS id Selector: chọn các phần tử HTML dựa trên id của các phần tử (#).</p>
+          <pre><code class="language-html">#para1 {
+  text-align: center;
+  color: red;
+}</code></pre>
+      </div>
+        <h4>c. Class selector</h4>
+        <div class="subsection">
+          <p>CSS class Selector: chọn các phần tử HTML dựa trên tên class của các phần tử (.).</p>
+          <pre><code class="language-html">.center {
+  text-align: center;
+  color: red;
+  }</code></pre>
+          <p>Có thể chỉ định rằng cụ thể những phần tử HTML sẽ bị ảnh hưởng bởi trong một lớp(&lt;element&gt;.&lt;class&gt;).</p>
+          <pre><code class="language-html">p.center {
+  text-align: center;
+  color: red;
+  }</code></pre>
+        </div>
+        <h4>d. Universal selector</h4>
+        <div class="subsection">
+          <p>CSS Universal Selector: chọn tất cả các phần tử HTML (*).</p>
+          <pre><code class="language-html">*{
+  text-align: center;
+  color: red;
+}</code></pre>
+      </div>
+      <h4>e. Grouping selector</h4>
+        <div class="subsection">
+          <p>CSS Grouping Selector: chọn các phần tử HTML để định dạng chung (,).</p>
+          <pre><code class="language-html">h1, h2, p {
+  text-align: center;
+  color: red;
+}</code></pre>
+      </div></li>
+      <li><h3>CSS Combinators</h3>
+        <h4>a. Descendant Selector</h4>
+        <div class="subsection">
+          <p>CSS Descendant Selector: chọn phần tử con là con cháu của một phần tử cụ thể được chỉ định.</p>
+          <pre><code class="language-html">div p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>b. Child Selector</h4>
+        <div class="subsection">
+          <p>CSS Child Selector: chỉ chọn phần tử là phần tử con của một phần tử cụ thể được chỉ định.(&gt;)</p>
+          <pre><code class="language-html">div > p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>c. Adjacent Sibling Selector</h4>
+        <div class="subsection">
+          <p>CSS CAdjacent Sibling Selector: chọn phần tử anh em liền kề phía sau một phần tử cụ thể được chỉ định.(+)</p>
+          <pre><code class="language-html">div + p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>d. General Sibling Selector</h4>
+        <div class="subsection">
+          <p>CSS General Sibling Selector: chọn tất cả phần tử anh em liền kề phía sau một phần tử cụ thể được chỉ định.(~)</p>
+          <pre><code class="language-html">div + p {
+  background-color: yellow;
+}</code></pre>
+        </div>
+      </li>
+      <li><h3>CSS Pseudo-classes</h3>
+        <h4>a. Anchor Pseudo-classes</h4>
+        <div class="subsection">
+          <p>CSS Anchor Pseudo-classes: Các lớp giả này cho phép bạn xác định trạng thái hoặc vị trí của các liên kết trong tài liệu.</p>
+          <pre><code class="language-html">/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}</code></pre>
+        <p>Lưu ý: a:hover PHẢI đặt sau a:link và a:visited trong định nghĩa CSS để có hiệu quả! a:active PHẢI đặt sau a:hover 
+          trong định nghĩa CSS để có hiệu quả! Tên lớp giả không phân biệt chữ hoa chữ thường</p>
+        </div>
+        <h4>b. The :first-child Pseudo-class</h4>
+        <div class="subsection">
+          <p>CSS The :first-child Pseudo-class: chọn phần tử con đầu tiên</p>
+          <pre><code class="language-html">p:first-child {
+  color: blue;
+}</code></pre>
+          <p>Chọn phần tử con đầu tiên trong một phần tử cụ thể</p>
+          <pre><code class="language-html">p i:first-child {
+  color: blue;
+}</code></pre>
+          <p>Chọn tất cả phần tử cụ thể trong phần tử con đầu tiên</p>
+          <pre><code class="language-html">p:first-child i {
+  color: blue;
+}</code></pre>
+        </div>
+      </li>
+      <li><h3>CSS Pseudo-elements</h3>
+        <h4>a. The ::first-line Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::first-line Pseudo-element: được sử dụng để thêm một kiểu dáng đặc biệt cho dòng đầu tiên của một đoạn văn bản.</p>
+          <pre><code class="language-html">p::first-line {
+  color: #ff0000;
+}</code></pre>
+        </div>
+        <h4>b. The ::first-letter Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::first-letter Pseudo-element: được sử dụng để thêm một kiểu dáng đặc biệt cho kí tự đầu tiên của một đoạn văn bản.</p>
+          <pre><code class="language-html">p::first-letter {
+  color: #ff0000;
+}</code></pre>
+        </div>
+        <h4>c. The ::before Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::before Pseudo-element: để chèn nội dung nào đó trước nội dung của một phần tử.</p>
+          <pre><code class="language-html">p::before {
+  content: url(smiley.gif);
+}</code></pre>
+        </div>
+        <h4>d. The ::after Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::after Pseudo-element: để chèn nội dung nào đó sau nội dung của một phần tử.</p>
+          <pre><code class="language-html">p::after {
+  content: url(smiley.gif);
+}</code></pre>
+        </div>
+        <h4>e. The ::marker Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::marker Pseudo-element: để chọn các chỉ mục của danh sách</p>
+          <pre><code class="language-html">p::marker {
+  color: red;
+}</code></pre>
+        </div>
+        <h4>f. The ::selection Pseudo-element</h4>
+        <div class="subsection">
+          <p>CSS The ::selection Pseudo-element: nhũng phần tử được chọn, tô đậm bởi người dùng</p>
+          <pre><code class="language-html">p::selection {
+  color: red;
+}</code></pre>
+        </div>
+      </li>
+      <li><h3>CSS Attribute Selectors</h3>
+        <h4>a. [attribute] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute] Selector: chọn những phần tử chứa thuộc tính cụ thể.</p>
+          <pre><code class="language-html">a[target] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>b. [attribute="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị cụ thể.</p>
+          <pre><code class="language-html">a[target="_blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>c. [attribute~="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute~="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa từ cụ thể (cách nhau bằng space).</p>
+          <pre><code class="language-html">[target~="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>d. [attribute|="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute|="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa từ cụ thể (cách nhau bằng -).</p>
+          <pre><code class="language-html">[target|="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>e. [attribute^="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute^="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị bắt đầu bằng chuỗi kí tự cụ thể.</p>
+          <pre><code class="language-html">[target^="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>f. [attribute$="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute$="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị kết thúc bằng chuỗi kí tự cụ thể.</p>
+          <pre><code class="language-html">[target$="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+        <h4>g. [attribute*="value"] Selector</h4>
+        <div class="subsection">
+          <p>CSS [attribute*="value"] Selector: chọn những phần tử chứa thuộc tính có giá trị chứa chuỗi kí tự cụ thể.</p>
+          <pre><code class="language-html">[target*="blank"] {
+  background-color: yellow;
+}</code></pre>
+        </div>
+      </li>
+      </ol>
       </section>
       <section id="section6">
+        <h2>6. CSS Rule Priority</h2>
+        <ol>
+        <li><h3>Specificity</h3>
+          <p>Một giá trị định danh độ ưu tiên của các quy tắc CSS. Nó được biểu diễn bằng một bộ giá trị có 
+            4 con số (a, b, c, d), trong đó mỗi con số đại diện cho một loại chọn phần tử hoặc quy tắc khác nhau.
+             Các con số này xác định độ ưu tiên của một quy tắc CSS khi áp dụng kiểu dáng.</p>
+          <p>Thứ tự ưu tiên của các loại chọn phần tử và quy tắc trong đặc thù là:</p>
+          <ol>
+            <li>Inline style: a = 1 </li>
+            <li>ID selectors: b = số lượng ID selectors trong quy tắc</li>
+            <li>Class selectors, attribute selectors, và pseudo-classes: c = số lượng class selectors, attribute selectors, và pseudo-classes trong quy tắc</li>
+            <li>Element selectors và pseudo-elements: d = số lượng element selectors và pseudo-elements trong quy tắc</li>
+          </ol>
+          <p>Ví dụ:</p>
+          <ul>
+            <li>h1: (0,0,0,1)</li>
+            <li>.container: (0,0,1,0)</li>
+            <li>#head: (0,1,0,0)</li>
+            <li>body .container p: (0,0,1,2)</li>
+            <li>a:hover: (0,0,1,1)</li>
+          </ul>
+        </li>
+        <p>Đặc thù cao nhất sẽ có ưu tiên cao nhất và được áp dụng khi có xung đột giữa các quy tắc. Ví dụ: hai quy tắc với đặc thù 
+          (0,1,1,0) và (0,0,2,1) được áp dụng cho cùng một phần tử, quy tắc có đặc thù (0,0,2,1) sẽ có độ ưu tiên cao hơn và được áp dụng.</p>
+        <li><h3>Order of declaration</h3>
+          <p>Thứ tự khai báo trong CSS là cách thứ tự các quy tắc CSS được khai báo trong tệp CSS hoặc CSS của một trang HTML. 
+            Thứ tự này quyết định ưu tiên áp dụng các quy tắc CSS khi có các quy tắc xung đột hoặc ghi đè lên nhau.</p>
+          <p>Một số quy định thứ tự khai báo trong CSS:</p>
+          <ul>
+            <li>Thứ tự từ trên xuống dưới: Các quy tắc CSS được áp dụng theo thứ tự từ trên xuống dưới trong tệp CSS hoặc phần khai báo CSS.</li>
+            <li>Quy tắc sau ghi đè lên: Nếu hai quy tắc có cùng đặc thù, thì quy tắc được khai báo sau sẽ ghi đè lên quy tắc được khai báo trước đó.</li>
+          </ul>
+        </li>
+      </ol>
       </section>
       <section id="section7">
+        <h2>7. CSS Attribute</h2>
+        <p>Attribute(thuộc tính) bao gồm các cặp "tên thuộc tính" và "giá trị" được sử dụng để kiểm soát và định dạng các phần tử HTML trên trang web.</p>
+        <p>Mỗi thuộc tính CSS có một tên đặc trưng và có thể có một hoặc nhiều giá trị.</p>
       </section>
       <section id="section8">
         <h2>8. Styling Box</h2>
