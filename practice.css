@@ -14,7 +14,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+li,
+pre {
   margin-bottom: 0.5em;
 }
 
@@ -28,32 +31,28 @@ a:hover {
   text-decoration: underline;
 }
 
-p,
-div {
-  margin-bottom: 0.5em;
-}
-
 ul,
 ol {
   padding-left: 1.5em;
   margin-bottom: 1em;
 }
-li {
-  margin-bottom: 0.5em;
-}
 
 /*---Main style---*/
 .container {
   padding: 1em;
-}
+} 
 section {
   margin-bottom: 2em;
+}
+article {
+  margin-bottom: 1em;
 }
 main {
   padding: 1em 0;
 }
-.section-desc {
+.subsection {
   padding-left: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 /* section1 */

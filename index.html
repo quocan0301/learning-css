@@ -16,7 +16,7 @@
       <h2>Mục lục</h2>
       <ol>
         <li><a href="#section1">Lịch sử về CSS</a></li>
-        <li><a href="#section2">Những cơ bản về CSS</a></li>
+        <li><a href="#section2">Tiêu chuẩn CSS</a></li>
         <li><a href="#section3">Cách CSS hoạt động</a></li>
         <li><a href="#section4">Cú pháp CSS</a></li>
         <li><a href="#section5">CSS Selectors</a></li>
@@ -39,30 +39,33 @@
         <header>
           <h2>1. Lịch sử về CSS</h2>
         </header>
-        <div class="section-desc">
+        <div class="subsection">
           <article>
             <header>
               <h3>a. CSS là gì?</h3>
             </header>
-            <div class="section-desc">
+            <div class="subsection">
               <p>CSS là chữ viết tắt của Cascading Style Sheets, có nghĩa là các tập tin định kiểu theo tầng.</p>
-              <p>CSS có các code để tạo kiểu cho nội dung trang web, cho phép tạo ra các trang web đẹp mắt.</p>
+              <p>CSS là một ngôn ngữ quy định cách trình bày cho các tài liệu viết bằng HTML.</p>
+              <p>Về cơ bản, các trang HTML như bộ xương - khuôn khổ cơ bản - của một trang web - trong khi các file CSS
+                sẽ cụ thể hóa các thành phần của một trang nên được hiển thị như thế nào. CSS cho phép kiểm soát phông
+                chữ, màu chữ, kiểu nền…, của một trang HTML.</p>
+              <p>CSS đã giúp cho việc thay đổi phong cách của một trang Web đơn giản hơn và đỡ tốn thời gian hơn, có thể
+                thực hiện sự thay đổi trên một mục nào đó và sau đó ứng dụng sự thay đổi này trên toàn bộ trang Web thay
+                vì phải thực hiện trên từng mục riêng lẻ như trước đây.</p>
               <p>Tương tự như HTML thì CSS không phải là ngôn ngữ lập trình, mà là style sheet language (ngôn ngữ định
-                dạng
-                trang). CSS sẽ tạo kiểu cho các phần tử của HTML một cách có chọn lọc.</p>
+                dạng trang). CSS sẽ tạo kiểu cho các phần tử của HTML một cách có chọn lọc.</p>
               <p>Khái niệm của nó được bắt nguồn bởi Håkon Wium Lie vào năm 1994. Vào tháng 12 năm 1996, CSS đã được W3C
-                tạo
-                ra một đặc tả và ngày nay cho phép các nhà phát triển web thay đổi bố cục và diện mạo của các trang web.
+                tạo ra một đặc tả và ngày nay cho phép các nhà phát triển web thay đổi bố cục và diện mạo của các trang
+                web.
               </p>
-              <p>CSS lần đầu tiên được đề xuất bởi Håkon Wium Lie vào ngày 10 tháng 10 năm 1994.</p>
             </div>
           </article>
           <article>
             <header>
               <h3>b. Lịch sử phiên bản</h3>
             </header>
-            <div class="section-desc">
-              <p>Có 3 phiên bản chính:</p>
+            <div class="subsection">
               <ul>
                 <li>
                   <p>CSS W3C phiên bản đầu tiên (CSS1) được xuất bản vào ngày 17 tháng 12 năm 1996.</p>
@@ -77,9 +80,8 @@
                 <li>
                   <p>CSS 3 được chia thành nhiều tài liệu riêng biệt gọi là “module”. Mỗi module thêm các khả năng mới
                     hoặc mở rộng các tính năng được xác định trong CSS 2, duy trì khả năng tương thích ngược.</p>
-                  <p>Bản nháp CSS 3 sớm nhất đã được xuất bản vào tháng 6 năm 1999. CSS3 là phiên bản CSS (Cascading
-                    Style Sheets) thay thế CSS2 . Nó giới thiệu các bộ chọn và thuộc tính mới cho phép linh hoạt hơn với
-                    bố cục và trình bày trang.</p>
+                  <p>Bản nháp CSS 3 sớm nhất đã được xuất bản vào tháng 6 năm 1999. CSS3 là phiên bản thay thế CSS2. Nó
+                    giới thiệu các bộ chọn và thuộc tính mới cho phép linh hoạt hơn với bố cục và trình bày trang.</p>
                 </li>
               </ul>
             </div>
@@ -87,21 +89,166 @@
         </div>
       </section>
       <section id="section2">
+        <header>
+          <h2>2. Tiêu chuẩn CSS</h2>
+        </header>
+        <div class="subsection">
+          <p>Tiêu chuẩn Cascading Style Sheets (CSS) - Giao thức định kiểu theo tầng là một tiêu chuẩn được phát triển
+            và duy trì bởi Hiệp hội Web toàn cầu (World Wide Web Consortium - W3C). Ban đầu CSS là một cơ chế xác định
+            kiểu đơn giản cho phép đính kèm kiểu (ví dụ phông, màu sắc và khoảng cách) vào tài liệu HTML, sau này được
+            mở rộng thêm nhiều tính năng. Một trong những đặc tính cơ bản của CSS là xếp tầng các kiểu hay còn gọi là
+            định kiểu theo tầng.</p>
+          <p><strong>Nguyên tắc thiết kế CSS theo tiêu chuẩn của W3C:</strong></p>
+          <p>CSS dựa trên một số nguyên tắc thiết kế sau:</p>
+          <ul>
+            <li><i>Tương thích xuôi và tương thích ngược.</i><br />
+              Các thiết bị/chương trình trên máy người sử dụng sử dụng CSS 2.1
+              có khả năng hiểu được CSS 1. Các thiết bị/chương trình trên máy người sử dụng sử dụng CSS 1 có khả năng
+              hiểu được CSS 2.1 và bỏ đi những phần không hiểu</li>
+            <li><i>Bổ sung cho tài liệu có cấu trúc.</i><br />
+              Ví dụ các kiểu CSS bổ sung cho tài liệu HTML và các ứng dụng XML. Việc thay đổi kiểu cần dễ
+              dàng và ít sự thay đổi hoặc không ảnh hưởng đến việc trang trí.</li>
+            <li><i>Độc lập nhà cung cấp, nền tảng và thiết bị.</i><br />
+              Bản thân các kiểu cũng độc lập với nhà cung cấp và nền tảng
+              nhưng CSS cho phép xác định kiểu cho một nhóm thiết bị (ví dụ laptop, tablet, mobile).</li>
+            <li>Khả năng duy trì.<br />
+              Bằng việc xác định kiểu từ những tài liệu, người quản trị có thể đơn giản hóa việc duy trì trang web và
+              giữ được sự thống nhất của giao diện. Ví dụ, nếu thay đổi màu nền, chỉ cần thay đổi một tập tin.</li>
+            <li><i>Khả năng đơn giản.</i><br />
+              CSS là một ngôn ngữ định kiểu đơn giản cho cả việc đọc và viết đối với con người. Các thuộc tính CSS được
+              giữ độc lập với nhau để cho phép có thể mở rộng tối đa.</li>
+            <li>Hiệu năng mạng (hiệu suất kết nối mạng).<br />
+              CSS cung cấp khả năng mã hóa gọn nhẹ phương thức biểu diễn nội dung. So sánh với những tập tin hình ảnh và
+              âm thanh thường được sử dụng, các kiểu thường giảm kích thước nội dung, do đó kết nối mạng yếu cũng có thể
+              mở được.</li>
+            <li><i>Khả năng linh động.</i><br />
+              CSS có thể được áp dụng theo nhiều cách. Đặc tính quan trọng là khả năng xếp tầng thông tin kiểu được xác
+              định trong kiểu mặc định, kiểu của người dùng, kiểu được liên kết, tiêu đề tài liệu và trong các thuộc
+              tính cho các phần tử tạo nên nội dung tài liệu.</li>
+            <li><i>Nội dung phong phú.</i><br />
+              Cung cấp cho người xây dựng một tập các hiệu ứng sửa đổi để làm tăng nội dung web như là một phương tiện
+              thể hiện.</li>
+            <li><i>Thay đổi ngôn ngữ kết hợp.</i><br />
+              Tập các thuộc tính CSS tạo nên một mô hình định dạng thống nhất cho việc biểu diễn hình ảnh và âm thanh.
+              Mô hình định dạng có thể truy cập thông qua ngôn ngữ CSS nhưng cũng có thể kết hợp với các ngôn ngữ khác.
+              Ví dụ, một chương trình JavaScript có thể tự động thay đổi giá trị của thuộc tính ‘color’ của một phần tử
+              cố định.</li>
+            <li><i>Khả năng truy cập.</i><br />
+              Một số đặc tính CSS sẽ làm cho web dễ truy cập hơn đối với những người khuyết tật.
+            </li>
+          </ul>
+          <p>Ngoài ra, khi viết CSS, sẽ có một số cách viết tiểu chuẩn được quy ước để đảm bảo được tính dễ đọc, chuẩn
+            nhất có thể.</p>
+          <p>Một trong số đó là kỹ thuật OOCSS (Object Oriented CSS) hay còn gọi là CSS hướng đối tượng. Một ứng dụng cụ
+            thể cụ thể của kỹ thuật này là BEM. BEM là viết tắt của Block-Element-Modifier, là một tiêu
+            chuẩn quy ước đặt tên cho các tên lớp CSS. BEM giúp cho việc code Frontend dễ đọc và dễ hiểu hơn, dễ làm
+            việc và dễ mở rộng cũng như bảo trì khi làm việc với CSS.</p>
+          <p>Việc đặt tên theo chuẩn giúp các lập trình viên frontend hiểu được đoạn code đó có ý nghĩa gì, nó thực
+            hiện nhiệm vụ gì. Từ đó những lập trình viên khác khi đọc vào code của bạn họ cũng hiểu được bạn đang
+            làm gì, từ đó dễ dàng phân tích, thay đổi và quản lý hơn sau này.</p>
+        </div>
       </section>
       <section id="section3">
+        <header>
+          <h1>3. Cách CSS hoạt động</h1>
+        </header>
+        <div class="subsection">
+          <p>Khi một trình duyệt hiển thị một tài liệu, nó phải kết hợp nội dung của tài liệu với thông tin kiểu của nó.
+            Nó sẽ xử lý tài liệu theo một số giai đoạn tóm tắt như sau:</p>
+          <ol>
+            <li>
+              <p>Trình duyệt tải HTML (ví dụ như lấy từ trên mạng).</p>
+            </li>
+            <li>
+              <p>Trình duyệt chuyển đổi HTML thành DOM (<i>Document Object Model</i>). DOM đại diện cho tài liệu trong
+                bộ nhớ của máy tính.</p>
+            </li>
+            <li>
+              <p>Trình duyệt tìm nạp hầu hết các tài nguyên được liên kết bởi tài liệu HTML, ví dụ như hình ảnh, video,
+                và CSS. JavaScript sẽ được nạp.
+              </p>
+            </li>
+            <li>
+              <p>
+                Trình duyệt phân tích cú pháp CSS và sắp xếp các quy tắc khác nhau theo từng loại bộ chọn thành các
+                "nhóm" khác nhau, ví dụ: element, class, id, v.v... Dựa trên các bộ chọn được tìm thấy, nó
+                tìm ra quy tắc nào sẽ được áp dụng cho node nào trong DOM và gắn kiểu cho chúng theo yêu cầu (bước trung
+                gian này được gọi là render tree).
+              </p>
+            </li>
+            <li>
+              <p>
+                Render tree được đặt trong cấu trúc mà nó sẽ xuất hiện sau khi các quy tắc đã được áp dụng cho nó.
+              </p>
+            </li>
+            <li>
+              <p>
+                Nội dung trực quan của trang sẽ được hiển thị trên màn hình (công đoạn này được gọi là "vẽ").
+              </p>
+              <img src="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works/rendering.svg"
+                alt="">
+            </li>
+          </ol>
+          <p>
+          <h3>DOM</h3>
+          </p>
+          <p>DOM là tên gọi viết tắt của (Document Object Model - Mô hình Các Đối tượng Tài liệu), là một chuẩn
+            được định nghĩa bởi W3C (Tổ Chức Web Toàn Cầu - World Wide Web Consortium). DOM là một giao diện lập trình
+            cho các tài liệu web, nó đại diện cho trang để các chương trình có thể thay đổi cấu trúc, kiểu và nội dung.
+            DOM đại diện cho tài liệu dưới dạng các nodes và đối tượng; theo cách đó, các ngôn ngữ lập trình (ví dụ
+            JavaScript) có thể
+            tương tác với trang.</p>
+          <p>
+            Khi một trang web được tải, trình duyệt sẽ tạo ra một DOM của trang.
+          </p>
+          <p>
+            DOM có cấu trúc dạng cây. Mô hình HTML DOM được xây dựng như một cái cây của các đối tượng. Mỗi phần tử,
+            thuộc tính, và văn bản trong ngôn ngữ đánh dấu (HTML) trở thành một node DOM trong cấu trúc cây này. Các
+            node này được xác định bởi mối quan hệ với những nodes DOM khác. Một số phần tử là cha của các node con, và
+            các node con có anh chị em.
+          </p>
+          <img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="">
+        </div>
       </section>
       <section id="section4">
+        <header>
+          <h2>4. Cú pháp CSS</h2>
+          <div class="subsection">
+            <p>
+              Một bộ quy tắc CSS bao gồm một bộ chọn (selector) và một khối khai báo (declaration):
+            </p>
+            <h3>Cú pháp CSS:</h3>
+            <img src="https://www.w3schools.com/css/img_selector.gif" alt="">
+            <p>Bộ chọn (Selector) chỉ tới các phần tử HTML mà bạn áp dụng kiểu.</p>
+            <p>Khối mô tả (Declaration) bao gồm một hoặc nhiều mô tả phân tách nhau bằng dấu chấm phẩy.</p>
+            <p>Mỗi khai báo bao gồm một tên thuộc tính CSS và một giá trị, phân tách bằng dấu hai chấm.</p>
+            <p>Các khai báo CSS luôn luôn kết thúc với một dấu chấm phẩy, và các khối khai báo đặt trong một cặp ngoặc nhọn ({}).</p>
+            <p>Ví dụ:</p>
+            <pre><code class="language-css">p {
+  color: red;
+  text-align: center;
+}</code></pre>
+            <p>Giải thích:</p>
+            <ul>
+              <li>p là một bộ chọn CSS (trỏ tới phần tử HTML mà bạn muốn áp dụng kiểu:)</li>
+              <li>color là một thuộc tính, và red là giá trị thuộc tính</li>
+              <li>text-align là một thuộc tính, và center là giá trị thuộc tính</li>
+            </ul>
+          </div>
+        </header>
       </section>
       <section id="section5">
         <h2>5. CSS Selectors</h2>
         <div class="subsection" id="section5a">
-            <p>Element selector: chọn các phần tử HTML dựa trên tên phần tử.</p>
-            <pre><code class="language-html">p {
+          <p>Element selector: chọn các phần tử HTML dựa trên tên phần tử.</p>
+          <pre><code class="language-html">p {
       text-align: center;
       color: red;
     }</code></pre>
         </div>
-        <div class="ele-selector"><p>đỏ giữa</p></div>
+        <div class="ele-selector">
+          <p>đỏ giữa</p>
+        </div>
       </section>
       <section id="section6">
       </section>
@@ -124,7 +271,8 @@
         <div style="text-align:center">Cấu trúc cơ bản của một phần tử flexbox với 3 flex item</div>
         <ul>
           <li>Flex container: Chính là flexbox, nơi chứa các flex item bên trong nó.</li>
-          <li>Main axis: trục quyết định hướng mà các flex item sẽ hiển thị (mặc định từ trái qua phải); cross axis: trục
+          <li>Main axis: trục quyết định hướng mà các flex item sẽ hiển thị (mặc định từ trái qua phải); cross axis:
+            trục
             còn lại của flexbox, vuông góc với main axis.</li>
           <li>Cross start: vị trí bắt đầu của trục cross axis; cross end: vị trí kết thúc của trục
             cross axis.</li>
@@ -181,7 +329,7 @@
                 <div>3</div>
               </div>
             </li>
-    
+
             <li>flex-wrap: xác định flex item có được phép xuống dòng hay không.
               <pre>
                 <code class="language-css">
@@ -245,7 +393,6 @@
                 </code>
               </pre>
             </li>
-            </li>
             <li>justify-content: xác định cách thức căn chỉnh các flex item theo trục ngang.
               <pre>
                 <code class="language-css">
@@ -300,7 +447,7 @@
                 <div>3</div>
               </div>
             </li>
-    
+
             <li>align-items: xác định cách thức căn chỉnh các flex item theo chiều của cross axis.
               <pre>
                 <code class="language-css">
@@ -345,7 +492,7 @@
                 <div style="height: 90px">3</div>
               </div>
             </li>
-    
+
             <li>align-content: xác định cách thức căn chỉnh các flex line theo chiều của cross axis.
               <pre>
                 <code class="language-css">
@@ -372,7 +519,7 @@
                 <div>6</div>
                 <div>7</div>
                 <div>8</div>
-    
+
               </div>
               <p>+ align-content: flex-end</p>
               <div style="height: 200px" class="flex-2 ac-end">
@@ -430,7 +577,8 @@
                 <div>8</div>
               </div>
             </li>
-            <li>order: Sắp xếp thứ tự hiển thị cho các flex item theo quy tắc: phần tử có giá trị order nhỏ hơn sẽ xuất hiện
+            <li>order: Sắp xếp thứ tự hiển thị cho các flex item theo quy tắc: phần tử có giá trị order nhỏ hơn sẽ xuất
+              hiện
               trước. <br>
               Giá
               trị order
@@ -446,8 +594,8 @@
                 &lt;/div&gt;
               </code>
             </pre>
-            <p>=> Do giá trị order mặc định là 0, nên 5 sẽ xuất hiện trước 3 do -1 < 0. Tiếp theo đó lần lượt là 4, 1, 2 do
-                1 < 2 < 4. </p>
+            <p>=> Do giá trị order mặc định là 0, nên 5 sẽ xuất hiện trước 3 do -1 < 0. Tiếp theo đó lần lượt là 4, 1, 2
+                do 1 < 2 < 4. </p>
                 <div class="flex">
                   <div style="order: 2">1</div>
                   <div style="order: 4">2</div>
@@ -464,10 +612,13 @@
         <ol>
           <li>
             <strong>Positions</strong>
-            <p><strong>Concept: </strong>là thuộc tính sử dụng để kiểm soát cách các phần tử HTML hiển thị và được định vị trên trang web. Dưới đây là một số giá trị phổ biến của position: </p>
+            <p><strong>Concept: </strong>là thuộc tính sử dụng để kiểm soát cách các phần tử HTML hiển thị và được định
+              vị trên trang web. Dưới đây là một số giá trị phổ biến của position: </p>
             <ol>
               <li>
-                <strong>Static: </strong>là giá trị mặc định của positon. Các phần tử sẽ được hiển thị theo trình tự tự nhiên của tài liệu HTML và sẽ không bị ảnh hưởng bởi các thuộc tính vị trí khác như: <strong>top, bottom, right, left.</strong>
+                <strong>Static: </strong>là giá trị mặc định của positon. Các phần tử sẽ được hiển thị theo trình tự tự
+                nhiên của tài liệu HTML và sẽ không bị ảnh hưởng bởi các thuộc tính vị trí khác như: <strong>top,
+                  bottom, right, left.</strong>
                 <div class="wrap wrap1">
                   <div class="round round1"></div>
                   <div class="round round2"></div>
@@ -475,7 +626,9 @@
                 </div>
               </li>
               <li>
-                <strong>Relative: </strong>các phần tử sẽ được sẽ được định vị tương đối so với vị trí ban đầu của nó. Bằng cách sử dụng các thuộc tính top, bottom, left, right, phần tử có thể được di chuyển từ vị trí ban đầu một cách tương đối.
+                <strong>Relative: </strong>các phần tử sẽ được sẽ được định vị tương đối so với vị trí ban đầu của nó.
+                Bằng cách sử dụng các thuộc tính top, bottom, left, right, phần tử có thể được di chuyển từ vị trí ban
+                đầu một cách tương đối.
                 <div class="wrap wrap2">
                   <div class="round round1 round11"></div>
                   <div class="round round2 round21"></div>
@@ -483,7 +636,9 @@
                 </div>
               </li>
               <li>
-                <strong>Absolute: </strong>các phần tử  sẽ được định vị tuyệt đối so với phần tử cha gần nhất có position khác static. Phần tử sẽ được di chuyển dựa trên các thuộc tính top, bottom, left, right. Nếu không có phần tử cha nào có position khác static, thì phần tử absolute sẽ dựa trên cửa sổ trình duyệt.
+                <strong>Absolute: </strong>các phần tử sẽ được định vị tuyệt đối so với phần tử cha gần nhất có position
+                khác static. Phần tử sẽ được di chuyển dựa trên các thuộc tính top, bottom, left, right. Nếu không có
+                phần tử cha nào có position khác static, thì phần tử absolute sẽ dựa trên cửa sổ trình duyệt.
                 <div class="wrap wrap3">
                   <div class="round round1 round12"></div>
                   <div class="round round2 round22"></div>
@@ -491,7 +646,9 @@
                 </div>
               </li>
               <li style="margin-top: 100px;">
-                <strong>Fixed: </strong>phần tử sẽ được định vị tuyệt đối so với cửa sổ trình duyệt. Nó sẽ không di chuyển khi người dùng cuộn trang. Để định rõ vị trí của phần tử fixed, ta sử dụng các thuộc tính top, bottom, left, right.
+                <strong>Fixed: </strong>phần tử sẽ được định vị tuyệt đối so với cửa sổ trình duyệt. Nó sẽ không di
+                chuyển khi người dùng cuộn trang. Để định rõ vị trí của phần tử fixed, ta sử dụng các thuộc tính top,
+                bottom, left, right.
                 <div class="menu">
                   <span>Item1</span>
                   <span>Item2</span>
@@ -503,16 +660,31 @@
           <li>
             <strong>Multiple-column layout</strong>
             <p>
-              Multiple-column layout trong CSS cho phép chia nội dung thành nhiều cột ngang, tạo ra một bố cục giống báo chí hoặc tạp chí. Đây là một cách tiện lợi để hiển thị nội dung dài mà không cần cuộn xuống hết trang.
+              Multiple-column layout trong CSS cho phép chia nội dung thành nhiều cột ngang, tạo ra một bố cục giống báo
+              chí hoặc tạp chí. Đây là một cách tiện lợi để hiển thị nội dung dài mà không cần cuộn xuống hết trang.
             </p>
             <p class="multi-col">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing
+              and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+              unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+              passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum
             </p>
-            <p><strong>Lưu ý </strong>multiple-column layout không được hỗ trợ trên tất cả các trình duyệt cũ, vì vậy bạn nên kiểm tra tính tương thích trình duyệt trước khi sử dụng. Đồng thời, cần cân nhắc về trải nghiệm di động và đảm bảo rằng nội dung vẫn đọc được và hiển thị tốt trên các thiết bị nhỏ hơn.</p>
+            <p><strong>Lưu ý </strong>multiple-column layout không được hỗ trợ trên tất cả các trình duyệt cũ, vì vậy
+              bạn nên kiểm tra tính tương thích trình duyệt trước khi sử dụng. Đồng thời, cần cân nhắc về trải nghiệm di
+              động và đảm bảo rằng nội dung vẫn đọc được và hiển thị tốt trên các thiết bị nhỏ hơn.</p>
           </li>
           <li>
             <strong>Float</strong>
-            <p>Thuộc tính Float CSS là một thuộc tính được sử dụng để chuyển một phần tử sang góc trái hoặc góc bên phải của không gian bao quanh nó. </p>
+            <p>Thuộc tính Float CSS là một thuộc tính được sử dụng để chuyển một phần tử sang góc trái hoặc góc bên phải
+              của không gian bao quanh nó. </p>
             <strong>Thuộc tính Float có thể bao gồm các giá trị dưới đây:</strong>
             <ul style="margin: 20px 0;">
               <li><strong>Left: </strong>Cố định phần tử HTML về phía bên trái.</li>
@@ -521,33 +693,58 @@
               <li><strong>Inherit: </strong>Phần tử kế thừa giá trị float của phần tử cha. </li>
             </ul>
             <p>
-              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
-              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
-              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho"
+                style="width:170px;height:170px; margin-left:15px;"> Nho là một loại quả mọng lấy từ các loài cây thân
+              leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục,
+              đỏ-tía
+              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản
+              xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ
+              đào và khi người ta nói đến rượu bồ
+              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera,
+              loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn
+              gốc từ các loài châu Mỹ và châu Á.
             </p>
             <p>
-              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;float: left;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
-              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
-              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho"
+                style="width:170px;height:170px; margin-left:15px;float: left;"> Nho là một loại quả mọng lấy từ các
+              loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam,
+              vàng, lục, đỏ-tía
+              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản
+              xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ
+              đào và khi người ta nói đến rượu bồ
+              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera,
+              loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn
+              gốc từ các loài châu Mỹ và châu Á.
             </p>
             <p style="margin-top: 120px;">
-              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho" style="width:170px;height:170px; margin-left:15px;float: right;"> Nho là một loại quả mọng lấy từ các loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam, vàng, lục, đỏ-tía
-              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ đào và khi người ta nói đến rượu bồ
-              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera, loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn gốc từ các loài châu Mỹ và châu Á.
+              <img src="https://demoweb.company/hoaqua/wp-content/uploads/2020/11/nho-den.jpg" alt="Quả nho"
+                style="width:170px;height:170px; margin-left:15px;float: right;"> Nho là một loại quả mọng lấy từ các
+              loài cây thân leo thuộc chi Nho (Vitis). Quả nho mọc thành chùm từ 6 đến 300 quả, chúng có màu đen, lam,
+              vàng, lục, đỏ-tía
+              hay trắng. Khi chín, quả nho có thể ăn tươi hoặc được sấy khô để làm nho khô, cũng như được dùng để sản
+              xuất các loại rượu vang, thạch nho, nước quả, mật nho, dầu hạt nho. Trong tiếng Trung, nó được gọi là bồ
+              đào và khi người ta nói đến rượu bồ
+              đào tức là rượu sản xuất từ quả nho. Phần lớn nho được thu hoạch từ loài được trồng là Vitis vinifera,
+              loài làm rượu vang châu Âu bản địa của vùng Địa Trung Hải và Trung Á. Một lượng nhỏ trái và rượu có nguồn
+              gốc từ các loài châu Mỹ và châu Á.
             </p>
           </li>
         </ol>
       </section>
       <section id="section14" style="margin-top: 120px;">
         <h3 class="sec14_head">14. About CSS Stacking Contexts</h3>
-        <p>Là một khái niệm quan trọng trong CSS để xác định cách các phần tử HTML được xếp chồng và hiển thị trên trang web. Mỗi phần tử HTML có một stacking context riêng, và cách chúng xếp chồng với nhau được quy định bởi một số quy tắc.</p>
+        <p>Là một khái niệm quan trọng trong CSS để xác định cách các phần tử HTML được xếp chồng và hiển thị trên trang
+          web. Mỗi phần tử HTML có một stacking context riêng, và cách chúng xếp chồng với nhau được quy định bởi một số
+          quy tắc.</p>
         <p>Một stacking context được tạo ra khi một phần tử thỏa mãn một trong những điều kiện sau: </p>
         <ol>
-          <li>Phần tử có một thuộc tính position không phải là static (như relative, absolute hoặc fixed) và một trong những thuộc tính sau đây được áp dụng: z-index, opacity nhỏ hơn 1, transform, ...</li>
+          <li>Phần tử có một thuộc tính position không phải là static (như relative, absolute hoặc fixed) và một trong
+            những thuộc tính sau đây được áp dụng: z-index, opacity nhỏ hơn 1, transform, ...</li>
           <li>Phần tử có một thuộc tính position là fixed hoặc sticky.</li>
           <li>Phần tử là một root của trang web (ví dụ: phần tử &lt;html&gt;).</li>
         </ol>
-        <p>Mỗi stacking context có một "độ sâu" được xác định bởi giá trị z-index của các phần tử trong nó. Phần tử với z-index lớn hơn sẽ được hiển thị trên phần tử với z-index nhỏ hơn.</p>
+        <p>Mỗi stacking context có một "độ sâu" được xác định bởi giá trị z-index của các phần tử trong nó. Phần tử với
+          z-index lớn hơn sẽ được hiển thị trên phần tử với z-index nhỏ hơn.</p>
         <strong>Expample: </strong>
         <div class="wrap4 wrap">
           <div class="round round1 round14"></div>
@@ -557,14 +754,18 @@
       </section>
       <section id="section15" style="margin-top:150px;">
         <h3>15. Animation</h3>
-        <p>CSS Animation là một công nghệ cho phép tạo ra các hiệu ứng chuyển động của các phần tử HTML. Cho phép điều chỉnh thuộc tính của một phần tử theo thời gian, tạo ra các hiệu ứng chuyển động.</p>
+        <p>CSS Animation là một công nghệ cho phép tạo ra các hiệu ứng chuyển động của các phần tử HTML. Cho phép điều
+          chỉnh thuộc tính của một phần tử theo thời gian, tạo ra các hiệu ứng chuyển động.</p>
         <p>Để tạo ra một Animation trong CSS, cần thực hiện các bước sau: </p>
         <ol>
           <li>
-            <p><strong>Định nghĩa Animation: </strong>Sử dụng <strong>@keyframes</strong> để định nghĩa các trạng thái của animation. Mỗi keyframe đại diện cho 1 trạng thái của phần tử tại 1 thời điểm cụ thể trong quá trình animation.</p>
+            <p><strong>Định nghĩa Animation: </strong>Sử dụng <strong>@keyframes</strong> để định nghĩa các trạng thái
+              của animation. Mỗi keyframe đại diện cho 1 trạng thái của phần tử tại 1 thời điểm cụ thể trong quá trình
+              animation.</p>
           </li>
           <li>
-            <p><strong>Áp dụng Animation: </strong>Sử dụng thuộc tính <strong>animation</strong> hoặc cá thuộc tính liên quan để áp dụng animation vào phần tử.</p>
+            <p><strong>Áp dụng Animation: </strong>Sử dụng thuộc tính <strong>animation</strong> hoặc cá thuộc tính liên
+              quan để áp dụng animation vào phần tử.</p>
           </li>
         </ol>
         <p>
@@ -576,11 +777,14 @@
         <strong>Trong đó: </strong>
         <ul>
           <li><strong>name: </strong>tên của animation được định nghĩa bằng @keyframes</li>
-          <li><strong>duration: </strong>thời gian hoàn thành animation, có thể là giá trị số (ex: 1s, 500ms, ...) hoặc 'infinite' để lặp vô hạn.</li>
+          <li><strong>duration: </strong>thời gian hoàn thành animation, có thể là giá trị số (ex: 1s, 500ms, ...) hoặc
+            'infinite' để lặp vô hạn.</li>
           <li><strong>timing-function: </strong>hàm thời gian, quyết định tốc độ chuyển động.</li>
           <li><strong>delay: </strong>độ trễ trước khi animation bắt đầu.</li>
-          <li><strong>iteration-count: </strong>số lần lặp lại của animation, có thể là giá trị số hoặc infinite để lặp vô hạn.</li>
-          <li><strong>direction: </strong>xác định cách animation chuyển động khi lặp lại. Nó quyết định animation sẽ chạy theo hướng nào và có đảo ngược hay không.</li>
+          <li><strong>iteration-count: </strong>số lần lặp lại của animation, có thể là giá trị số hoặc infinite để lặp
+            vô hạn.</li>
+          <li><strong>direction: </strong>xác định cách animation chuyển động khi lặp lại. Nó quyết định animation sẽ
+            chạy theo hướng nào và có đảo ngược hay không.</li>
           <li><strong>fill-mode: </strong>trạng thái của phần tử sau khi animation kết thúc.</li>
         </ul>
         <p><strong>Example: </strong></p>
@@ -595,6 +799,104 @@
         </div>
       </section>
       <section id="section16">
+        <header>
+          <h2>16. Preprocessors - SASS/SCSS</h2>
+        </header>
+        <div class="subsection">
+          <p><strong>CSS Preprocessors</strong> là ngôn ngữ tiền xử lý CSS. Là một ngôn ngữ kịch bản mở rộng của CSS và
+            được biên dịch thành cú pháp CSS giúp lập trình viên viết CSS nhanh hơn và có cấu trúc rõ ràng hơn. CSS
+            Preprocessor có thể giúp tiết kiệm thời gian viết CSS, dễ dàng bảo trì và phát triển CSS.
+          </p>
+          <p>
+            <strong>SASS/SCSS </strong>là các chương trình tiền xử lý CSS (<i>CSS Preprocessors</i>).
+          </p>
+          <p>
+            Ví dụ SCSS:
+          </p>
+          <pre><code class="language-scss">$gray-f3: #f3f3f3;
+.header {
+  color: $gray-f3;
+
+  &__inner {
+    border: 1px solid $gray-f3;
+    transform: translate(50%, -20%);
+  }
+}</code></pre>
+          <p>
+            Nội dung CSS được biên dịch từ SCSS trên:
+          </p>
+          <pre><code class="language-css">.header {
+  color: #f3f3f3;
+}
+.header__inner {
+  border: 1px solid #f3f3f3;
+  -webkit-transform: translate(50%, -20%);
+  transform: translate(50%, -20%);
+}</code></pre>
+          <p>
+            SASS (Syntactically Awesome StyleSheets) là một CSS Preprocessor giúp viết CSS nhanh hơn và có cấu trúc
+            rõ ràng hơn. Với SASS, lập trình viên có thể viết CSS theo thứ tự rõ ràng, quản lý các biến đã được định
+            nghĩa sẵn, các
+            class dùng chung hay có thể tự động nén tập tin CSS lại để tiết kiệm dung lượng. Tập tin SASS có phần mở
+            rộng là <strong>.sass</strong>.
+          </p>
+          <p>
+            Đến phiên bản SASS 3.0 được phát hành vào tháng 5/2010, một cú pháp mới được giới thiệu gọi là SCSS (Sassy
+            CSS) có cú pháp viết tương tự như cách viết CSS. Cú
+            pháp này được tạo ra nhằm thu hẹp khoảng cách giữa SASS và CSS bằng cách mang lại một thứ gì đó thân thiện
+            với CSS. Hiểu một cách
+            đơn giản, SCSS là một bản nâng cấp của SASS giúp chúng ta viết CSS một cách dễ dàng và dễ hiểu hơn. Tập tin
+            SASS có phần mở
+            rộng là <strong>.scss</strong>.
+          </p>
+          <p>
+            SASS và SCSS về bản chất là giống nhau, chỉ khác nhau ở cách viết. SASS sử dụng cú pháp không giống với CSS
+            (cú pháp của nó được xây dựng giống ngôn ngữ Ruby với cách viết thụt lề và không có dấu ngoặc nhọn '{}' hoặc
+            dấu chấm phẩy ';'),
+            trong khi SCSS sử dụng cú pháp giống với CSS.
+          </p>
+          <p>
+            SCSS được sử dụng rộng rãi hơn do nó có cú pháp giống với CSS thông thường và do đó dễ học hơn.
+          </p>
+          <p>
+            Các tính năng cơ bản của SASS:
+          </p>
+          <ul>
+            <li>
+              <p>Xếp chồng - Nested Rules<br />
+                SASS cho phép lồng các bộ chọn CSS theo cách tương tự như HTML.</p>
+            </li>
+            <li>
+              <p>Biến - variable<br />
+                SASS cho phép lưu trữ các biến.</p>
+            </li>
+            <li>
+              <p>Quy tắc Mixin<br />
+                Lệnh <strong>@mixin</strong> cho phép tạo code CSS để sử dụng lại trên toàn bộ trang web. Để sử dụng lại
+                thì sử dụng <strong>@include</strong></p>
+            </li>
+            <li>
+              <p>Kế thừa - Extends<br />
+                Lệnh <strong>@extend</strong> cho phép chia sẻ một tập hợp các thuộc tính CSS từ bộ chọn này sang bộ
+                chọn khác.</p>
+            </li>
+            <li>
+              <p>Import<br />
+                Tương tự CSS thì lệnh @import cho phép đưa nội dung của file khác vào. Tip: Không cần phải thêm phần mở
+                rộng của file khi khai báo.</p>
+            </li>
+            <li>
+              <p>Vòng lặp<br />
+                SASS cho phép viết vòng lặp với <strong>@for</strong> hoặc <strong>@while</strong> hoặc
+                <strong>@each</strong>
+              </p>
+            </li>
+            <li>
+              <p>Mệnh đề điều kiện IF<br />
+                SASS cũng cho phép viết câu lệnh rẽ nhánh với <strong>@if</strong></p>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
     <footer>---</footer>
@@ -602,3 +904,5 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 </body>
+
+</html>
