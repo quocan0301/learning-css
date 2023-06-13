@@ -1,14 +1,59 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-
   font-family: Tahoma, sans-serif;
 }
 
-code {
-  font-size: 18px;
+/*---GLOBAL STYLE---*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: blue;
+}
+a:hover {
+  color: purple;
+  text-decoration: underline;
+}
+
+p,
+div {
+  margin-bottom: 0.5em;
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+li {
+  margin-bottom: 0.5em;
+}
+
+/*---Main style---*/
+.container {
+  padding: 1em;
+}
+section {
+  margin-bottom: 2em;
+}
+main {
+  padding: 1em 0;
+}
+.section-desc {
+  padding-left: 0.5em;
 }
 
 /* section1 */
@@ -16,6 +61,10 @@ code {
 /* section3 */
 /* section4 */
 /* section5 */
+.ele-selector p {
+  text-align: center;
+  color: red;
+}
 /* section6 */
 /* section7 */
 /* section8 */
