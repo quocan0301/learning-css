@@ -23,7 +23,6 @@
         <li><a href="#section6">CSS Rule Priority</a></li>
         <li><a href="#section7">CSS Properties</a></li>
         <li><a href="#section8">CSS Styling Box</a></li>
-        <li><a href="#section9">CSS Specificity</a></li>
         <li><a href="#section10">CSS Transitions</a></li>
         <li><a href="#section11">CSS Units</a></li>
         <li><a href="#section12">CSS Flexbox./ Grid</a></li>
@@ -144,12 +143,6 @@
             thể của kỹ thuật này là BEM. BEM là viết tắt của Block-Element-Modifier, là một tiêu
             chuẩn quy ước đặt tên cho các tên lớp CSS. BEM giúp cho việc code Frontend dễ đọc và dễ hiểu hơn, dễ làm
             việc và dễ mở rộng cũng như bảo trì khi làm việc với CSS.</p>
-            <p>
-              <strong>Quy ước đặt tên của BEM:</strong>
-            </p>
-            <pre><code class="language-css">.block {}   /* Block */
-  .block__element {}  /* Element */
-  .block--modifier {}  /* Modifier */</code></pre>
           <p>
             <strong>Định nghĩa block, element, modifier:</strong>
           </p>
@@ -189,6 +182,12 @@
     }
     &__intro {}
 }</code></pre>
+          <p>
+            <strong>Quy ước đặt tên của BEM:</strong>
+          </p>
+          <pre><code class="language-css">.block {}   /* Block */
+.block__element {}  /* Element */
+.block--modifier {}  /* Modifier */</code></pre>
           <p>Việc đặt tên theo chuẩn giúp các lập trình viên frontend hiểu được đoạn code đó có ý nghĩa gì, nó thực
             hiện nhiệm vụ gì. Từ đó những lập trình viên khác khi đọc vào code của bạn họ cũng hiểu được bạn đang
             làm gì, từ đó dễ dàng phân tích, thay đổi và quản lý hơn sau này.</p>
@@ -375,7 +374,7 @@
             <div class="subsection">
               <p>CSS General Sibling Selector: chọn tất cả phần tử anh em liền kề phía sau một phần tử cụ thể được chỉ
                 định.(~)</p>
-              <pre><code class="language-html">div + p {
+              <pre><code class="language-html">div ~ p {
   background-color: yellow;
 }</code></pre>
             </div>
@@ -405,9 +404,6 @@ a:hover {
 a:active {
   color: #0000FF;
 }</code></pre>
-              <p>Lưu ý: a:hover PHẢI đặt sau a:link và a:visited trong định nghĩa CSS để có hiệu quả! a:active PHẢI đặt
-                sau a:hover
-                trong định nghĩa CSS để có hiệu quả! Tên lớp giả không phân biệt chữ hoa chữ thường</p>
             </div>
             <h4>b. The :first-child Pseudo-class</h4>
             <div class="subsection">
@@ -692,10 +688,8 @@ a:active {
           <span>Content Here</span>
         </div>
       </section>
-      <section id="section9">
-      </section>
       <section id="section10">
-        <h2>10. Transitions</h2>
+        <h2>9. Transitions</h2>
         <p>Trong CSS, transition cho phép chúng ta thay đổi các thuộc tính CSS của phần tử một cách "mượt" hơn, sự thay
           đổi này có thể được kéo dài một khoảng thời gian nhất định. </p>
         <p>Ví dụ: Khi hover vào logo, hiệu ứng phóng to của logo có transition diễn ra chậm hơn, từ đó đem lại cảm giác
@@ -915,7 +909,7 @@ a:active {
         </ul>
       </section>
       <section id="section12">
-        <h2>12.Flexbox / Grid</h2>
+        <h2>11.Flexbox / Grid</h2>
         <h3>a. Flexbox</h3>
         <div style="display: flex; justify-content: center">
           <img src="https://images.viblo.asia/0c116fbb-972d-4162-8506-bac8605cd704.png" alt="Flexbox" />
@@ -1726,7 +1720,7 @@ a:active {
 
       </section>
       <section id="section13">
-        <h3 class="sec13_head">13. About CSS Layout</h3>
+        <h3 class="sec13_head">12. About CSS Layout</h3>
         <ol>
           <li>
             <strong>Normal Flow</strong>
@@ -1935,7 +1929,7 @@ a:active {
         </ol>
       </section>
       <section id="section14">
-        <h3 class="sec14_head">14. About CSS Stacking Contexts</h3>
+        <h3 class="sec14_head">13. About CSS Stacking Contexts</h3>
         <p>Là một khái niệm quan trọng trong CSS để xác định cách các phần tử HTML được xếp chồng và hiển thị trên trang
           web. Mỗi phần tử HTML có một stacking context riêng, và cách chúng xếp chồng với nhau được quy định bởi một số
           quy tắc.</p>
@@ -1956,7 +1950,7 @@ a:active {
         </div>
       </section>
       <section id="section15" style="margin-top:150px;">
-        <h3>15. Animation</h3>
+        <h3>14. Animation</h3>
         <p>CSS Animation là một công nghệ cho phép tạo ra các hiệu ứng chuyển động của các phần tử HTML. Cho phép điều
           chỉnh thuộc tính của một phần tử theo thời gian, tạo ra các hiệu ứng chuyển động.</p>
         <p>Để tạo ra một Animation trong CSS, cần thực hiện các bước sau: </p>
@@ -2003,7 +1997,7 @@ a:active {
       </section>
       <section id="section16">
         <header>
-          <h2>16. Preprocessors - SASS/SCSS</h2>
+          <h2>15. Preprocessors - SASS/SCSS</h2>
         </header>
         <div class="subsection">
           <p><strong>CSS Preprocessors</strong> là ngôn ngữ tiền xử lý CSS. Là một ngôn ngữ kịch bản mở rộng của CSS và
