@@ -6,6 +6,7 @@
 
 html {
   font-family: Tahoma, sans-serif;
+  scroll-padding-top: 4.5em;
 }
 
 /*---GLOBAL STYLE---*/
@@ -45,6 +46,7 @@ code {
 /*---Main style---*/
 .container {
   padding: 1em;
+  padding-top: 4.5em;
 }
 
 section {
