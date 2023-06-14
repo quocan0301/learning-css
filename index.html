@@ -99,7 +99,7 @@
             kiểu đơn giản cho phép đính kèm kiểu (ví dụ phông, màu sắc và khoảng cách) vào tài liệu HTML, sau này được
             mở rộng thêm nhiều tính năng. Một trong những đặc tính cơ bản của CSS là xếp tầng các kiểu hay còn gọi là
             định kiểu theo tầng.</p>
-          <p><strong>Nguyên tắc thiết kế CSS theo tiêu chuẩn của W3C:</strong></p>
+          <p><h3>Nguyên tắc thiết kế CSS theo tiêu chuẩn của W3C:</h3></p>
           <p>CSS dựa trên một số nguyên tắc thiết kế sau:</p>
           <ul>
             <li><i>Tương thích xuôi và tương thích ngược.</i><br />
@@ -141,9 +141,54 @@
           <p>Ngoài ra, khi viết CSS, sẽ có một số cách viết tiểu chuẩn được quy ước để đảm bảo được tính dễ đọc, chuẩn
             nhất có thể.</p>
           <p>Một trong số đó là kỹ thuật OOCSS (Object Oriented CSS) hay còn gọi là CSS hướng đối tượng. Một ứng dụng cụ
-            thể cụ thể của kỹ thuật này là BEM. BEM là viết tắt của Block-Element-Modifier, là một tiêu
+            thể của kỹ thuật này là BEM. BEM là viết tắt của Block-Element-Modifier, là một tiêu
             chuẩn quy ước đặt tên cho các tên lớp CSS. BEM giúp cho việc code Frontend dễ đọc và dễ hiểu hơn, dễ làm
             việc và dễ mở rộng cũng như bảo trì khi làm việc với CSS.</p>
+          <p>
+            <strong>Định nghĩa block, element, modifier:</strong>
+          </p>
+          <table class="table-bem">
+            <tr>
+              <th>Thành phần</td>
+              <th>Block (Khối)</td>
+              <th>Element (Phần tử)</td>
+              <th>Modifier (Sửa đổi)</td>
+            </tr>
+            <tr>
+              <th>Định nghĩa</th>
+              <td>Là thực thể độc lập có ý nghĩa riêng. Tuy các block có thể được lồng vào nhau và tương tác với nhau, nhưng về mặt ngữ nghĩa các block vẫn bình đẳng, không có sự ưu tiên hoặc thứ bậc.</td>
+              <td>Là một phần của block và không có ý nghĩa độc lập, hay có thể coi element là phần tử con của block, element được gắn về mặt ngữ nghĩa với block của nó.</td>
+              <td>Là sửa đổi trên một block hoặc element, được dùng để thay đổi vẻ ngoài, hành vi hoặc trạng thái của block hay element đó.</td>
+            </tr>
+            <tr>
+              <th>Ví dụ</th>
+              <td>header, container, menu, checkbox, input</td>
+              <td>menu item, list item, checkbox caption, header title</td>
+              <td>disabled, highlighted, checked, fixed, size big, color yellow</td>
+            </tr>
+          </table>
+          <p>Ví dụ:</p>
+          <pre><code class="language-css">.post {}
+.post__image {}
+.post__name-tag--hightlight {}
+.post__name-tag--normal {}
+.post__name {}
+.post__intro {}</code></pre>
+          <p>Style cũng có thể được viết với định dạng SASS như sau:</p>
+          <pre><code class="language-scss">.post {
+    &__image {}
+    &__name-tag {
+        &--hightlight {}
+        &--normal {}
+    }
+    &__intro {}
+}</code></pre>
+          <p>
+            <strong>Quy ước đặt tên của BEM:</strong>
+          </p>
+          <pre><code class="language-css">.block {}   /* Block */
+.block__element {}  /* Element */
+.block--modifier {}  /* Modifier */</code></pre>
           <p>Việc đặt tên theo chuẩn giúp các lập trình viên frontend hiểu được đoạn code đó có ý nghĩa gì, nó thực
             hiện nhiệm vụ gì. Từ đó những lập trình viên khác khi đọc vào code của bạn họ cũng hiểu được bạn đang
             làm gì, từ đó dễ dàng phân tích, thay đổi và quản lý hơn sau này.</p>
@@ -243,9 +288,9 @@
 }</code></pre>
             <p>Giải thích:</p>
             <ul>
-              <li><strong>p</strong> là một bộ chọn CSS (trỏ tới phần tử HTML mà bạn muốn áp dụng kiểu)</li>
-              <li><strong>color</strong> là một thuộc tính, và <strong>red</strong> là giá trị thuộc tính</li>
-              <li><strong>text-align</strong> là một thuộc tính, và <strong>center</strong> là giá trị thuộc tính</li>
+              <li><strong>p</strong> là một bộ chọn CSS (trỏ tới phần tử HTML mà bạn muốn áp dụng kiểu).</li>
+              <li><strong>color</strong> là một thuộc tính, và <strong>red</strong> là giá trị thuộc tính.</li>
+              <li><strong>text-align</strong> là một thuộc tính, và <strong>center</strong> là giá trị thuộc tính.</li>
             </ul>
           </div>
         </header>

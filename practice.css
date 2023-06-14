@@ -64,6 +64,15 @@ main {
 
 /* section1 */
 /* section2 */
+.table-bem {
+  border-collapse: collapse;
+  margin-bottom: 0.5em;
+}
+.table-bem th,
+.table-bem td {
+  border: 1px solid black;
+  padding: 0.5em;
+}
 /* section3 */
 /* section4 */
 /* section5 */
@@ -300,7 +309,7 @@ main {
 }
 
 .transition-table td,
-th {
+.transition-table th {
   border: 3px solid black;
   padding: 15px 40px;
 }
