@@ -36,7 +36,8 @@ ol {
   margin-bottom: 1em;
 }
 
-li {
+li,
+p {
   margin-bottom: 0.5em;
 }
 
